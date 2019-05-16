@@ -10,3 +10,7 @@ var settings = {
 $.ajax(settings).done(function (response) {
   console.log(response);
 });
+
+
+var pelicula1 = document.querySelector('#pelicula1')
+pelicula1.innerHTML = '<ol>' + settings + '</ol>'
