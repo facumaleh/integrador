@@ -26,3 +26,8 @@ $.ajax(settings).done(function (response) {
   var pelicula3 = document.querySelector('#pelicula3')
   pelicula3.innerHTML = '<h2>' + response.results[2].title  + '</h2>'
 });
+$.ajax(settings).done(function (response) {
+  console.log(response.results[3].title);
+  var pelicula4 = document.querySelector('#pelicula4')
+  pelicula4.innerHTML = '<h2>' + response.results[3].title  + '</h2>'
+});
