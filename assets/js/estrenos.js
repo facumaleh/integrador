@@ -23,6 +23,10 @@ $.ajax(settings).done(function (response) {
   console.log(response.results[0].overview);
   var pp1 = document.querySelector('#pp1')
   pp1.innerHTML = '<p>' + response.results[0].overview  + '</p>'
+  console.log(response.results[1].release_date);
+  var r1 = document.querySelector('#reseña1')
+  r1.innerHTML = '<p>' + response.results[0].release_date + '</p>'
+
 });
 
 $.ajax(settings).done(function (response) {
@@ -37,6 +41,9 @@ $.ajax(settings).done(function (response) {
   console.log(response.results[1].overview);
   var pp2 = document.querySelector('#pp2')
   pp2.innerHTML = '<p>' + response.results[1].overview  + '</p>'
+  console.log(response.results[1].release_date);
+  var r2 = document.querySelector('#reseña2')
+  r2.innerHTML = '<p>' + response.results[1].release_date + '</p>'
 
 });
 
@@ -53,44 +60,8 @@ $.ajax(settings).done(function (response) {
   console.log(response.results[2].overview);
   var pp3 = document.querySelector('#pp3')
   pp3.innerHTML = '<p>' + response.results[2].overview  + '</p>'
-
-});
-$.ajax(settings).done(function (response) {
-  console.log(response.results[3].title);
-  var pelicula4 = document.querySelector('#pelicula4')
-  pelicula4.innerHTML = '<h2>' + response.results[3].title  + '</h2>'
-  var foto4 = document.querySelector('#foto4')
-  var primerParteURL = "HTTPS://image.tmdb.org/t/p/original"
-  primerParteURL+= response.results[3].backdrop_path
-  foto4.setAttribute("src",primerParteURL )
-  console.log(response.results[3].overview);
-  var pp4 = document.querySelector('#pp4')
-  pp4.innerHTML = '<p>' + response.results[3].overview  + '</p>'
-
-});
-$.ajax(settings).done(function (response) {
-  console.log(response.results[4].title);
-  var pelicula5 = document.querySelector('#pelicula5')
-  pelicula5.innerHTML = '<h2>' + response.results[4].title  + '</h2>'
-  var foto5 = document.querySelector('#foto5')
-  var primerParteURL = "HTTPS://image.tmdb.org/t/p/original"
-  primerParteURL+= response.results[4].backdrop_path
-  foto5.setAttribute("src",primerParteURL )
-  console.log(response.results[4].overview);
-  var pp5 = document.querySelector('#pp5')
-  pp5.innerHTML = '<p>' + response.results[4].overview  + '</p>'
-
-});
-$.ajax(settings).done(function (response) {
-  console.log(response.results[5].title);
-  var pelicula6 = document.querySelector('#pelicula6')
-  pelicula6.innerHTML = '<h2>' + response.results[5].title  + '</h2>'
-  var foto6 = document.querySelector('#foto6')
-  var primerParteURL = "HTTPS://image.tmdb.org/t/p/original"
-  primerParteURL+= response.results[5].backdrop_path
-  foto6.setAttribute("src",primerParteURL )
-  console.log(response.results[5].overview);
-  var pp6 = document.querySelector('#pp6')
-  pp6.innerHTML = '<p>' + response.results[5].overview  + '</p>'
+  console.log(response.results[2].release_date);
+  var r3 = document.querySelector('#reseña3')
+  r3.innerHTML = '<p>' + response.results[2].release_date + '</p>'
 
 });
