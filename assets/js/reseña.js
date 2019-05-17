@@ -9,57 +9,36 @@ var settings = {
 
 
 
-$.ajax(settings).done(function (response) {
-  console.log(response.results[0].title);
-  var pelicula1 = document.querySelector('#pelicula1')
-  pelicula1.innerHTML = '<h2>' + response.results[0].title  + '</h2>'
-  console.log(response.results[0].backdrop_path);
-  var foto1 = document.querySelector('#foto1')
-  var primerParteURL = "HTTPS://image.tmdb.org/t/p/original"
-  primerParteURL+= response.results[0].backdrop_path
-  console.log("Sus");
-  console.log(primerParteURL);
-  foto1.setAttribute("src",primerParteURL)
-  console.log(response.results[0].overview);
-  var pp1 = document.querySelector('#pp1')
-  pp1.innerHTML = '<p>' + response.results[0].overview  + '</p>'
-  console.log(response.results[1].release_date);
-  var r1 = document.querySelector('#reseña1')
-  r1.innerHTML = '<p>' + response.results[0].release_date + '</p>'
+var ruta = "HTTPS://image.tmdb.org/t/p/original"
 
-});
+fetch(settings.url)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(response) {
+    console.log("Esto es lo que me devuele, la API de movies: "+response);
+    console.log(response);
+    console.log(response.results);
 
-$.ajax(settings).done(function (response) {
-  console.log(response.results[1]);
-  var pelicula1 = document.querySelector('#pelicula2')
-  pelicula2.innerHTML = '<h2>' + response.results[1].title  + '</h2>'
-  console.log(response.results[1].backdrop_path);
-  var foto2 = document.querySelector('#foto2')
-  var primerParteURL = "HTTPS://image.tmdb.org/t/p/original"
-  primerParteURL+= response.results[1].backdrop_path
-  foto2.setAttribute("src",primerParteURL )
-  console.log(response.results[1].overview);
-  var pp2 = document.querySelector('#pp2')
-  pp2.innerHTML = '<p>' + response.results[1].overview  + '</p>'
-  console.log(response.results[1].release_date);
-  var r2 = document.querySelector('#reseña2')
-  r2.innerHTML = '<p>' + response.results[1].release_date + '</p>'
+// capturo los 3 divs, donde voy a insertar la data de los estrenos
+var arrayDeDivs = document.querySelectorAll("div.estrenos")
+console.log(arrayDeDivs);
+// voy a recorrer los divs, de los estrenos y les voy a insertar la darta
+      for (var i = 0; i < arrayDeDivs.length; i++) {
+        console.log(response.results[i].title);
+        console.log(response.results[i].backdrop_path);
+        console.log(response.results[i].release_date);
 
-});
-$.ajax(settings).done(function (response) {
-  console.log(response.results[2].title);
-  var pelicula3 = document.querySelector('#pelicula3')
-  pelicula3.innerHTML = '<h2>' + response.results[2].title  + '</h2>'
-  console.log(response.results[2].backdrop_path);
-  var foto3 = document.querySelector('#foto3')
-  var primerParteURL = "HTTPS://image.tmdb.org/t/p/original"
-  primerParteURL+= response.results[2].backdrop_path
-  foto3.setAttribute("src",primerParteURL )
-  console.log(response.results[2].overview);
-  var pp3 = document.querySelector('#pp3')
-  pp3.innerHTML = '<p>' + response.results[2].overview  + '</p>'
-  console.log(response.results[2].release_date);
-  var r3 = document.querySelector('#reseña3')
-  r3.innerHTML = '<p>' + response.results[2].release_date + '</p>'
+        console.log(arrayDeDivs[i]);
+        arrayDeDivs[i].querySelector("h2 a").innerText = response.results[i].title
+console.log(arrayDeDivs[i].querySelector("a img"));
+        arrayDeDivs[i].querySelector("a img").setAttribute("src", ruta + response.results[i].backdrop_path)
+        arrayDeDivs[i].querySelector("p.overview").innerText = response.results[i].overview
+        arrayDeDivs[i].querySelector("p").innerText = response.results[i].release_date
+      }
 
+
+  })
+  .catch(function(error) {
+  console.log('Hubo un problema con la petición Fetch:' + error.message);
 });
