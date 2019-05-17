@@ -7,10 +7,22 @@ var settings = {
   "data": "{}"
 }
 
+
 $.ajax(settings).done(function (response) {
-  console.log(response);
+  console.log(response.results[0].title);
+  var pelicula1 = document.querySelector('#pelicula1')
+  pelicula1.innerHTML = '<h2>' + response.results[0].title  + '</h2>'
+});
+
+$.ajax(settings).done(function (response) {
+  console.log(response.results[1].title);
+  var pelicula1 = document.querySelector('#pelicula2')
+  pelicula2.innerHTML = '<h2>' + response.results[1].title  + '</h2>'
 });
 
 
-var pelicula1 = document.querySelector('#pelicula1')
-pelicula1.innerHTML = '<ol>' + settings + '</ol>'
+$.ajax(settings).done(function (response) {
+  console.log(response.results[2].title);
+  var pelicula3 = document.querySelector('#pelicula3')
+  pelicula3.innerHTML = '<h2>' + response.results[2].title  + '</h2>'
+});
