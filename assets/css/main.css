@@ -99,7 +99,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #f4f4f4;
+		background: black;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -182,11 +182,11 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #2ebaae !important;
+			color: blueviolet !important;
 		}
 
 			a:hover:before {
-				color: #2ebaae !important;
+				color: blueviolet !important;
 			}
 
 	strong, b {
@@ -1891,8 +1891,8 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			box-shadow: inset 0 0 0 1px #2ebaae;
-			color: #2ebaae !important;
+			box-shadow: inset 0 0 0 1px blueviolet;
+			color: blueviolet !important;
 		}
 
 			input[type="submit"]:hover:active,
@@ -2066,8 +2066,8 @@ input, select, textarea {
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #2ebaae;
-			box-shadow: inset 0 0 0 1px #2ebaae;
+			border-color: blueviolet;
+			box-shadow: inset 0 0 0 1px blueviolet;
 		}
 
 	.select-wrapper {
@@ -2199,8 +2199,8 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #2ebaae;
-			box-shadow: 0 0 0 1px #2ebaae;
+			border-color: blueviolet;
+			box-shadow: 0 0 0 1px blueviolet;
 		}
 
 	input[type="radio"] + label:before {
@@ -2443,6 +2443,11 @@ input, select, textarea {
 			ul.actions.fit.stacked {
 				width: 100%;
 			}
+input.login1{
+	border-radius: 10px;
+	margin-bottom: 3%;
+
+}
 
 		@media screen and (max-width: 480px) {
 
@@ -2671,6 +2676,7 @@ input, select, textarea {
 	.mini-posts {
 		margin: 0 0 2em 0;
 	}
+
 
 		@media screen and (max-width: 1280px) {
 
@@ -3008,6 +3014,9 @@ input, select, textarea {
 	section.special, article.special {
 		text-align: center;
 	}
+header#header{
+	background-color: black;
+}
 
 	header p {
 		font-family: "Raleway", Helvetica, sans-serif;
@@ -3308,6 +3317,7 @@ input, select, textarea {
 		opacity: 1;
 		padding: 4.5em;
 		width: 90em;
+		color: blueviolet;
 	}
 
 		body.is-menu-visible #wrapper {
@@ -3562,7 +3572,7 @@ input, select, textarea {
 					}
 
 					#menu .links > li a:hover h3 {
-						color: #2ebaae;
+						color: blueviolet;
 					}
 
 				#menu .links > li:first-child {
