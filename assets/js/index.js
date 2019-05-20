@@ -67,6 +67,7 @@ fetch(URL)
         console.log(arrayDeDivs[i]);
         arrayDeDivs[i].querySelector("img").src = " https://image.tmdb.org/t/p/original/"+ respuesta.results[i].backdrop_path
         arrayDeDivs[i].querySelector('.text').innerText = respuesta.results[i].original_title
+        arrayDeDivs[i].querySelector('.descripcion').innerText = respuesta.results[i].overview
     }
 
 })
