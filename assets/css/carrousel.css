@@ -9,15 +9,18 @@ img {vertical-align: middle; border-radius: 40px;}
 
   position: relative;
   margin: auto;
+  width: 100%;
 }
 div.mySlides {
   width: 100%;
   margin: 0 23vw;
+  width: 100%;
+
 }
 div.slideshow-container div.mySlides img {
     background-size: contain;
-    max-width: 600px;
-    width: 100%;
+    max-width: 100%;
+    width: 600px;
     text-align: center;
 }
 /* Next & previous buttons */
