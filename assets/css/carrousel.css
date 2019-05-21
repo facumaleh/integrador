@@ -16,7 +16,7 @@ div.mySlides {
 }
 div.slideshow-container div.mySlides img {
     background-size: contain;
-    max-width: 400px;
+    max-width: 600px;
     width: 100%;
     text-align: center;
 }
@@ -53,9 +53,19 @@ div.slideshow-container div.mySlides img {
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 8px;
+  top: 400px;
   width: 100%;
-  text-align: center;
+  text-align: left;
+  overflow: hidden;
+}
+
+.descripcion{
+overflow: hidden;
+position: absolute;
+text-align: justify;
+max-width: 600px;
+max-height: 30vh;
+top: 440px;
 }
 
 /* Number text (1/3 etc) */
