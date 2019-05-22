@@ -5,11 +5,14 @@ body {font-family: Verdana, sans-serif; margin:0; overflow-x:hidden;
 img {vertical-align: middle; border-radius: 40px;}
 
 /* Slideshow container */
+
+
 .slideshow-container {
 
   position: relative;
   margin: auto;
   width: 100%;
+
 }
 div.mySlides {
   width: 100%;
@@ -20,7 +23,7 @@ div.mySlides {
 div.slideshow-container div.mySlides img {
     background-size: contain;
     max-width: 100%;
-    width: 600px;
+    width: 600px  ;
     text-align: center;
 }
 /* Next & previous buttons */

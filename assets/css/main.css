@@ -7,6 +7,11 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+.intro{
+	width: 100%;
+	white-space:nowrap;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -2970,9 +2975,11 @@ input.login1{
 		.slideshow-container{
 			width: 100%;
 			text-align: left;
+			white-space:nowrap;
 		}
 		div.mySlides{
 			text-align: center;
+
 		}
 
 		.fotovich{
@@ -3329,6 +3336,22 @@ header#header{
 				display: none;
 			}
 
+			.slideshow-container{
+				width: 100%;
+				text-align: left;
+			}
+			div.mySlides{
+				text-align: center;
+			}
+
+			.fotovich{
+				text-align: center;
+				max-width: 300px;
+				position: relative;
+				right: 23vw;
+			}
+
+
 		}
 
 		@media screen and (max-width: 736px) {
@@ -3344,6 +3367,21 @@ header#header{
 
 				#header .main .search {
 					display: none;
+				}
+
+				.slideshow-container{
+					width: 100%;
+					text-align: left;
+				}
+				div.mySlides{
+					text-align: center;
+				}
+
+				.fotovich{
+					text-align: center;
+					max-width: 300px;
+					position: relative;
+					right: 23vw;
 				}
 
 		}
@@ -3380,6 +3418,20 @@ header#header{
 			#wrapper {
 				padding: 3em;
 			}
+			.slideshow-container{
+				width: 100%;
+				text-align: left;
+			}
+			div.mySlides{
+				text-align: center;
+			}
+
+			.fotovich{
+				text-align: center;
+				max-width: 300px;
+				position: relative;
+				right: 23vw;
+			}
 
 		}
 
@@ -3388,6 +3440,20 @@ header#header{
 			#wrapper {
 				display: block;
 			}
+			.slideshow-container{
+				width: 100%;
+				text-align: left;
+			}
+			div.mySlides{
+				text-align: center;
+			}
+
+			.fotovich{
+				text-align: center;
+				max-width: 300px;
+				position: relative;
+				right: 23vw;
+			}
 
 		}
 
@@ -3395,6 +3461,20 @@ header#header{
 
 			#wrapper {
 				padding: 1.5em;
+			}
+			.slideshow-container{
+				width: 100%;
+				text-align: left;
+			}
+			div.mySlides{
+				text-align: center;
+			}
+
+			.fotovich{
+				text-align: center;
+				max-width: 300px;
+				position: relative;
+				right: 23vw;
 			}
 
 		}
@@ -3443,6 +3523,20 @@ header#header{
 				padding: 3em 0 0 0;
 				width: 100%;
 				overflow-x: hidden;
+			}
+			.slideshow-container{
+				width: 100%;
+				text-align: left;
+			}
+			div.mySlides{
+				text-align: center;
+			}
+
+			.fotovich{
+				text-align: center;
+				max-width: 300px;
+				position: relative;
+				right: 23vw;
 			}
 
 		}
@@ -3500,6 +3594,20 @@ header#header{
 
 			#intro header p {
 				font-size: 0.7em;
+			}
+			.slideshow-container{
+				width: 100%;
+				text-align: left;
+			}
+			div.mySlides{
+				text-align: center;
+			}
+
+			.fotovich{
+				text-align: center;
+				max-width: 300px;
+				position: relative;
+				right: 23vw;
 			}
 
 	}
