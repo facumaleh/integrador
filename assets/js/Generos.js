@@ -15,6 +15,7 @@ $.ajax(settings).done(function (response) {
     console.log(response);
     console.log(response.genres[i].name);
     var lista = document.querySelector('.generos-list')
-    lista.innerHTML += '<li class="list-group-item" id="'+response.genres[i].id + '">' + response.genres[i].name + '</li>'
+    // lista.innerHTML += "<a href='listadegeneros.html?query'"+response.genres[i].id+" ><li class='list-group-item' id='"+response.genres[i].id + "'>" + response.genres[i].name + "</li></a>"
+    lista.innerHTML += "<form action='listadegeneros.html' method='GET'><input class='display-none' type='' name='idGenero' value='"+ response.genres[i].id +"' style='display:none;'><button class='list-group-item' id='"+response.genres[i].id + "'>" + response.genres[i].name + "</buton></form>"
   }
 });
