@@ -23,7 +23,7 @@ div.mySlides {
 div.slideshow-container div.mySlides img {
     background-size: contain;
     max-width: 100%;
-    width: 600px  ;
+    width: 85%  ;
     text-align: center;
 }
 /* Next & previous buttons */
@@ -55,25 +55,28 @@ div.slideshow-container div.mySlides img {
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 400px;
-  width: 100%;
-  text-align: left;
-  overflow: hidden;
+    color: #f2f2f2;
+    font-size: 29px;
+    padding: 8px 12px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 115%;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
 }
 
-.descripcion{
-overflow: hidden;
-position: absolute;
-text-align: justify;
-max-width: 600px;
-max-height: 30vh;
-top: 440px;
+.descripcion {
+    overflow: hidden;
+    position: absolute;
+    text-align: justify;
+    max-width: 78%;
+    max-height: 50%;
+    top: 126%;
+    left: 12%;
+    font-size: 24px;
 }
-
 /* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;

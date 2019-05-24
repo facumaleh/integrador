@@ -10,6 +10,7 @@
 .intro{
 	width: 100%;
 	white-space:nowrap;
+
 }
 
 html, body, div, span, applet, object,
@@ -2684,6 +2685,19 @@ input.login1{
 
 
 		@media screen and (max-width: 1280px) {
+			.descripcion{display: none;}
+			div.text {
+    color: #f2f2f2;
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 128%;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+ }
 
 			.mini-posts {
 				display: -moz-flex;
@@ -3389,14 +3403,7 @@ header#header{
 /* Wrapper */
 
 	#wrapper {
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
-		display: flex;
-		-moz-flex-direction: row-reverse;
-		-webkit-flex-direction: row-reverse;
-		-ms-flex-direction: row-reverse;
-		flex-direction: row-reverse;
+
 		-moz-transition: opacity 0.5s ease;
 		-webkit-transition: opacity 0.5s ease;
 		-ms-transition: opacity 0.5s ease;
