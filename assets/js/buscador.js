@@ -10,31 +10,24 @@ window.onload = function() {
 
       return respuesta.json()
     })
-    .then(function(informacion) {
-      console.log(informacion);
+    .then(function(respuesta) {
+      console.log(respuesta);
+      console.log(respuesta.results);
+      console.log(respuesta.results[0]);
 
-      var arrayDePeliculas = informacion.results
-      console.log(arrayDePeliculas);
-      var ruta = "HTTPS://image.tmdb.org/t/p/original"
-
-      for (var i = 0; i < arrayDePeliculas.length; i++) {
-
-          var title = arrayDePeliculas[i].title;
-          var path = arrayDePeliculas[i].poster_path;
-          var date = arrayDePeliculas[i].release_date;
-          var overview = arrayDePeliculas[i].overview;
-
-          // console.log(arrayDePeliculas[i]);
-          document.querySelector("h2 a").innerText = title
-      // console.log(arrayDePeliculas[i].querySelector("a img"));
-          var fotos =document.querySelectorAll(".foto1")
-          console.log(fotos);
-          fotos[i].setAttribute("src", ruta + path)
-          document.querySelector("p.overview").innerText = overview
-          document.querySelector("p").innerText = date
-
-
+      var arrayDeDivs = document.querySelectorAll("div.slideshow-container div.mySlides")
+      for (var i = 0; i < arrayDeDivs.length; i++) {
+          console.log(arrayDeDivs[i]);
+          arrayDeDivs[i].querySelector("img").src = " https://image.tmdb.org/t/p/original/"+ respuesta.results[i].backdrop_path
+          arrayDeDivs[i].querySelector('.text').innerText = respuesta.results[i].original_title
+          arrayDeDivs[i].querySelector('.descripcion').innerText = respuesta.results[i].overview
       }
+
+
+
+
+
+
     })
     .catch(function(error) {
       console.log("Error: " + error);
