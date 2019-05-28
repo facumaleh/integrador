@@ -1,14 +1,14 @@
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://api.themoviedb.org/3/search/movie?include_adult=false&page=1&language=en-US&api_key=97feb9420c9c2cc675ee55c92f4a520c",
+  "url": "https://api.themoviedb.org/3/search/movie?include_adult=false&page=1&language=en-US&api_key=%3C%3Capi_key%3E%3E",
   "method": "GET",
   "headers": {},
   "data": "{}"
 }
 
 
-var URL =  "https://api.themoviedb.org/3/search/movie?include_adult=false&page=1&language=en-US&api_key=97feb9420c9c2cc675ee55c92f4a520c"
+var URL =  "https://api.themoviedb.org/3/search/movie?include_adult=false&page=1&language=en-US&api_key=%3C%3Capi_key%3E%3E"
 fetch(URL)
 .then(function(response) {
   return response.json()
