@@ -74,3 +74,11 @@ fetch(URL)
 .catch(function(error) {
   console.log("Error: " + error);
 })
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
