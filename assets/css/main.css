@@ -1990,6 +1990,15 @@ input, select, textarea {
 				color: rgba(160, 160, 160, 0.3) !important;
 			}
 
+			button.list-group-item{
+				width: 20%;
+				border-radius: 10px;
+				padding: 0%;
+			}
+
+div.maingeneros{
+	text-align: center;
+}
 /* Form */
 
 	form {
@@ -2456,6 +2465,11 @@ input.login1{
 }
 
 		@media screen and (max-width: 480px) {
+
+			button.list-group-item{
+				width: 50%;
+				border-radius: 10px;
+			}
 
 			ul.actions:not(.fixed) {
 				-moz-flex-direction: column;
