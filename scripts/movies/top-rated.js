@@ -1,6 +1,6 @@
 // API KEY.
 const API_KEY = config.API_KEY;
-
+// => es una function
 // Define the spinner and set it to display none.
 const spinner = document.querySelector(".spinner");
 const container = document.querySelector(".showcase");
