@@ -1,237 +1,58 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Pelis para todos</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/carrousel.css" />
-		<link rel="stylesheet" href="assets/css/Login.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/homepage.css">
+    <link rel="stylesheet" href="style/fonts.css">
+</head>
+<body>
+    <!-- Navigation links -->
+    <nav>
+        <ul>
+            <li><a href="movies/latest-movies.html">movies</a></li>
+        </ul>
+    </nav>
 
-	</head>
-	<body class="is-preload">
+    <!-- Popular movies section -->
+    <section class="popularMovies popular">
+        <h2 class="popularTitle">PELICULAS POPULARES <span><i class="material-icons hot">whatshot</i></span></h2>
+        <a href="movies/popular-movies.html">see more...</a>
+        <!-- Movies output -->
+        <div id="movies" class="scroll"></div>
+    </section>
 
-			<div id="wrapper">
-				<!-- Intro -->
-					<section id="intro"  class="intro" style="
-    text-align: center;
-">
-						<a href="#" class="logo"><img src="images/IMG_4725.JPG" alt="logo" /></a>
-						<header>
-							<h2>Súper Pelis</h2>
-							<p>peliculas para todos </p>
 
-						</header>
-					</section>
+    <!-- See more section -->
 
-					<header id="header">
-						<h1><a href="index.html">Pelis para todos</a></h1>
-						<nav class="links">
-							<ul class="links">
-								<li><a href="index.HTML">Inicio</a></li>
-								<li><a href="Reseñas.html">Reseñas</a></li>
-								<li><a href="Estrenos.HTML">Estrenos</a></li>
-								<li><a href="Generos.html">Generos</a></li>
-								<li> <h3>Nombre de usuario:</h3> </li>
-								<li> <h3>Genero favorito:</h3> </li>
+
+        </div>
+    </section>
 
 
 
-								</ul>
-						</nav>
-						<nav class="main">
-							<ul>
-								<li class="search">
-									<a class="fa-search" href="#search">Search</a>
-									<form id="search" action="resultados.html" method="get" action="#">
-										<input type="text" name="query" placeholder="Search" style="border-radius: 10px;" />
-									</form>
-								</li>
-								<li class="menu">
-									<a class="fa-bars" href="#menu">Menu</a>
-								</li>
-							</ul>
-						</nav>
-					</header>
-
-
-					<section id="menu">
-
-						<section>
-							<ul class="links">
-
-								<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
-							<div id="id01" class="modal">
-
-								<form class="modal-content animate" action="/action_page.php">
-									<div class="imgcontainer">
-										<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-										<img src="images/nacho.jpeg" alt="Avatar" class="avatar">
-									</div>
-
-									<div class="container">
- 									 <label for="uname"><b>Username</b></label>
- 									 <input type="text" placeholder="Ingrese su usuario" name="uname" required>
-
- 									 <label for="psw"><b>Password</b></label>
- 									 <input type="password" placeholder="Ingrese su contraseña" name="psw" required>
- 									 <label for="genero"><b>Generos</b></label>
- 									 <input type="text" placeholder="Ingrese un genero" name="gen" required>
-
- 									 <button type="submit">Login</button>
- 									 <label>
- 										 <input type="checkbox" checked="checked" name="remember"> Remember me
- 									 </label>
- 								 </div>
-
-
-									<div class="container" style="background-color:#f1f1f1">
-										<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-										<span class="psw">Forgot <a href="#">password?</a></span>
-									</div>
-								</form>
-							</div>
-
-
-
-
-
-
-									<li><a href="index.HTML">Inicio</a></li>
-									<li><a href="Reseñas.html">Reseñas</a></li>
-									<li><a href="Estrenos.HTML">Estrenos</a></li>
-									<li><a href="Generos.html">Generos</a></li>
-								</ul>
-						</section>
-
-					<!-- Actions -->
-						<section>
-
-						</section>
-
-				</section>
-
-
-
-					<div id="main">
-
-
-						<div class="slideshow-container">
-
-			          <div class="mySlides fade">
-			            <div class="numbertext"></div>
-			            <img src="" class="fotovich">
-			            <div class="text"></div>
-									<div class="descripcion"></div>
-			          </div>
-
-			          <div class="mySlides fade">
-			            <div class="numbertext"></div>
-			            <img src="" class="fotovich">
-			            <div class="text"></div>
-									<div class="descripcion"></div>
-			          </div>
-
-			          <div class="mySlides fade">
-			            <div class="numbertext"></div>
-			            <img src="" class="fotovich">
-			            <div class="text"></div>
-									<div class="descripcion"></div>
-			          </div>
-
-								<div class="mySlides fade">
-								 <div class="numbertext"></div>
-								 <img src="" class="fotovich">
-								 <div class="text"></div>
-								 <div class="descripcion"></div>
-							 </div>
-							 <div class="mySlides fade">
-						 	 <div class="numbertext"></div>
-						 	 <img src="" class="fotovich">
-						 	 <div class="text"></div>
-						 	 <div class="descripcion"></div>
-						  </div>	<div class="mySlides fade">
-								 <div class="numbertext"></div>
-								 <img src="" class="fotovich">
-								 <div class="text"></div>
-								 <div class="descripcion"></div>
-							 </div>	<div class="mySlides fade">
- 								 <div class="numbertext"></div>
- 								 <img src="" class="fotovich">
- 								 <div class="text"></div>
- 								 <div class="descripcion"></div>
- 							 </div>	<div class="mySlides fade">
- 								 <div class="numbertext"></div>
- 								 <img src="" class="fotovich">
- 								 <div class="text"></div>
- 								 <div class="descripcion"></div>
- 							 </div>	<div class="mySlides fade">
- 								 <div class="numbertext"></div>
- 								 <img src="" class="fotovich">
- 								 <div class="text"></div>
- 								 <div class="descripcion"></div>
- 							 </div>	<div class="mySlides fade">
- 								 <div class="numbertext"></div>
- 								 <img src="" class="fotovich">
- 								 <div class="text"></div>
- 								 <div class="descripcion"></div>
- 							 </div>
-
-			            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-			            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-			        </div>
-			          <br>
-
-			          <div style="text-align:center">
-			          <span class="dot" onclick="currentSlide(1)"></span>
-			          <span class="dot" onclick="currentSlide(2)"></span>
-			          <span class="dot" onclick="currentSlide(3)"></span>
-								 <span class="dot" onclick="currentSlide(4)"></span>
-								 	 <span class="dot" onclick="currentSlide(5)"></span>
-									 	 <span class="dot" onclick="currentSlide(6)"></span>
-										 	 <span class="dot" onclick="currentSlide(7)"></span>
-											 	 <span class="dot" onclick="currentSlide(8)"></span>
-												 	 <span class="dot" onclick="currentSlide(9)"></span>
-													 	 <span class="dot" onclick="currentSlide(10)"></span>
-			      </div>
-
-			    </div>
-
-
-						<!-- Footer -->
-
-<!-- Footer -->
-
-					</div>
-
-				<!-- Sidebar -->
-
-
-
-						<footer class="page-footer font-small blue">
-
-						<!-- Copyright -->
-						<div class="footer-copyright text-center py-"><img style="width: 5%;"src="images/tmdbLogo.png" alt="" />
-							<p>Facundo.M, Lucas.G, Tomas.C</p>
-						</div>
-
-
-						</footer>
-
-
-						<!-- Mini Posts -->
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/index.js"></script>
-			<script src="assets/js/carrousel.js"></script>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-				<script>src="assets/js/login.js"</script>
+    <!-- Footer -->
+    <footer>
+        <!-- Links -->
+        <div class="links">
+            <div class="moviesLinks">
+                <h3>MOVIES</h3>
+                <ul>
+                    <li><a href="movies/top-rated.html">Top Rated</a></li>
+                    <li><a href="movies/popular-movies.html">Popular</a></li>
+                    <li><a href="movies/latest-movies.html">Latest</a></li>
+                    <li><a href="movies/search-movies.html">Search</a></li>
+                </ul>
+            </div>
+        <!-- Credits -->
+        <div class="credits">
+            <a href="https://themoviedb.org" target="somethingUnique"><img src="images/tmdb2.svg" width="150px" alt="TMDB - The movie database."></a>
+        </div>
+    </footer>
+</body>
+<script src="scripts/config.js"></script>
+<script src="scripts/homePage.js"></script>
+<!-- Axios link -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </html>
