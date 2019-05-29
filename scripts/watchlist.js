@@ -11,6 +11,12 @@ const removeAllTvShows = document.getElementById("removeAllTvShows");
 // DISPLAY WATCHLISTS ON PAGE LOAD.
 window.onload = function displayWatchlist(){
     // MOVIES
+    // // Guardar data al almacenamiento local actual
+// localStorage.setItem("nombredeusuario", "John");
+//
+// // Accesar data almacenada
+// alert( "nombredeusuario = " + localStorage.getItem("nombredeusuario"));
+
     let toWatch = JSON.parse(localStorage.getItem("movies")) || [];
     for(let i = 0; i < toWatch.length; i++){
           // axios libreria de js que se usa para hacer http requests
