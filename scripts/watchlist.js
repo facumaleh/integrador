@@ -13,7 +13,12 @@ window.onload = function displayWatchlist(){
     // MOVIES
     let toWatch = JSON.parse(localStorage.getItem("movies")) || [];
     for(let i = 0; i < toWatch.length; i++){
-// axios libreria de js que se usa para hacer http requests
+          // axios libreria de js que se usa para hacer http requests
+          // const firstName = 'Jane';
+          // Output:
+          // Hello Jane!
+          // How are you
+          // today?
         axios.get("https://api.themoviedb.org/3/movie/"+toWatch[i]+'?api_key='+API_KEY+'&language=es-ES')
         .then((response)=>{
             let movie = response.data;
