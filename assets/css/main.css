@@ -2696,6 +2696,9 @@ input.login1{
 	.mini-posts {
 		margin: 0 0 2em 0;
 	}
+	article.post{
+		background-color: black;
+	}
 
 
 		@media screen and (max-width: 1280px) {
