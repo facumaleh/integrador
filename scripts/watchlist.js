@@ -4,7 +4,7 @@ const API_KEY = config.API_KEY;
 // OUTPUT FOR MOVIES.
 let movieOutput = document.getElementById("movies");
 // OUTPUT FOR TV SHOWS.
-let  tvShowsOutput = document.getElementById("tvShows");
+
 
 const removeAllMovies = document.getElementById("removeAllMovies");
 const removeAllTvShows = document.getElementById("removeAllTvShows");
@@ -13,7 +13,8 @@ window.onload = function displayWatchlist(){
     // MOVIES
     let toWatch = JSON.parse(localStorage.getItem("movies")) || [];
     for(let i = 0; i < toWatch.length; i++){
-        axios.get("https://api.themoviedb.org/3/movie/"+toWatch[i]+'?api_key='+API_KEY+'&language=en-US')
+// axios libreria de js que se usa para hacer http requests
+        axios.get("https://api.themoviedb.org/3/movie/"+toWatch[i]+'?api_key='+API_KEY+'&language=es-ES')
         .then((response)=>{
             let movie = response.data;
             movieOutput.innerHTML +=
@@ -38,7 +39,7 @@ window.onload = function displayWatchlist(){
     if(toWatch.length == 0) {
         // SHOW A MESSAGE IF THERE ARE NO MOVIES IN THE LIST.
         movieOutput.innerHTML +=
-        `<p class="infoText"> There are no movies in the watchlist. Add some now. <a href="#" onclick="openRecommendMoviesBox()"> Here are some recommendations !</a> </p>`;
+        `<p class="infoText"> No hay peliculas en la lista. <a href="#" onclick="openRecommendMoviesBox()"> Here are some recommendations !</a> </p>`;
     }
     // TV SHOWS
     let toWatchTvShows = JSON.parse(localStorage.getItem("series")) || [];
@@ -65,11 +66,7 @@ window.onload = function displayWatchlist(){
             //Display "Clear List" button.
             removeAllTvShows.style.display = "block";
     }
-    if(toWatchTvShows == 0){
-        // SHOW A MESSAGE IF THERE ARE NO MOVIES IN THE LIST.
-        tvShowsOutput.innerHTML +=
-        `<p class="infoText"> There are no tv shows in the watchlist. Add some now. <a href="#" onclick="openRecommendTvShowsBox()"> Here are some recommendations !</a> </p>`;
-    }
+
 }
 // Recommend movies
 const recommendedBox = document.querySelector(".recommendedBox");
@@ -81,6 +78,7 @@ function openRecommendMoviesBox(){
 function recommendMovies(){
 
     // Get random year on each call, between 1990 - current year.
+    // let es para una variable
     let minYear = 1990;
     let maxYear = (new Date()).getFullYear();
     minYear = Math.ceil(minYear);
