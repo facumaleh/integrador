@@ -187,7 +187,7 @@ function goBack(){
 // Take user to details page.
 function movieSelected(id){
 	sessionStorage.setItem("movieId", id);
-	location.replace("movie-page.html");
+	location.replace("detalle.html");
 	return false;
 }
 

@@ -12,7 +12,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 	<link rel="stylesheet" type="text/css" href="style/main.css">
-	<link rel="stylesheet" type="text/css" href="style/detailsPage.css">
+	<link rel="stylesheet" type="text/css" href="style/detalles.css">
 	<link rel="stylesheet" href="style/fonts.css">
 </head>
 <body>
@@ -22,9 +22,9 @@
 	<!-- The Menu -->
 	<div class="menu">
 			<ul>
-			 <li class="list"><a href="movies/latest-movies.html">PELICULAS</a></li>
-			 <li class="list"><a href="watchlist.html">FILA</a></li>
-			 <li class="list"><a href="favorites.html">FAVORITAS</a></li>
+			 <li class="list"><a href="movies/estrenos.html">PELICULAS</a></li>
+			 <li class="list"><a href="enfila.html">FILA</a></li>
+			 <li class="list"><a href="favoritas.html">FAVORITAS</a></li>
 	 </ul>
 	</div>
 			<!-- The burger menu for small screens -->
@@ -39,17 +39,17 @@
 					<li><a href="../index.html">Home</a></li>
 					<li id="smallScreenMovies">Peliculas<span><i class="ion-chevron-down"></i></span>
 						<ul id="moviesDropdown">
-									<li><a href="movies/search-movies.html">Buscador</a></li>
-									<li><a href="movies/top-rated.html">Mejores puntuadas</a></li>
-									<li><a href="movies/popular-movies.html">Populares</a></li>
-									<li><a href="movies/latest-movies.html">Estrenos</a></li>
+									<li><a href="movies/busqueda.html">Buscador</a></li>
+									<li><a href="movies/mejorespuntuadas.html">Mejores puntuadas</a></li>
+									<li><a href="movies/populares.html">Populares</a></li>
+									<li><a href="movies/estrenos.html">Estrenos</a></li>
 						</ul>
 					</li>
 
 					<li class="list" id="smallScreenList">Mi Listsa<span class="drop"><i class="ion-chevron-down"></i></span></a>
 											 <ul id="myListsDropdown">
-													<li><a href="../watchlist.html">En fila</a>
-													<li><a href="../favorites.html">Favoritos</a>
+													<li><a href="../enfila.html">En fila</a>
+													<li><a href="../favoritas.html">Favoritos</a>
 											 </ul>
 				 </li>
 				 <li class="list"><a id="randomMovieSmall">Pelicula aleatoria</a></li>
@@ -69,17 +69,17 @@
 				   <li><a href="index.html">Home</a></li>
 				   <li id="smallScreenMovies">Movies<span><i class="ion-chevron-down"></i></span>
 					   <ul id="moviesDropdown">
-								   <li><a href="movies/search-movies.html">Search movies</a></li>
-								   <li><a href="movies/top-rated.html">Top rated</a></li>
-								   <li><a href="movies/popular-movies.html">Popular movies</a></li>
-								   <li><a href="movies/latest-movies.html">Latest movies</a></li>
+								   <li><a href="movies/busqueda.html">Search movies</a></li>
+								   <li><a href="movies/mejorespuntuadas.html">Top rated</a></li>
+								   <li><a href="movies/populares.html">Popular movies</a></li>
+								   <li><a href="movies/estrenos.html">Latest movies</a></li>
 					   </ul>
 				   </li>
 
 				   <li class="list" id="smallScreenList">Mi Listsa<span class="drop"><i class="ion-chevron-down"></i></span></a>
 					<ul id="myListsDropdown">
-					   <li><a href="watchlist.html">Watchlist</a>
-					   <li><a href="favorites.html">Favorites</a>
+					   <li><a href="enfila.html">enfila</a>
+					   <li><a href="favoritas.html">favoritas</a>
 					</ul>
 					</li>
 			   </ul>
@@ -90,8 +90,8 @@
 <!-- Container that will showcase the info, links, trailer, recommended list -->
 <div class="container">
 	<!-- Notifications -->
-	<div class="notification" id="added"> Added to Watchlist !</div>
-	<div class="notification" id="alreadyStored"> Already in watchlist !</div>
+	<div class="notification" id="added"> Added to enfila !</div>
+	<div class="notification" id="alreadyStored"> Already in enfila !</div>
 	<div id="movie"></div>
 	<h2 id="trailer_title">Trailer</h2>
 	<div id="trailer"></div>
@@ -112,7 +112,7 @@
 <!-- Script links -->
 <script src="scripts/config.js"></script>
 <script src="scripts/global.js"></script>
-<script src="scripts/movies/movie-page.js"></script>
+<script src="scripts/movies/detalle.js"></script>
 <!-- Axios link -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>

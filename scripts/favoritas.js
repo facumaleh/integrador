@@ -7,25 +7,13 @@ let movieOutput = document.getElementById("movies");
 
 
 const removeAllMovies = document.getElementById("removeAllMovies");
-const removeAllTvShows = document.getElementById("removeAllTvShows");
+
 // DISPLAY WATCHLISTS ON PAGE LOAD.
 window.onload = function displayWatchlist(){
     // MOVIES
-    // // Guardar data al almacenamiento local actual
-// localStorage.setItem("nombredeusuario", "John");
-//
-// // Accesar data almacenada
-// alert( "nombredeusuario = " + localStorage.getItem("nombredeusuario"));
-
-    let toWatch = JSON.parse(localStorage.getItem("movies")) || [];
+    let toWatch = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
     for(let i = 0; i < toWatch.length; i++){
-          // axios libreria de js que se usa para hacer http requests
-          // const firstName = 'Jane';
-          // Output:
-          // Hello Jane!
-          // How are you
-          // today?
-        axios.get("https://api.themoviedb.org/3/movie/"+toWatch[i]+'?api_key='+API_KEY+'&language=es-ES')
+        axios.get("https://api.themoviedb.org/3/movie/"+toWatch[i]+'?api_key='+API_KEY+'&language=en-US')
         .then((response)=>{
             let movie = response.data;
             movieOutput.innerHTML +=
@@ -50,10 +38,10 @@ window.onload = function displayWatchlist(){
     if(toWatch.length == 0) {
         // SHOW A MESSAGE IF THERE ARE NO MOVIES IN THE LIST.
         movieOutput.innerHTML +=
-        `<p class="infoText"> No hay peliculas en la lista. <a href="#" onclick="openRecommendMoviesBox()"> Here are some recommendations !</a> </p>`;
+        `<p class="infoText"> There are no favorite movies. Go watch some. <a href="#" onclick="openRecommendMoviesBox()"> Here are some recommendations !</a> </p>`;
     }
     // TV SHOWS
-    let toWatchTvShows = JSON.parse(localStorage.getItem("series")) || [];
+    let toWatchTvShows = JSON.parse(localStorage.getItem("favoriteSeries")) || [];
     for(let i = 0; i < toWatchTvShows.length; i++){
         axios.get("https://api.themoviedb.org/3/tv/"+toWatchTvShows[i]+'?api_key='+API_KEY+'&language=en-US')
             .then((response)=>{
@@ -77,7 +65,11 @@ window.onload = function displayWatchlist(){
             //Display "Clear List" button.
             removeAllTvShows.style.display = "block";
     }
-
+    if(toWatchTvShows == 0){
+        // SHOW A MESSAGE IF THERE ARE NO MOVIES IN THE LIST.
+        tvShowsOutput.innerHTML +=
+        `<p class="infoText"> There are no favorite tv shows. Go watch some. <a href="#" onclick="openRecommendTvShowsBox()"> Here are some recommendations !</a> </p>`;
+    }
 }
 // Recommend movies
 const recommendedBox = document.querySelector(".recommendedBox");
@@ -87,9 +79,7 @@ function openRecommendMoviesBox(){
     recommendMovies();
 }
 function recommendMovies(){
-
     // Get random year on each call, between 1990 - current year.
-    // let es para una variable
     let minYear = 1990;
     let maxYear = (new Date()).getFullYear();
     minYear = Math.ceil(minYear);
@@ -107,9 +97,9 @@ function recommendMovies(){
         .then((response)=>{
             console.log(response)
             let movie = response.data.results;
-            movies.length = 4;
+            movie.length = 4;
             let output = "";
-            for(let i = 0; i < movies.length; i++) {
+            for(let i = 0; i < movie.length; i++) {
                 output +=
                 `<div class="recommended_card" onclick="movieSelected(${movie[i].id})">
                 <div class="recommendedOverlay">
@@ -180,31 +170,31 @@ function recommendTvShows(){
 
 // Close recommended box.
 document.getElementById("closeRecommended").addEventListener("click", ()=>{
-    recommendedBox.classList.remove("recommendedBoxActive")
+    recommendedBox.classList.remove("recommendedBoxActive");
 })
 //Delete movie from the movie watchlist.
-function movieSplice(id){
-        let storedId = JSON.parse(localStorage.getItem("movies")) ||  [];
-        let index = storedId.indexOf(id);
-        storedId.splice(index, 1);
-        localStorage.setItem("movies", JSON.stringify(storedId));
+  function movieSplice(id){
+    let storedId = JSON.parse(localStorage.getItem("favoriteMovies")) ||  [];
+    let index = storedId.indexOf(id);
+    storedId.splice(index, 1);
+    localStorage.setItem("favoriteMovies", JSON.stringify(storedId));
 
-        //Notification that a movie was removed from watchlist.
-        const removedWatchlist = document.getElementById("alreadyStored");
-        removedWatchlist.innerHTML = "Removed from watchlist !";
-        removedWatchlist.classList.add("alreadyStored");
-        setTimeout(() => {
-            added.classList.remove("alreadyStored");
-            location.reload();
-        }, 1500);
+    //Notification that a movie was removed from watchlist.
+    const removedWatchlist = document.getElementById("alreadyStored");
+    removedWatchlist.innerHTML = "Removed from watchlist !";
+    removedWatchlist.classList.add("alreadyStored");
+    setTimeout(() => {
+        added.classList.remove("alreadyStored");
+        location.reload();
+    }, 1500);
 }
 
 // Delete a tv show from the watchlist.
 function seriesSplice(id){
-    let storedId = JSON.parse(localStorage.getItem("series")) || [];
+    let storedId = JSON.parse(localStorage.getItem("favoriteSeries")) || [];
     let index = storedId.indexOf(id);
     storedId.splice(index, 1);
-    localStorage.setItem("series", JSON.stringify(storedId));
+    localStorage.setItem("favoriteSeries", JSON.stringify(storedId));
 
     //Notification that a tv shows was removed from watchlist.
     const removedWatchlist = document.getElementById("alreadyStored");
@@ -219,7 +209,7 @@ function seriesSplice(id){
 //Takes you to detailed movie info page.
 function movieSelected(id){
     sessionStorage.setItem("movieId",id);
-    window.open("movie-page.html");
+    window.open("detalle.html");
     return false;
 }
 // Takes you to detailed tv show info page.
@@ -261,7 +251,7 @@ recommendedOutput.addEventListener("mousemove", (e)=>{
 
 // Remove all movies.
 removeAllMovies.addEventListener("click", ()=>{
-    localStorage.removeItem("movies");
+    localStorage.removeItem("favoriteMovies");
 
     //Notification that all movies are removed from watchlist.
     const removedAll = document.getElementById("alreadyStored");
@@ -274,7 +264,7 @@ removeAllMovies.addEventListener("click", ()=>{
 })
 // Remove all tv shows.
 removeAllTvShows.addEventListener("click", ()=>{
-    localStorage.removeItem("series");
+    localStorage.removeItem("favoriteSeries");
 
     //Notification that all tv shows are removed from watchlist.
     const removedAll = document.getElementById("alreadyStored");
@@ -296,8 +286,4 @@ document.body.addEventListener("keydown", (e)=>{
 // Reload recommended movies
 function reloadRecommendedMovies(){
     recommendMovies();
-}
-// Reload recommended TV Shows
-function reloadRecommendedTvShows(){
-    recommendTvShows();
 }

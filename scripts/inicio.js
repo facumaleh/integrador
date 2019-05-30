@@ -155,7 +155,7 @@ slider.forEach(scroll => scroll.addEventListener("mousemove", (e)=>{
 //Takes you to detailed info page.
 function movieSelected(id){
     sessionStorage.setItem("movieId", id);
-    location.replace("movie-page.html");
+    location.replace("detalle.html");
     return false;
 }//Takes you to detailed tv shows info page.
 function showSelected(id){
