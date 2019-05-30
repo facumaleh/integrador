@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Watchlist </title>
+    <title>Favoritas</title>
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -20,15 +20,39 @@
     <!-- Navigation Bar -->
 	<nav>
 
-        <!-- The Menu -->
-        <div class="menu">
-            <ul>
-             <li class="list"><a href="movies/latest-movies.html">PELICULAS</a></li>
+    <div class="menu">
+        <ul>
+         <li class="list"><a href="movies/estrenos.html">PELICULAS</a></li>
 
-             <li class="list"><a href="watchlist.html">FILA</a></li>
-             <li class="list"><a href="favorites.html">FAVORITAS</a></li>
-         </ul>
+         <li class="list"><a href="enfila.html">FILA</a></li>
+         <li class="list"><a href="favorites.html">FAVORITAS</a></li>
+     </ul>
+    </div>
+        <!-- The burger menu for small screens -->
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+        <!-- Slide menu for small screens -->
+        <div class="slide">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li id="smallScreenMovies">Pelicualss<span><i class="ion-chevron-down"></i></span>
+
+            </li>
+
+            <li class="list" id="smallScreenList">Mi Listsa<span class="drop"><i class="ion-chevron-down"></i></span></a>
+                         <ul id="myListsDropdown">
+                            <li><a href="../enfila.html">En fila</a>
+                            <li><a href="../favorites.html">Favoritos</a>
+                         </ul>
+           </li>
+           <li class="list"><a id="randomMovieSmall">Pelicula aleatoria</a></li>
+          </ul>
+        </div>
+      </nav>
+
                <!-- The burger menu for small screens -->
                <div class="burger">
                    <span></span>
@@ -41,17 +65,17 @@
                        <li><a href="index.html">Home</a></li>
                        <li id="smallScreenMovies">Movies<span><i class="ion-chevron-down"></i></span>
                            <ul id="moviesDropdown">
-                                       <li><a href="movies/search-movies.html">Search movies</a></li>
-                                       <li><a href="movies/top-rated.html">Top rated</a></li>
-                                       <li><a href="movies/popular-movies.html">Popular movies</a></li>
-                                       <li><a href="movies/latest-movies.html">Latest movies</a></li>
+                                       <li><a href="movies/busqueda.html">Buscar</a></li>
+                                       <li><a href="movies/mejorespuntuadas.html">Mejor puntuada</a></li>
+                                       <li><a href="movies/populares.html">Populares</a></li>
+                                       <li><a href="movies/estrenos.html">Estrenos</a></li>
                            </ul>
                        </li>
 
                        <li class="list" id="smallScreenList">Mi Listsa<span class="drop"><i class="ion-chevron-down"></i></span></a>
                         <ul id="myListsDropdown">
-                           <li><a href="watchlist.html">EN FILA</a>
-                           <li><a href="favorites.html">FAVORITAS</a>
+                           <li><a href="enfila.html">En fila</a>
+                           <li><a href="favorites.html">Favoritas</a>
                         </ul>
                         </li>
                    </ul>
@@ -59,20 +83,18 @@
            </nav>
 <!-- Container -->
 	<div class="container">
-        <h1 id="page_title">EN FILA</h1>
+        <h1>FAVORITAS</h1>
     </div>
-
 <!-- Smooth scroll to top button -->
 <button id="scrollToTop"><i class="material-icons upArrow">expand_less</i></button>
 
 <!-- Showcase - lists top rated movies -->
 	<div class="showcase">
-        <!-- OUTPUT FOR MOVIES -->
+		<!-- OUTPUT FOR MOVIES -->
         <h2>PELICULAS</h2>
         <button class="remove" id="removeAllMovies">Clear List</button>
         <div id="movies" class="moviesRows"></div>
-
-
+	</div>
     <!-- Buttons for Pages -->
     <div class="pages">
         <button id="prev" title="Previous page">PREVIOUS</button>
@@ -80,17 +102,17 @@
     </div>
     <!-- Recommended Box -->
     <div class="recommendedBox">
-        <h2 id="recommendedTitle"></h2>
-        <div id="recommendedOutput" class="recommendedOutput"></div>
-        <button id="closeRecommended">Close</button>
-    </div>
+            <h2 id="recommendedTitle"></h2>
+            <div id="recommendedOutput" class="recommendedOutput"></div>
+            <button id="closeRecommended">Close</button>
+        </div>
     <!-- Notifications -->
-		<div class="notification" id="added"></div>
-		<div class="notification" id="alreadyStored"></div>
+	<div class="notification" id="added"></div>
+	<div class="notification" id="alreadyStored"></div>
 <!-- Script links -->
 <script src="scripts/config.js"></script>
 <script src="scripts/global.js"></script>
-<script src="scripts/watchlist.js"></script>
+<script src="scripts/favorites.js"></script>
 <!-- Axios link -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>

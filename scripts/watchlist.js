@@ -219,7 +219,7 @@ function seriesSplice(id){
 //Takes you to detailed movie info page.
 function movieSelected(id){
     sessionStorage.setItem("movieId",id);
-    window.open("movie-page.html");
+    window.open("detalle.html");
     return false;
 }
 // Takes you to detailed tv show info page.
