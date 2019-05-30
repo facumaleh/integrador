@@ -7,6 +7,9 @@ That includes (index.html,popular-movies.html,search-movies.html,top-rated.html,
 	padding: 0;
 	box-sizing: border-box;
 }
+.Titulo{
+	color: white;
+}
 select {
 	outline: none !important;
 	cursor: pointer;
