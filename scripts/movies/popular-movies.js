@@ -41,7 +41,7 @@ window.onload = function getMovies(){
 							<h2>${movie[i].title}</h2>
 								<p id="p_rating"><strong>Rating:</strong> <span>${movie[i].vote_average} / 10  <i class="material-icons star">star_rate</i></span> </p>
 								<p><strong>Release date:</strong> <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span></p>
-								<a onclick="movieSelected('${movie[i].id}')" href="#">DEtelles</a>
+								<a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
 						</div>
 						</div>
 						<div class="card_img">
