@@ -245,7 +245,7 @@ nav a{
 }
 .submenu a:hover{
 	color: #2f3640;
-	border-bottom: 5px solid #2f3640;
+	border-bottom: 5px solid #6e00f4;
 }
 /* Navigation bar - END. */
 
@@ -616,7 +616,7 @@ nav a{
 }
 .container_search #form input{
 	padding: 5px;
-	border-radius: 3px;
+	border-radius: 10px;
 	border: none;
 	background-color: #fff;
 	box-shadow: 0 5px 5px rgba(0,0,0,0.10);
