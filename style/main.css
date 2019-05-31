@@ -82,31 +82,7 @@ button:focus, button:active{
 .menu span, .slide span{
 	margin-left: 5px;
 }
-/* Spinner */
-.spinner:before{
-	content: '';
-	box-sizing: border-box;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform:translate(-50%,-50%);
-	height:40px;
-	width: 40px;
-	border-radius: 50%;
-	margin-top: -20px;
-	border: 3px solid transparent;
-	border-top-color: #e1302a;
-	border-bottom-color: #2f3640;
-	animation: spinner 0.5s ease infinite;
-}
-@keyframes spinner{
-	from{
-		transform:translate(-50%,-50%) rotate(0deg);
-	}
-	to{
-		transform:translate(-50%,-50%) rotate(360deg);
-	}
-}
+
 /* MATERIAL DESIGN ICONS CSS */
 .material-icons {
 	font-family: 'Material Icons';

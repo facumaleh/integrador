@@ -1,20 +1,10 @@
 //API KEY.
 const API_KEY = config.API_KEY;
 
-//Spinner.
-const spinner = document.querySelector(".spinner");
-const container = document.querySelector(".container");
-spinner.style.display = "none";
-container.style.display = "none";
+
 
 //Gets the movie ID stored in the Session storage and uses it to display information about
 //the movie that has that ID.
-function getMovie(){
-	spinner.style.display = "block";
-	setTimeout(() => {
-		spinner.style.display = "none";
-		container.style.display = "block";
-	}, 1000);
 
 	let movieId = sessionStorage.getItem("movieId");
 
@@ -148,7 +138,7 @@ function getMovie(){
 						<div class="overlay">
 						<div class="movie">
 							<h2>${movie[i].title}</h2>
-								<p id="p_rating"><strong>Rating:</strong> <span>${movie[i].vote_average} / 10  <i class="material-icons star">star_rate</i></span> </p>
+								<p id="p_rating"><strong>Rating:</strong> <span>${movie[i].vote_average} / 10 </span> </p>
 								<p><strong>Release date:</strong> <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span></p>
 								<a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
 						</div>
@@ -162,21 +152,7 @@ function getMovie(){
 				//Target "recommended" and output the similar movies into it.
 				let recommended = document.getElementById("recommended");
 				recommended.innerHTML = output;
-				// Hide the previous page button of the first page.
-				document.getElementById("prev").style.display = "none";
-			})
-			//If there is an error, it logs it in the console.
-			.catch ((err)=>{
-				let recommended = document.getElementById("recommended");
-				document.getElementById("rec_title").style.display = "none";
-				document.querySelector(".page").style.display = "none";
-				recommended.innerHTML =
-				 `<div class="recommendations_error">
-					<h3>Perdon </h3>
-					<br>
-					<p>No hay recomendaciones por el momento.</p>
-				 </div>`;
-			})
+
 }
 
 //Go back button function.
@@ -191,66 +167,7 @@ function movieSelected(id){
 	return false;
 }
 
-//Page number.
-let pageNum = 1;
-
-//Previous page for recommended.
-const prev = document.getElementById("prev");
-prev.addEventListener("click", ()=>{
-	pageNum--;
-	recommendedPage(pageNum);
-})
-
-//Next page for recommended.
-const next = document.getElementById("next");
-next.addEventListener("click", ()=>{
-	pageNum++;
-	recommendedPage(pageNum);
-})
-
-//Recommended page change.
-function recommendedPage(pageNum){
-	let movieId = sessionStorage.getItem("movieId");
-	axios.get("https://api.themoviedb.org/3/movie/"+movieId+'/recommendations?api_key='+API_KEY+'&language=es-ES&page='+pageNum)
-	.then ((response)=>{
-				let movie = response.data.results;
-				movie.length = 4;
-				let output = "";
-				for(let i = 0; i < movie.length; i++) {
-					output += `<div class="card">
-					<div class="overlay">
-					<div class="movie">
-						<h2>${movie[i].title}</h2>
-						<p id="p_rating"><strong>Rating:</strong> <span>${movie[i].vote_average} / 10  <i class="material-icons star">star_rate</i></span> </p>
-						<p><strong>Release date:</strong> <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span></p>
-						<a onclick="movieSelected('${movie[i].id}')" href="#">DEtalles</a>
-					 </div>
-					</div>
-					<div class="card_img">
-						<img src="http://image.tmdb.org/t/p/w300/${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';">
-					</div>
-					</div>`;
-				}
-				let recommended = document.getElementById("recommended");
-				recommended.innerHTML = output;
-				let totalPages = response.data.total_pages;
-
-				if (pageNum >= 2) {
-					document.getElementById("prev").style.display = "flex";
-				}
-
-				if( pageNum === totalPages) {
-					document.getElementById("next").style.display = "none";
-				} else if (pageNum === 1){
-					document.getElementById("prev").style.display = "none";
-					document.getElementById("next").style.display = "flex";
-				}
-			})
-	//If there is an error, it logs it in the console.
-	.catch ((err)=>{
-		console.log(err);
-	})
-}
+/
 
 //Add to watchlist.
 function addToList(id){
@@ -275,11 +192,4 @@ function addToList(id){
             alreadyStored.classList.remove("alreadyStored");
         }, 1500);
 	}
-}
-
-// Share on Twitter.
-function tweet(title) {
-	var strWindowFeatures = "location=yes,height=255,width=520,scrollbars=yes,status=yes";
-	var URL = "https://twitter.com/intent/tweet?text=Going to watch "+ title +' . Find something to watch @ https://pecko95.github.io/WatchSomething/&hashtags=watchSomething, whatToWatch';
-	var win = window.open(URL, "_blank", strWindowFeatures);
 }

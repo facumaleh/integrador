@@ -40,7 +40,7 @@ window.onload = function() {
               <h2>${movie[i].title}</h2>
                 <p id="p_rating">
                   <strong>Rating:</strong>
-                    <span>${movie[i].vote_average} / 10  <i class="material-icons star">star_rate</i></span>
+                    <span>${movie[i].vote_average} / 10 </span>
                 </p>
 
                 <p>
@@ -72,7 +72,7 @@ window.onload = function() {
                             <h2>${movie[i].title}</h2>
                               <p id="p_rating">
                                 <strong>Rating:</strong>
-                                  <span>${movie[i].vote_average} / 10  <i class="material-icons star">star_rate</i></span>
+                                  <span>${movie[i].vote_average} / 10 </span>
                               </p>
                               <p>
                                 <strong>Release date:</strong>

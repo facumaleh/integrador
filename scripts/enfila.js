@@ -34,7 +34,7 @@ window.onload = function displayWatchlist(){
              <div class="addBtn"><span><i class="material-icons trash" onclick="movieSplice('${movie.id}')">delete_forever</i></span></div>
              <div class="movie">
                  <h2>${movie.title}</h2>
-                 <p id="p_rating"><strong>Rating:</strong> <span>${movie.vote_average} / 10  <i class="material-icons star">star_rate</i></span> </p>
+                 <p id="p_rating"><strong>Rating:</strong> <span>${movie.vote_average} / 10 </span> </p>
                  <p><strong>First air date:</strong> <span>${movie.release_date} <i class="material-icons date">date_range</i> </span></p>
                  <a onclick="movieSelected('${movie.id}')" href="#">Details</a>
               </div>
@@ -64,7 +64,7 @@ window.onload = function displayWatchlist(){
                 <div class="addBtn"><span><i class="material-icons trash" onclick="seriesSplice('${series.id}')">delete_forever</i></span></div>
                 <div class="movie">
                     <h2>${series.name}</h2>
-                    <p id="p_rating"><strong>Rating:</strong> <span>${series.vote_average} / 10  <i class="material-icons star">star_rate</i></span> </p>
+                    <p id="p_rating"><strong>Rating:</strong> <span>${series.vote_average} / 10 </span> </p>
                     <p><strong>First air date:</strong> <span>${series.first_air_date} <i class="material-icons date">date_range</i> </span></p>
                     <a onclick="showSelected('${series.id}')" href="#">Details</a>
                  </div>

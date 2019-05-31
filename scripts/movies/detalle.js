@@ -189,21 +189,3 @@ return false;
 
 //Page number.
 let pageNum = 1;
-
-//Previous page for recommended.
-const prev = document.getElementById("prev");
-prev.addEventListener("click", ()=>{
-pageNum--;
-recommendedPage(pageNum);
-})
-
-//Next page for recommended.
-const next = document.getElementById("next");
-next.addEventListener("click", ()=>{
-pageNum++;
-recommendedPage(pageNum);
-})
-
-
-
-;

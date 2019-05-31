@@ -57,7 +57,7 @@ window.onload = function featuredMovies(){
                     <div class="overlay">
                         <div class="movie">
                             <h2>${featured[i].title}</h2>
-                            <p id="p_rating"><strong>Rating:</strong> <span>${featured[i].vote_average} / 10  <i class="material-icons star">star_rate</i></span> </p>
+                            <p id="p_rating"><strong>Rating:</strong> <span>${featured[i].vote_average} / 10 </span> </p>
                             <p><strong>Release date:</strong> <span>${featured[i].release_date} <i class="material-icons date">date_range</i> </span></p>
                             <a onclick="movieSelected('${featured[i].id}')" href="#">Detalles</a>
                         </div>
@@ -83,7 +83,7 @@ window.onload = function featuredMovies(){
                         <div class="overlay">
                         <div class="movie">
                                 <h2>${shows[i].name}</h2>
-                                <p id="p_rating"><strong>Rating:</strong> <span>${shows[i].vote_average} / 10  <i class="material-icons star">star_rate</i></span> </p>
+                                <p id="p_rating"><strong>Rating:</strong> <span>${shows[i].vote_average} / 10 </span> </p>
                                 <p><strong>First air date:</strong> <span>${shows[i].first_air_date} <i class="material-icons date">date_range</i> </span></p>
                                 <a onclick="showSelected('${shows[i].id}')" href="#">Detalles</a>
                         </div>
@@ -107,7 +107,7 @@ window.onload = function featuredMovies(){
                         <div class="overlay">
                             <div class="movie">
                                 <h2>${nowPlaying[i].title}</h2>
-                                <p id="p_rating"><strong>Rating:</strong> <span>${nowPlaying[i].vote_average} / 10  <i class="material-icons star">star_rate</i></span> </p>
+                                <p id="p_rating"><strong>Rating:</strong> <span>${nowPlaying[i].vote_average} / 10 </span> </p>
                                 <p><strong>Release date:</strong> <span>${nowPlaying[i].release_date} <i class="material-icons date">date_range</i> </span></p>
                                 <a onclick="movieSelected('${nowPlaying[i].id}')" href="#">Detalles</a>
                             </div>
