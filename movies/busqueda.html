@@ -6,6 +6,7 @@
 	<title>Buscador</title>
 	<link rel="stylesheet" type="text/css" href="../style/main.css">
 	<link rel="stylesheet" href="../style/fonts.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../style/detalles.css"> -->
 </head>
 <body>
 <!-- Barra de navegacion -->
@@ -57,10 +58,13 @@
 
 
 					 </div>
+
+ <!-- Spinner -->
+	<div class="spinner"></div>
 <!-- Container -->
 	<div class="container_search">
-			<form id="form" autocomplete="off">
-                    <input type="text" id="inputField" placeholder="Actor, Titulo, Genero, Año, director...">
+			<form id="form" autocomplete="off" action="busqueda.html">
+          <input type="text" id="inputField" name="buscador" placeholder="Actor, Titulo, Genero, Año, director...">
 
 			 </form>
 
@@ -95,6 +99,7 @@
 
 		<!-- caja Modal -->
 		<div class="modal">
+
 			<div class="modal_container">
 				<h3>INFO !</h3>
 				<hr>
