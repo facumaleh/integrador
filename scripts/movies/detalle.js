@@ -140,13 +140,13 @@ fetch("https://api.themoviedb.org/3/movie/"+movieId+'/recommendations?api_key='+
 		let output = "";
 		for(let i = 0; i < movie.length; i++){
 			output += `
+
 			<div class="card">
 				<div class="overlay">
 				<div class="movie">
 					<h2>${movie[i].title}</h2>
-						<p id="p_rating"><strong>Rating:</strong> <span>${movie[i].vote_average} / 10  <i class="material-icons star">star_rate</i></span> </p>
 						<p><strong>Release date:</strong> <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span></p>
-						<a onclick="movieSelected('${movie[i].id}')" href="#">Details</a>
+
 				</div>
 				</div>
 				<div class="card_img">

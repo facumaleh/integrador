@@ -96,7 +96,7 @@ a {
 	border: 1px solid #55555530;
 	color: #333;
 	text-align: center;
-	transition: 0.2s ease;
+
 }
 .buttons a:hover{
 	background-color: #2f3640;
@@ -114,7 +114,7 @@ a {
 	display: block;
 	content: "\f243";
 	font-family: "Ionicons";
-	transition: 0.1s;
+
 	font-size: 18px;
 }
 .buttons .twitter:hover{
@@ -161,7 +161,7 @@ a {
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-	transition: 0.3s ease;
+
 }
 #prev:hover, #next:hover{
 	color: #333;
@@ -275,7 +275,7 @@ a {
 	left: 0;
 	width: 100%;
 	height: 0%;
-	transition: 0.30s ease-in-out;
+
 	background-color: rgba(0,0,0,0.6);
 }
 .card:hover .overlay{
@@ -302,7 +302,7 @@ a {
     font-family: "Montserrat SemiBold";
     margin: 10px 15px;
     cursor: pointer;
-	transition: 0.2s ease;
+
 	outline: none !important;
 }
 .card .overlay .movie a:hover{
@@ -392,7 +392,7 @@ a {
 		left: 0;
 		width: 100%;
 		height: 425px;
-		transition: 0.30s ease-in-out;
+
 		background-color: rgba(0,0,0,0.6);
 	}
 	#recommended{
