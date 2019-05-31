@@ -10,8 +10,7 @@ const container = document.querySelector(".showcase");
 container.style.display = "none"
 
 //Pages
-const pages = document.querySelector(".pages");
-pages.style.display = "none";
+
 
 //Run "getMovies()" on page load.
 window.onload = function getMovies(){

@@ -255,7 +255,7 @@ removeAllMovies.addEventListener("click", ()=>{
 
     //Notification that all movies are removed from watchlist.
     const removedAll = document.getElementById("alreadyStored");
-    removedAll.innerHTML = "Removed all movies!";
+    removedAll.innerHTML = "eliminada!";
     removedAll.classList.add("alreadyStored");
     setTimeout(() => {
         added.classList.remove("alreadyStored");

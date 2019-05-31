@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="style/fonts.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Barra de navegacion -->
 	<nav>
 
-        <!-- The Menu -->
+        <!-- Menu -->
         <h1 class="Titulo">Pelis Para Todos</h1>
         <div class="menu">
 
@@ -28,16 +28,15 @@
              <li class="list"><a href="favoritas.html">FAVORITAS</a></li>
          </ul>
         </div>
-               <!-- The burger menu for small screens -->
+               <!-- menu costado-->
                <div class="burger">
                    <span></span>
                    <span></span>
                    <span></span>
                </div>
-               <!-- Slide menu for small screens -->
                <div class="slide">
                    <ul>
-                    
+
                        <li id="PeliculasChicas">Movies<span><i class="ion-chevron-down"></i></span>
                            <ul id="moviesDropdown">
                                        <li><a href="movies/busqueda.html">Buscar</a></li>
@@ -61,31 +60,25 @@
         <h1 id="page_title">EN FILA</h1>
     </div>
 
-<!-- Smooth scroll to top button -->
-<button id="scrollToTop"><i class="material-icons upArrow">expand_less</i></button>
-
-<!-- Showcase - lists top rated movies -->
+<!-- Showcase - peliculas mejores puntuadas-->
 	<div class="showcase">
-        <!-- OUTPUT FOR MOVIES -->
+        <!-- OUTPUT DE PELICULAS -->
         <h2>PELICULAS</h2>
         <button class="remove" id="removeAllMovies">Clear List</button>
         <div id="movies" class="moviesRows"></div>
 
 
-    <!-- Buttons for Pages -->
+    <!-- Botones paginas -->
     <div class="pages">
-        <button id="prev" title="Previous page">PREVIOUS</button>
-		<button id="next" title="Next page">NEXT</button>
+
     </div>
-    <!-- Recommended Box -->
+    <!-- caja de recomendaciones -->
     <div class="recommendedBox">
         <h2 id="recommendedTitle"></h2>
         <div id="recommendedOutput" class="recommendedOutput"></div>
         <button id="closeRecommended">Close</button>
     </div>
-    <!-- Notifications -->
-		<div class="notification" id="added"></div>
-		<div class="notification" id="alreadyStored"></div>
+    
 <!-- Script links -->
 <script src="scripts/config.js"></script>
 <script src="scripts/global.js"></script>
