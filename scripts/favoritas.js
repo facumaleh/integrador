@@ -24,7 +24,7 @@ window.onload = function displayWatchlist(){
                  <h2>${movie.title}</h2>
                  <p id="p_rating"><strong>Rating:</strong> <span>${movie.vote_average} / 10 </span> </p>
                  <p><strong>First air date:</strong> <span>${movie.release_date} <i class="material-icons date">date_range</i> </span></p>
-                 <a onclick="movieSelected('${movie.id}')" href="#">Details</a>
+                 <a onclick="movieSelected('${movie.id}')" href="detalle.html">Detalle</a>
               </div>
              </div>
              <div class="card_img">

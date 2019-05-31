@@ -827,7 +827,6 @@ function movieByTitlePage(pageNum){
 }
 
 // ********* STORING INTO LISTS *********
-
 //Add movie to watch list.
 function addToList(id){
     let storedId = JSON.parse(localStorage.getItem("movies")) || [];
