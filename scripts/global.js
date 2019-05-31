@@ -41,7 +41,7 @@ burger.addEventListener("click", ()=>{
 	}
 });
 // Click on DROPDOWN - MOVIES on small screen to display/hide the list.
-const smallMovies = document.getElementById("smallScreenMovies");
+const smallMovies = document.getElementById("PeliculasChicas");
 smallMovies.addEventListener("click", ()=>{
 	const moviesDropdown = document.getElementById("moviesDropdown");
 	moviesDropdown.classList.toggle("drop");
