@@ -48,7 +48,7 @@ window.onload = function() {
                     <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span>
                 </p>
 
-                <a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
+                <a onclick="movieSelected('${movie[i].id}')" href="../detalle.html">Detalles</a>
             </div>
             </div>
 
@@ -78,7 +78,7 @@ window.onload = function() {
                                 <strong>Release date:</strong>
                                   <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span>
                               </p>
-                            <a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
+                            <a onclick="movieSelected('${movie[i].id}')" href="../detalle.html'>Detalles</a>
                     </div>
                     </div>
                     <div class="card_img">
