@@ -95,3 +95,66 @@ window.onload = function() {
     console.log("The error was: "+ error);
   })
 }
+
+
+// ********* STORING INTO LISTS *********
+//Add movie to watch list.
+function addToList(id){
+    let storedId = JSON.parse(localStorage.getItem("movies")) || [];
+	if(storedId.indexOf(id) === -1){
+		storedId.push(id);
+		localStorage.setItem("movies", JSON.stringify(storedId));
+		//Notification that it will be added to Watchlist.
+        const added = document.getElementById("added");
+        added.innerHTML = "Added to watchlist !"
+        added.classList.add("added");
+        setTimeout(() => {
+            added.classList.remove("added");
+        }, 1500);
+	} else {
+		//Notification that it has already been added to the watchlist.
+        const alreadyStored = document.getElementById("alreadyStored");
+        alreadyStored.innerHTML = "Already in watchlist !"
+        alreadyStored.classList.add("alreadyStored");
+        setTimeout(() => {
+            alreadyStored.classList.remove("alreadyStored");
+        }, 1500);
+	}
+}
+
+//Add movie to favorite movies.
+function favorite(id){
+    let storedId = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
+	if(storedId.indexOf(id) === -1){
+		storedId.push(id);
+		localStorage.setItem("favoriteMovies", JSON.stringify(storedId));
+		//Notification that it will be added to Watchlist.
+        const added = document.getElementById("added");
+        added.innerHTML = "Added to Favorites !";
+        added.classList.add("added");
+        setTimeout(() => {
+            added.classList.remove("added");
+        }, 1500);
+	} else {
+		//Notification that it has already been added to the watchlist.
+		const alreadyStored = document.getElementById("alreadyStored");
+        alreadyStored.innerHTML = "Already in favorites !";
+        alreadyStored.classList.add("alreadyStored");
+        setTimeout(() => {
+            alreadyStored.classList.remove("alreadyStored");
+        }, 1500);
+	}
+}
+
+//Get the movie ID, set it to storageSession and then re-direct the user to movie details page.
+function movieSelected(id){
+    sessionStorage.setItem("movieId", id);
+    window.open("../detalle.html");
+    return false;
+}
+
+// // ON PAGE RELOAD, CLEAR SESSION STORAGE.
+// window.onload = function clearStorage(){
+//     sessionStorage.removeItem("movieByYearGenre");
+//     sessionStorage.removeItem("movieByTitleGenre");
+// }
