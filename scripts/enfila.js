@@ -50,7 +50,7 @@ window.onload = function displayWatchlist(){
     if(toWatch.length == 0) {
         // SHOW A MESSAGE IF THERE ARE NO MOVIES IN THE LIST.
         movieOutput.innerHTML +=
-        `<p class="infoText"> No hay peliculas en la lista. <a href="#" onclick="openRecommendMoviesBox()"> Here are some recommendations !</a> </p>`;
+        `<p class="infoText">  </p>`;
     }
     // TV SHOWS
     let toWatchTvShows = JSON.parse(localStorage.getItem("series")) || [];
