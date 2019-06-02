@@ -89,29 +89,52 @@ const API_KEY = config.API_KEY;
 			document.getElementById("trailer_title").style.display = "none";
 			document.getElementById("rec_title").style.display = "none";
 		});
+		fetch("https://api.themoviedb.org/3/movie/"+movieId+'/videos?api_key='+API_KEY+'&language=es-ES')
+		.then(function(response) {
+			return response.json();
+		})
+		.then(function(response) {
+			console.log(response);
+			console.log(response.results);
+			let trailer = response.results;
+			let min = 0;
+			// -1 so it takes into account if theres only 1 item in the trailer length( at position 0).
+			let max = trailer.length - 1;
+			min = Math.ceil(min);
+			max = Math.floor(max);
+			let trailerNumber = Math.floor(Math.random() * (max-min +1)) + min;
 
-		//Gets the trailer link from youtube.
-		axios.get("https://api.themoviedb.org/3/movie/"+movieId+'/videos?api_key='+API_KEY+'&language=es-ES')
-			.then((response)=>{
-				//Targets the first item in the results Array, that hold the "key" parameter.
-				let trailer = response.data.results;
+			let output = `
+				<div class="video">
+				<iframe width="620" height="400" src="https://www.youtube.com/embed/${trailer[trailerNumber].key}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>`;
+			// Display the trailer.
+			let video = document.getElementById("trailer");
+			video.innerHTML = output;
+		})
 
-				// RANDOM NUMBER FOR TRAILER OUTPUT (ON EVERY PAGE LOAD, A DIFFERENT TRAILER WILL SHOW).
-				let min = 0;
-				// -1 so it takes into account if theres only 1 item in the trailer length( at position 0).
-				let max = trailer.length - 1;
-				min = Math.ceil(min);
-				max = Math.floor(max);
-				let trailerNumber = Math.floor(Math.random() * (max-min +1)) + min;
-
-				let output = `
-					<div class="video">
-					<iframe width="620" height="400" src="https://www.youtube.com/embed/${trailer[trailerNumber].key}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-					</div>`;
-				// Display the trailer.
-				let video = document.getElementById("trailer");
-				video.innerHTML = output;
-			})
+		// //Gets the trailer link from youtube.
+		// axios.get("https://api.themoviedb.org/3/movie/"+movieId+'/videos?api_key='+API_KEY+'&language=es-ES')
+		// 	.then((response)=>{
+		// 		//Targets the first item in the results Array, that hold the "key" parameter.
+		// 		let trailer = response.data.results;
+		//
+		// 		// RANDOM NUMBER FOR TRAILER OUTPUT (ON EVERY PAGE LOAD, A DIFFERENT TRAILER WILL SHOW).
+		// 		let min = 0;
+		// 		// -1 so it takes into account if theres only 1 item in the trailer length( at position 0).
+		// 		let max = trailer.length - 1;
+		// 		min = Math.ceil(min);
+		// 		max = Math.floor(max);
+		// 		let trailerNumber = Math.floor(Math.random() * (max-min +1)) + min;
+		//
+		// 		let output = `
+		// 			<div class="video">
+		// 			<iframe width="620" height="400" src="https://www.youtube.com/embed/${trailer[trailerNumber].key}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		// 			</div>`;
+		// 		// Display the trailer.
+		// 		let video = document.getElementById("trailer");
+		// 		video.innerHTML = output;
+		// 	})
 
 			.catch ((err)=>{
 				// Error message.
@@ -125,11 +148,21 @@ const API_KEY = config.API_KEY;
 				 </div>`;
 			});
 
+			fetch("https://api.themoviedb.org/3/movie/"+movieId+'/recommendations?api_key='+API_KEY+'&language=es-ES&page=1')
+			.then(function(response) {
+				return response.json();
+			})
+			.then(function(response) {
+				console.log(response);
+				console.log(response.results);
+					const movie = response.results;
+
+
+
 		//Gets similar movies to the current one.
 		axios.get("https://api.themoviedb.org/3/movie/"+movieId+'/recommendations?api_key='+API_KEY+'&language=es-ES&page=1')
 			.then ((response)=>{
 				const movie = response.data.results;
-				//Set the movie length (output) to 4.
 				movie.length = 4;
 				let output = "";
 				for(let i = 0; i < movie.length; i++){
@@ -149,6 +182,26 @@ const API_KEY = config.API_KEY;
 					</div>
 					`;
 				}
+				//Set the movie length (output) to 4.
+				// movie.length = 4;
+				// let output = "";
+				// for(let i = 0; i < movie.length; i++){
+				// 	output += `
+				// 	<div class="card">
+				// 		<div class="overlay">
+				// 		<div class="movie">
+				// 			<h2>${movie[i].title}</h2>
+				// 				<p id="p_rating"><strong>Rating:</strong> <span>${movie[i].vote_average} / 10 </span> </p>
+				// 				<p><strong>Release date:</strong> <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span></p>
+				// 				<a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
+				// 		</div>
+				// 		</div>
+				// 		<div class="card_img">
+				// 			<img src="http://image.tmdb.org/t/p/w400/${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';">
+				// 		</div>
+				// 	</div>
+				// 	`;
+				// }
 				//Target "recommended" and output the similar movies into it.
 				let recommended = document.getElementById("recommended");
 				recommended.innerHTML = output;
