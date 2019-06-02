@@ -219,30 +219,3 @@ function movieSelected(id){
 	location.replace("detalle.html");
 	return false;
 }
-
-/
-
-//Add to watchlist.
-function addToList(id){
-	let storedId = JSON.parse(localStorage.getItem("movies")) || [];
-	if(storedId.indexOf(id) === -1){
-		storedId.push(id);
-		localStorage.setItem("movies", JSON.stringify(storedId));
-
-		//Notification that it will be added to Watchlist.
-        const added = document.getElementById("added");
-        added.innerHTML = "Added to Watchlist!";
-        added.classList.add("added");
-		setTimeout(() => {
-            added.classList.remove("added");
-        }, 1500);
-	} else {
-		//Notification that it has already been added to the watchlist.
-		const alreadyStored = document.getElementById("alreadyStored");
-        alreadyStored.innerHTML = "Already in Watchlist!";
-        alreadyStored.classList.add("alreadyStored");
-		setTimeout(() => {
-            alreadyStored.classList.remove("alreadyStored");
-        }, 1500);
-	}
-}
