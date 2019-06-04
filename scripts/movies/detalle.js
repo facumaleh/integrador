@@ -58,8 +58,7 @@ function getMovie(){
 							output += `${genres[i].name}.`;
 						}
 					}
-					output += `</li>
-					<li><strong>slogan:</strong> ${movie.tagline} </li>
+					output += `<ul>
 					<li><strong>estreno:</strong> ${movie.release_date}</li>
 					<li><strong>duracion:</strong> ${movie.runtime} (min)</li>
 					<li><strong>Rating:</strong> ${movie.vote_average} / 10 <span id="smallText">(${movie.vote_count} votes)</span></li>
