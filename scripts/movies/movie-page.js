@@ -157,52 +157,39 @@ const API_KEY = config.API_KEY;
 				console.log(response.results);
 					const movie = response.results;
 
+					movie.length = 4;
+					let output = "";
+					for(let i = 0; i < movie.length; i++){
+						output += `
+						<div class="card">
+							<div class="overlay">
+							<div class="movie">
+								<h2>${movie[i].title}</h2>
+									<p id="p_rating"><strong>Rating:</strong> <span>${movie[i].vote_average} / 10 </span> </p>
+									<p><strong>Release date:</strong> <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span></p>
+									<a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
+							</div>
+							</div>
+							<div class="card_img">
+								<img src="http://image.tmdb.org/t/p/w400/${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';">
+							</div>
+						</div>
+						`;
+					}
+
 
 
 		//Gets similar movies to the current one.
-		axios.get("https://api.themoviedb.org/3/movie/"+movieId+'/recommendations?api_key='+API_KEY+'&language=es-ES&page=1')
-			.then ((response)=>{
-				const movie = response.data.results;
-				movie.length = 4;
-				let output = "";
-				for(let i = 0; i < movie.length; i++){
-					output += `
-					<div class="card">
-						<div class="overlay">
-						<div class="movie">
-							<h2>${movie[i].title}</h2>
-								<p id="p_rating"><strong>Rating:</strong> <span>${movie[i].vote_average} / 10 </span> </p>
-								<p><strong>Release date:</strong> <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span></p>
-								<a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
-						</div>
-						</div>
-						<div class="card_img">
-							<img src="http://image.tmdb.org/t/p/w400/${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';">
-						</div>
-					</div>
-					`;
-				}
-				//Set the movie length (output) to 4.
-				// movie.length = 4;
-				// let output = "";
-				// for(let i = 0; i < movie.length; i++){
-				// 	output += `
-				// 	<div class="card">
-				// 		<div class="overlay">
-				// 		<div class="movie">
-				// 			<h2>${movie[i].title}</h2>
-				// 				<p id="p_rating"><strong>Rating:</strong> <span>${movie[i].vote_average} / 10 </span> </p>
-				// 				<p><strong>Release date:</strong> <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span></p>
-				// 				<a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
-				// 		</div>
-				// 		</div>
-				// 		<div class="card_img">
-				// 			<img src="http://image.tmdb.org/t/p/w400/${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';">
-				// 		</div>
-				// 	</div>
-				// 	`;
-				// }
-				//Target "recommended" and output the similar movies into it.
+
+
+fetch("https://api.themoviedb.org/3/movie/"+movieId+'/recommendations?api_key='+API_KEY+'&language=es-ES&page=1')
+.then(function(response) {
+	return response.json();
+})
+.then(function(response) {
+	console.log(response);
+	console.log(response.results);
+
 				let recommended = document.getElementById("recommended");
 				recommended.innerHTML = output;
 

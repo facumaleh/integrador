@@ -15,11 +15,9 @@ container.style.display = "none"
 //Run "getMovies()" on page load.
 window.onload = function getMovies(){
 	spinner.style.display = "block";
-	setTimeout(() => {
-		spinner.style.display = "none";
-		container.style.display = "flex";
-		pages.style.display = "flex";
-	}, 1000);
+	setTimeout => {
+
+	}, 1000;
 
 	//Get the API.
 
