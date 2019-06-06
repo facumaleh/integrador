@@ -1,5 +1,5 @@
 /* The Main.css file hold the main CSS (body, links, menus, logo, peliculass, containers) for all the pages.
-That includes (index.html,popular-movies.html,search-movies.html,top-rated.html,search-series.html,series-latest.html, series-popular & series-toprated.html). It also holds the CSS for the menu, burger menu, slide menu for the movie-page.html and shows-page.html. */
+That includes (index.html,popular-movies.html,search-movies.html,top-rated.html,search-series.html,series-latest.html, series-popular & series-toprated.html). It also holds the CSS for the menu, MenuExpandible menu, slide menu for the movie-page.html and shows-page.html. */
 
 /* Target the whole document. */
 *{
@@ -72,7 +72,7 @@ button:focus, button:active{
 	margin-left: 35px;
 }
 /* Button for small screens. */
-.burger{
+.MenuExpandible{
 	display: none;
 }
 /* Menu for small screens. */
@@ -966,7 +966,7 @@ nav a{
 	#form{
 		margin-top: 30px;
 	}
-	.burger{
+	.MenuExpandible{
 		height: 30px;
 		width: 30px;
 		display: block;
@@ -976,7 +976,7 @@ nav a{
 		overflow: hidden;
 		cursor: pointer;
 	}
-	.burger span{
+	.MenuExpandible span{
 		width: 100%;
 		height: 5px;
 		border-radius: 15px;
@@ -988,41 +988,41 @@ nav a{
 	nav{
 		padding: 5px 0;
 	}
-	.sticky .burger span{
+	.sticky .MenuExpandible span{
 		background-color: #fff;
 	}
-	.burger span:nth-child(1){
+	.MenuExpandible span:nth-child(1){
 		top: 0px;
 		left: 0px;
 	}
-	.burger span:nth-child(2){
+	.MenuExpandible span:nth-child(2){
 		top: 11px;
 		left: 0px;
 	}
-	.burger:hover span:nth-child(2){
+	.MenuExpandible:hover span:nth-child(2){
 		left: 0px;
 	}
-	.burger span:nth-child(3){
+	.MenuExpandible span:nth-child(3){
 		top: 22px;
 	}
-	.burger.active span:nth-child(1){
+	.MenuExpandible.active span:nth-child(1){
 		top: 15px;
 		transform:rotate(45deg);
 		z-index: 9;
 	}
-	.burger.active span:nth-child(2){
+	.MenuExpandible.active span:nth-child(2){
 		left: 30px;
 		opacity: 0;
 	}
-	.burger.active span:nth-child(3){
+	.MenuExpandible.active span:nth-child(3){
 		top:15px;
 		transform:rotate(-45deg);
 		z-index: 9;
 	}
-	.burger.active span{
+	.MenuExpandible.active span{
 		background-color: #2f3640;
 	}
-	.burger.active:hover span{
+	.MenuExpandible.active:hover span{
 		background-color: #e1302a;
 	}
 	.slide{
