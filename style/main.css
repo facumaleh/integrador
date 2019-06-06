@@ -1,4 +1,4 @@
-/* The Main.css file hold the main CSS (body, links, menus, logo, cards, containers) for all the pages.
+/* The Main.css file hold the main CSS (body, links, menus, logo, peliculass, containers) for all the pages.
 That includes (index.html,popular-movies.html,search-movies.html,top-rated.html,search-series.html,series-latest.html, series-popular & series-toprated.html). It also holds the CSS for the menu, burger menu, slide menu for the movie-page.html and shows-page.html. */
 
 /* Target the whole document. */
@@ -312,7 +312,7 @@ nav a{
 	grid-gap: 15px;
 	margin: 15px 0;
 }
-.moviesRows p{
+.filaDePeliculas p{
 	font-family: "Montserrat SemiBold";
 	width: 500px;
 	text-align: center;
@@ -324,7 +324,7 @@ nav a{
 	left: 50%;
 	transform: translateX(-50%);
 }
-.moviesRows p a {
+.filaDePeliculas p a {
 	font-family: "Montserrat SemiBold";
 	color: #444;
 }
@@ -335,7 +335,7 @@ nav a{
 	color: #2f3640;
 }
 @media (min-width: 650px){
-	.card{
+	.peliculas{
 	height: 500px;
 	color: #fff;
 	width: 300px;
@@ -346,7 +346,7 @@ nav a{
 	cursor: default;
 
 }
-.card .overlay{
+.peliculas .overlay{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -355,19 +355,19 @@ nav a{
 
 	background-color: rgb(90, 4, 160, 0.65);
 }
-.card:hover{
+.peliculas:hover{
 	transform: translateY(-15px);
 	box-shadow: 0px 6px 10px rgba(0,0,0,0.10);
 }
-.card:hover .overlay{
+.peliculas:hover .overlay{
 	height: 500px;
 }
-.card .overlay .movie{
+.peliculas .overlay .movie{
 	position: absolute;
 	bottom:0;
 	left: 0;
 }
-.card .overlay .movie a{
+.peliculas .overlay .movie a{
 	display: flex;
 	position: relative;
 	bottom:0;
@@ -386,7 +386,7 @@ nav a{
 
 	outline: none !important;
 }
-.card .overlay .movie a:hover{
+.peliculas .overlay .movie a:hover{
     background-color: #2f3640;
     color: #fff;
 }
@@ -417,7 +417,7 @@ nav a{
 	text-shadow: 3px 3px rgba(0,0,0,0.35);
 	color: #f2f2f2;
 }
-.card .overlay .movie h2{
+.peliculas .overlay .movie h2{
     font-family: "Montserrat Black";
     width: 290px;
     font-size: 35px;
@@ -426,26 +426,26 @@ nav a{
 	padding: 5px;
 	text-align: left;
 }
-.card .card_img img{
+.peliculas .peliculas_img img{
 	width: 100%;
 	height: 500px;
 	z-index: 2;
 	overflow: hidden;
 }
-.card .card_img{
+.peliculas .peliculas_img{
 	height: 500px;
 	overflow: hidden;
 	z-index: 2;
 }
 
 }
-.card .addBtn{
+.peliculas .addBtn{
 	position: absolute;
 	top: 10px;
 	right: 10px;
 	display: flex;
 }
-.card .addBtn > *{
+.peliculas .addBtn > *{
 	margin: 0 3px;
 }
 .addBtn i {
@@ -457,7 +457,7 @@ nav a{
 	display: block;
 	transform:scale(0);
 }
-.card:hover .addBtn i{
+.peliculas:hover .addBtn i{
 	opacity: 1;
 	transform: scale(0.9);
 }
@@ -524,7 +524,7 @@ nav a{
 		transform: scale(1) rotate(0deg);
 	}
 }
-/* MOVIE / TV SHOW OUTPUT CARDS END*/
+/* MOVIE / TV SHOW OUTPUT peliculasS END*/
 
 /* Buttons for pages */
 .pages{
@@ -835,7 +835,7 @@ nav a{
 	transform: translateX(-50%);
 	z-index: 9;
 }
-.smallCard{
+.smallpeliculas{
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -869,20 +869,20 @@ nav a{
 	justify-content: center;
 	align-items: center;
 }
-.smallMovie_info .closeSmallCard{
+.smallMovie_info .closeSmallpeliculas{
 	position: absolute;
 	right: 0px;
 	bottom: 0px;
 	cursor: pointer;
 }
-.smallMovie_info .closeSmallCard i{
+.smallMovie_info .closeSmallpeliculas i{
 	font-size: 30px;
 }
-.smallCard_img{
+.smallpeliculas_img{
 	width: 185px;
 	height: 100%;
 }
-.smallCard_img img{
+.smallpeliculas_img img{
 	width: 185px;
 }
 
@@ -917,7 +917,7 @@ nav a{
 	}
 }
 @media (max-width: 1024px){
-	.card .overlay{
+	.peliculas .overlay{
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -928,11 +928,11 @@ nav a{
 		background-color: rgba(0,0,0,0.4);
 	}
 
-	.card:hover .addBtn i{
+	.peliculas:hover .addBtn i{
 		opacity: 1;
 		transform: scale(1);
 	}
-	.card .addBtn i{
+	.peliculas .addBtn i{
 		opacity: 1;
 		transform:scale(1);
 		font-size: 30px;
@@ -1118,7 +1118,7 @@ nav a{
 		flex-wrap: wrap;
 		justify-content: center;
 	}
-	.card{
+	.peliculas{
 		height: 400px;
 		color: #e1302a;
 		width: 280px;
@@ -1128,13 +1128,13 @@ nav a{
 		overflow: hidden;
 		cursor: default;
 	}
-	#movies .card:first-of-type, #tvShows .card:first-of-type{
+	#movies .peliculas:first-of-type, #tvShows .peliculas:first-of-type{
 		margin-top: 25px;
 	}
 	#movies > *, #tvShows > *{
 		margin: 20px 0;
 	}
-	.card .overlay{
+	.peliculas .overlay{
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -1143,12 +1143,12 @@ nav a{
 
 		background-color: rgba(0,0,0,0.4);
 	}
-	.card .overlay .movie{
+	.peliculas .overlay .movie{
 		position: absolute;
 		bottom:0;
 		left: 0;
 	}
-	.card .overlay .movie a{
+	.peliculas .overlay .movie a{
 		display: flex;
 		position: relative;
 		bottom:0;
@@ -1167,7 +1167,7 @@ nav a{
 
 		outline: none !important;
 	}
-	.card .overlay .movie a:hover{
+	.peliculas .overlay .movie a:hover{
 		background-color: #222;
 		color: #fff;
 	}
@@ -1197,7 +1197,7 @@ nav a{
 		color: #f2f2f2;
 		text-shadow: 3px 3px rgba(0,0,0,0.35);
 	}
-	.card .overlay .movie h2{
+	.peliculas .overlay .movie h2{
 		font-family: "Montserrat Black";
 		width: auto;
 		font-size: 30px;
@@ -1206,12 +1206,12 @@ nav a{
 		padding: 5px;
 		text-align: left;
 	}
-	.card .card_img img{
+	.peliculas .peliculas_img img{
 		width: 100%;
 		height: 400px;
 		z-index: 2;
 	}
-	.card .card_img{
+	.peliculas .peliculas_img{
 		height: 400px;
 		z-index: 2;
 
@@ -1235,15 +1235,15 @@ nav a{
 		width: 100%;
 		min-height:190px;
 	}
-	#movies .card:first-of-type, #tvShows .card:first-of-type{
+	#movies .peliculas:first-of-type, #tvShows .peliculas:first-of-type{
 		margin-top: 25px;
 	}
-	.card{
+	.peliculas{
 		margin: 10px 0;
 	}
 }
 @media (max-width: 455px){
-	.moviesRows p{
+	.filaDePeliculas p{
 		font-family: "Montserrat SemiBold";
 		width: 100%;
 		margin: 0 auto;
@@ -1262,7 +1262,7 @@ nav a{
 		width: 100%;
 		min-height:250px;
 	}
-	#movies .card:first-of-type, #tvShows .card:first-of-type{
+	#movies .peliculas:first-of-type, #tvShows .peliculas:first-of-type{
 		margin-top: 25px;
 	}
 }
@@ -1291,22 +1291,22 @@ nav a{
 	.title_upcoming h1{
 		font-size: 45px;
 	}
-	.card{
+	.peliculas{
 		margin: 20px 0;
 		width: 260px;
 		height: 470px;
 
 	}
-	#movies .card:first-of-type, #tvShows .card:first-of-type{
+	#movies .peliculas:first-of-type, #tvShows .peliculas:first-of-type{
 		margin-top: 25px;
 	}
-	.card .card_text{
+	.peliculas .peliculas_text{
 		height: 130px;
 	}
-	.card_img{
+	.peliculas_img{
 		width: 260px;
 	}
-	.card_img img{
+	.peliculas_img img{
 		width: 260px;
 
 	}

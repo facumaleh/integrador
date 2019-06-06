@@ -180,7 +180,7 @@ nav ul li a:hover{
     text-decoration: none;
     font-family: "Montserrat SemiBold";
 }
-/* MOVIE & TV SHOW CARDS */
+/* MOVIE & TV SHOW peliculasS */
 .scroll{
     margin:15px auto;
     overflow: hidden;
@@ -190,16 +190,16 @@ nav ul li a:hover{
     cursor: -webkit-grabbing;
     transition: 0.5s ease;
 }
-.scroll .card:first-child{
+.scroll .peliculas:first-child{
     margin-left: 0px;
 }
-.scroll .card{
+.scroll .peliculas{
     margin: 0px 3px;
     position: relative;
     height: 450px;
     transition: 0.5s ease;
 }
-.scroll .card img{
+.scroll .peliculas img{
     height: 450px;
 }
 .scroll .overlay{
@@ -218,7 +218,7 @@ nav ul li a:hover{
     bottom: 0;
     left: 0;
 }
-.scroll .card .overlay .movie a{
+.scroll .peliculas .overlay .movie a{
 	display: flex;
 	position: static;
 	justify-content: center;
@@ -235,7 +235,7 @@ nav ul li a:hover{
 	transition: 0.2s ease;
 	outline: none !important;
 }
-.scroll .card .overlay .movie a:hover{
+.scroll .peliculas .overlay .movie a:hover{
     background-color: #2f3640;
     color: #fff;
 }
@@ -270,7 +270,7 @@ nav ul li a:hover{
     text-transform: uppercase;
     padding: 5px;
 }
-.scroll .card:hover .overlay{
+.scroll .peliculas:hover .overlay{
     transform:translateY(0px)
 }
 /* About section */

@@ -161,7 +161,7 @@ const API_KEY = config.API_KEY;
 					let output = "";
 					for(let i = 0; i < movie.length; i++){
 						output += `
-						<div class="card">
+						<div class="peliculas">
 							<div class="overlay">
 							<div class="movie">
 								<h2>${movie[i].title}</h2>
@@ -170,7 +170,7 @@ const API_KEY = config.API_KEY;
 									<a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
 							</div>
 							</div>
-							<div class="card_img">
+							<div class="peliculas_img">
 								<img src="http://image.tmdb.org/t/p/w400/${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';">
 							</div>
 						</div>
