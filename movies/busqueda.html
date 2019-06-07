@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -15,10 +14,10 @@
 	 <!-- The Menu -->
 	 <div class="menu">
 			 <ul>
+				<li class="list"><a href="estrenos.html">PELICULAS</a></li>
 
-
-
-				<li class="list"><a href="../favoritas.html">Favoritas</a></li>
+				<li class="list"><a href="../enfila.html">FILA</a></li>
+				<li class="list"><a href="../favoritas.html">FAVORITAS</a></li>
 		</ul>
 	 </div>
 			 <!-- The MenuExpandible menu for small screens -->
@@ -42,7 +41,7 @@
 
 					 <li class="list" id="smallScreenList">Mi Lista<span class="drop"><i class="ion-chevron-down"></i></span></a>
 												<ul id="myListsDropdown">
-
+													 <li><a href="../enfila.html">En fila</a>
 													 <li><a href="../favoritas.html">Favoritos</a>
 												</ul>
 
@@ -64,14 +63,15 @@
 <!-- Container -->
 	<div class="container_search">
 			<form id="form" autocomplete="off" action="busqueda.html">
-          <input type="text" id="inputField" name="buscador" placeholder="Actor, Titulo, Genero, Año, director...">
+          <input type="text" id="inputField" name="buscador" placeholder="Buscá una peli!">
 
 			 </form>
 
 			 <div class="wrap">
-				<select id="selectedGenres">
+				<select id="selectedGenres" class="listaGenres">
 					<option>SELECT GENRE </option>
-					<option id="28" class="tag">Action</option>
+
+					<!-- <option id="28" class="tag">Action</option>
 					<option id="12" class="tag">Adventure</option>
 					<option id="16" class="tag">Animation</option>
 					<option id="35" class="tag">Comedy</option>
@@ -89,7 +89,7 @@
 					<option id="53" class="tag">Thriller</option>
 					<option id="10752" class="tag">War</option>
 					<option id="37" class="tag">Western</option>
-					<option id="10770" class="tag">TV Movie</option>
+					<option id="10770" class="tag">TV Movie</option> -->
 				</select>
 		   </div>
 	</div>

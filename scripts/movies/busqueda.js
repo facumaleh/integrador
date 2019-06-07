@@ -1,4 +1,3 @@
-
 window.onload = function() {
   // TEngo que capturar el formulario, querySelector
   // al formulario le agrego un evento para que cuando se submita el form, envie los datos por ajax(fetch)
@@ -27,6 +26,9 @@ window.onload = function() {
           <div class="peliculas">
             <div class="overlay">
             <div class="addBtn">
+              <span>
+                <i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i>
+              </span>
 
               <span>
                 <i class="material-icons favorite" onclick="favorite('${movie[i].id}')">favorite</i>
@@ -59,7 +61,9 @@ window.onload = function() {
                     <div class="peliculas">
                     <div class="overlay">
                     <div class="addBtn">
-                      
+                      <span>
+                        <i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i>
+                      </span>
 
                       <span>
                         <i class="material-icons favoriteMarked" onclick="favorite('${movie[i].id}')">favorite</i></span></div>
@@ -89,10 +93,10 @@ window.onload = function() {
   .catch(function(error){
     console.log("The error was: "+ error);
   })
-}
 
 
-// ********* STORING INTO LISTS *********
+
+// *** STORING INTO LISTS ***
 //Add movie to watch list.
 function addToList(id){
     let storedId = JSON.parse(localStorage.getItem("movies")) || [];
@@ -148,8 +152,63 @@ function movieSelected(id){
     return false;
 }
 
-// // ON PAGE RELOAD, CLEAR SESSION STORAGE.
-// window.onload = function clearStorage(){
-//     sessionStorage.removeItem("movieByYearGenre");
-//     sessionStorage.removeItem("movieByTitleGenre");
-// }
+
+//Get the value from the form on submit and then run the functions.
+const form = document.getElementById("form");
+
+// Object.freeze makes the object read-only, defending it from "hacky" activities.
+// Object containing the genres for the movies.
+// const genresObject = Object.freeze({
+//     "ACTION": 28,
+//     "ADVENTURE": 12,
+//     "ANIMATION": 16,
+//     "COMEDY": 35,
+//     "CRIME": 80,
+//     "DOCUMENTARY":99,
+//     "DRAMA": 18,
+//     "FAMILY": 10751,
+//     "FANTASY": 14,
+//     "HISTORY": 36,
+//     "HORROR": 27,
+//     "MUSIC": 10402,
+//     "MYSTERY":9648,
+//     "ROMANCE": 10749,
+//     "THRILLER": 53,
+//     "WAR": 10752,
+//     "WESTERN": 37,
+//     "SCIFI": 878,
+//     "TV MOVIE": 10770
+// })
+//
+// form.addEventListener("submit", (e)=>{
+//     let input = document.getElementById("inputField").value;
+//     let searchedFor = document.getElementById("searchedFor");
+// })
+
+const API_KEY = "07be10560c3c4cf68794acc1da83356b";
+
+  var urlGeneros = "https://api.themoviedb.org/3/genre/movie/list?api_key="+API_KEY;
+
+  fetch(urlGeneros)
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(responseJSON){
+      var generos = responseJSON.genres;
+      console.log(generos);
+      var buscarGeneros = document.querySelector('.listaGenres');
+      console.log(buscarGeneros);
+      var sleect = document.querySelector("#selectedGenres")
+      //abro select
+      for (var i = 0; i < generos.length; i++) {
+        option += generos[i].name
+      }
+
+      select += option
+      //cierro select
+  })
+  .catch(function(error){
+    console.log("The error was: "+ error);
+  })
+
+}
