@@ -5,9 +5,6 @@ const API_KEY = config.API_KEY;
 const spinner = document.querySelector(".spinner");
 spinner.style.display = "none";
 
-//Define the container where movies will be listed.
-const container = document.querySelector(".showcase");
-container.style.display = "none"
 
 //Pages
 
