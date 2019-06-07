@@ -1,5 +1,6 @@
+
 window.onload = function() {
-  // TEngo que capturar el formulario, querySelector
+  // Tengo que capturar el formulario, querySelector
   // al formulario le agrego un evento para que cuando se submita el form, envie los datos por ajax(fetch)
 
   var queryString = new URLSearchParams(window.location.search)
@@ -95,7 +96,8 @@ window.onload = function() {
   })
 
 
-// *** STORING INTO LISTS ***
+
+// ** GUARDAR EN LISTA DE FAVORITOS **
 //Add movie to watch list.
 function addToList(id){
     let storedId = JSON.parse(localStorage.getItem("movies")) || [];
@@ -120,7 +122,7 @@ function addToList(id){
 	}
 }
 
-//Add movie to favorite movies.
+//Agregar pelicula a favoritos
 function favorite(id){
     let storedId = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
 	if(storedId.indexOf(id) === -1){
@@ -151,3 +153,45 @@ function movieSelected(id){
     return false;
 }
 
+
+//Get the value from the form on submit and then run the functions.
+const form = document.getElementById("form");
+
+
+
+// **GENEROS**
+
+// Crear la caja con todos los generos sacados de la API
+
+const API_KEY = "07be10560c3c4cf68794acc1da83356b";
+
+  var urlGeneros = "https://api.themoviedb.org/3/genre/movie/list?api_key="+API_KEY;
+
+
+  fetch(urlGeneros)
+  .then(function(response){
+    // Esto sirve para poner los generos sacados de la API en la consola
+    return response.json();
+  })
+  .then(function(responseJSON){
+      var generos = responseJSON.genres;
+        console.log(generos);
+      var buscarGeneros = document.querySelector('.listaGenres');
+        console.log(buscarGeneros);
+
+
+    // Se pasan los generos que aparecen en la consola a el buscador
+      var select = document.getElementById('selectedGenres');
+
+            for (var i = 0; i < generos.length; i++) {
+                      option = "<option id="+generos[i].id+" class='tag'>"+generos[i].name+"</option>"
+                      select.innerHTML += option
+            }
+      })
+  .catch(function(error){
+    console.log("The error was: "+ error);
+  })
+}
+
+
+// Ahora se configura para que los generos que aparecen en la caja de busqueda busquen las peliculas que les corresponden
