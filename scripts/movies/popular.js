@@ -19,6 +19,8 @@ window.onload = function getMovies(){
 		pages.style.display = "flex";
 	}, 1000);
 
+	console.log("https://api.themoviedb.org/3/movie/popular?api_key="+API_KEY+'&language=es-ES&page=1');
+
 	//Get the API.
 	axios.get("https://api.themoviedb.org/3/movie/popular?api_key="+API_KEY+'&language=es-ES&page=1')
 		.then ((response)=>{
@@ -35,7 +37,7 @@ window.onload = function getMovies(){
 					output += `
 					<div class="peliculas">
 						<div class="overlay">
-						<div class="addBtn"><span><i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i></span>
+						<div class="addBtn">
 						<span><i class="material-icons favorite" onclick="favorite('${movie[i].id}')">favorite</i></span></div>
 						<div class="movie">
 							<h2>${movie[i].title}</h2>
@@ -52,7 +54,7 @@ window.onload = function getMovies(){
 					output += `
 					<div class="peliculas">
 					<div class="overlay">
-					<div class="addBtn"><span><i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i></span>
+					<div class="addBtn">
 					<span><i class="material-icons favorite" onclick="favorite('${movie[i].id}')">favorite</i></span></div>
 					<div class="movie">
 						<h2>${movie[i].title}</h2>

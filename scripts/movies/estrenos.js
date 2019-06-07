@@ -17,6 +17,8 @@ window.onload = function getMovies(){
 	}, 1000;
 
 	//Get the API.
+console.log();
+
 
 	fetch("https://api.themoviedb.org/3/movie/now_playing?api_key="+API_KEY+'&language=es-ES&page=1&region=US')
 	  .then(function(response) {
@@ -35,7 +37,7 @@ window.onload = function getMovies(){
 					output += `
 					<div class="peliculas">
 						<div class="overlay">
-						<div class="addBtn"><span><i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i></span>
+						<div class="addBtn">
 						<span><i class="material-icons favorite" onclick="favorite('${movie[i].id}')">favorite</i></span></div>
 						<div class="movie">
 							<h2>${movie[i].title}</h2>
@@ -53,7 +55,7 @@ window.onload = function getMovies(){
 					output += `
 					<div class="peliculas">
 					<div class="overlay">
-					<div class="addBtn"><span><i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i></span>
+					<div class="addBtn">
 					<span><i class="material-icons favoriteMarked" onclick="favorite('${movie[i].id}')">favorite</i></span></div>
 					<div class="movie">
 						<h2>${movie[i].title}</h2>
