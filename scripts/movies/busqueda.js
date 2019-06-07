@@ -4,10 +4,23 @@ window.onload = function() {
   // al formulario le agrego un evento para que cuando se submita el form, envie los datos por ajax(fetch)
 
   var queryString = new URLSearchParams(window.location.search)
-
+  var idGenero = queryString.get("id")
+  console.log(idGenero);
+  console.log(idGenero===null);
   var busco = queryString.get("buscador")
-
-  var url = "https://api.themoviedb.org/3/search/movie?api_key=07be10560c3c4cf68794acc1da83356b&language=en-US&query=" + busco + "&page=1&include_adult=false"
+  console.log(busco);
+  var select = document.getElementById('selectedGenres');
+      select.onchange= function(){
+        var idGenero = select.options[select.selectedIndex].value
+        window.location.href = "busqueda.html?id="+idGenero;
+      }
+  if (idGenero != null ) {
+    console.log("busco por genero");
+    var url = ('https://api.themoviedb.org/3/discover/movie?api_key=15bb9ea0cc06d94a6a0f45e9487d7633&sort_by=popularity.desc&include_adult=true&include_video=true&page=1&with_genres='+idGenero)
+  } else if (busco != null) {
+    console.log("busco una peli");
+    var url = "https://api.themoviedb.org/3/search/movie?api_key=07be10560c3c4cf68794acc1da83356b&language=en-US&query=" + busco + "&page=1&include_adult=false"
+  }
 
   var imgURL='https://image.tmdb.org/t/p/original'
 
@@ -184,13 +197,21 @@ const API_KEY = "07be10560c3c4cf68794acc1da83356b";
       var select = document.getElementById('selectedGenres');
 
             for (var i = 0; i < generos.length; i++) {
-                      option = "<option id="+generos[i].id+" class='tag'>"+generos[i].name+"</option>"
+                      option = "<option id="+generos[i].id+" value='"+generos[i].id+"' class='tag'>"+generos[i].name+"</option>"
                       select.innerHTML += option
             }
       })
   .catch(function(error){
     console.log("The error was: "+ error);
   })
+
+  // Aca se configura para que aparezcan los resultados en la busqueda que correspondan con el genero buscado
+
+
+
+                                                      //Hasta aca logramos que cuando busque aparezca el ID correspondiente con el
+
+
 }
 
 
