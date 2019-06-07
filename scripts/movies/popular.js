@@ -19,8 +19,6 @@ window.onload = function getMovies(){
 		pages.style.display = "flex";
 	}, 1000);
 
-	console.log("https://api.themoviedb.org/3/movie/popular?api_key="+API_KEY+'&language=es-ES&page=1');
-
 	//Get the API.
 	axios.get("https://api.themoviedb.org/3/movie/popular?api_key="+API_KEY+'&language=es-ES&page=1')
 		.then ((response)=>{

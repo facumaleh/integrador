@@ -17,8 +17,6 @@ window.onload = function getMovies(){
 	}, 1000;
 
 	//Get the API.
-console.log();
-
 
 	fetch("https://api.themoviedb.org/3/movie/now_playing?api_key="+API_KEY+'&language=es-ES&page=1&region=US')
 	  .then(function(response) {

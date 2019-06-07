@@ -28,7 +28,6 @@ window.onload = function() {
             <div class="overlay">
             <div class="addBtn">
 
-
               <span>
                 <i class="material-icons favorite" onclick="favorite('${movie[i].id}')">favorite</i>
               </span>
@@ -60,7 +59,7 @@ window.onload = function() {
                     <div class="peliculas">
                     <div class="overlay">
                     <div class="addBtn">
-                    
+                      
 
                       <span>
                         <i class="material-icons favoriteMarked" onclick="favorite('${movie[i].id}')">favorite</i></span></div>
