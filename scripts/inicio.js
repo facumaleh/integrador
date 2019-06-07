@@ -53,7 +53,7 @@ window.onload = function featuredMovies(){
             let output = "";
             for(let i = 0; i < featured.length; i++){
                 output += `
-                <div class="card">
+                <div class="peliculas">
                     <div class="overlay">
                         <div class="movie">
                             <h2>${featured[i].title}</h2>
@@ -79,7 +79,7 @@ window.onload = function featuredMovies(){
                 let output = "";
                 for(let i = 0; i < shows.length; i++){
                     output +=`
-                    <div class="card">
+                    <div class="peliculas">
                         <div class="overlay">
                         <div class="movie">
                                 <h2>${shows[i].name}</h2>
@@ -103,7 +103,7 @@ window.onload = function featuredMovies(){
                 let output = "";
                 for(let i = 0; i < nowPlaying.length; i++){
                     output +=`
-                    <div class="card">
+                    <div class="peliculas">
                         <div class="overlay">
                             <div class="movie">
                                 <h2>${nowPlaying[i].title}</h2>

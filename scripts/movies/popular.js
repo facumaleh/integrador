@@ -33,7 +33,7 @@ window.onload = function getMovies(){
 				let favoriteMovies = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
 				if(favoriteMovies.indexOf(id) === -1){
 					output += `
-					<div class="card">
+					<div class="peliculas">
 						<div class="overlay">
 						<div class="addBtn"><span><i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i></span>
 						<span><i class="material-icons favorite" onclick="favorite('${movie[i].id}')">favorite</i></span></div>
@@ -44,13 +44,13 @@ window.onload = function getMovies(){
 								<a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
 						</div>
 						</div>
-						<div class="card_img">
+						<div class="peliculas_img">
 							<img src="http://image.tmdb.org/t/p/w400/${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';">
 						</div>
 					</div>`;
 				} else {
 					output += `
-					<div class="card">
+					<div class="peliculas">
 					<div class="overlay">
 					<div class="addBtn"><span><i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i></span>
 					<span><i class="material-icons favorite" onclick="favorite('${movie[i].id}')">favorite</i></span></div>
@@ -61,7 +61,7 @@ window.onload = function getMovies(){
 							<a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
 					</div>
 					</div>
-					<div class="card_img">
+					<div class="peliculas_img">
 						<img src="http://image.tmdb.org/t/p/w400/${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';">
 					</div>
 				</div>`;

@@ -4,13 +4,13 @@ const submenu = document.querySelector(".submenu");
 const sticky = navbar.offsetTop;
 const scrollToTop = document.getElementById("scrollToTop");
 
-// Burger Menu.
-const burger = document.querySelector(".burger");
+// MenuExpandible Menu.
+const MenuExpandible = document.querySelector(".MenuExpandible");
 const slide = document.querySelector(".slide");
 let sideMenu = false;
 const body = document.querySelector("body");
-burger.addEventListener("click", ()=>{
-	burger.classList.toggle("active");
+MenuExpandible.addEventListener("click", ()=>{
+	MenuExpandible.classList.toggle("active");
 
 	// Slide menu.
 	slide.classList.toggle("slideIn");

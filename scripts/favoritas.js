@@ -17,7 +17,7 @@ window.onload = function displayWatchlist(){
         .then((response)=>{
             let movie = response.data;
             movieOutput.innerHTML +=
-             `<div class="card">
+             `<div class="peliculas">
              <div class="overlay">
              <div class="addBtn"><span><i class="material-icons trash" onclick="movieSplice('${movie.id}')">delete_forever</i></span></div>
              <div class="movie">
@@ -27,7 +27,7 @@ window.onload = function displayWatchlist(){
                  <a onclick="movieSelected('${movie.id}')" href="detalle.html">Detalle</a>
               </div>
              </div>
-             <div class="card_img">
+             <div class="peliculas_img">
                  <img src="http://image.tmdb.org/t/p/w400/${movie.poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';">
              </div>
          </div>`;
@@ -47,7 +47,7 @@ window.onload = function displayWatchlist(){
             .then((response)=>{
                 let series = response.data;
                 tvShowsOutput.innerHTML +=
-                `<div class="card">
+                `<div class="peliculas">
                 <div class="overlay">
                 <div class="addBtn"><span><i class="material-icons trash" onclick="seriesSplice('${series.id}')">delete_forever</i></span></div>
                 <div class="movie">
@@ -57,7 +57,7 @@ window.onload = function displayWatchlist(){
                     <a onclick="showSelected('${series.id}')" href="#">Details</a>
                  </div>
                 </div>
-                <div class="card_img">
+                <div class="peliculas_img">
                     <img src="http://image.tmdb.org/t/p/w400/${series.poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';">
                 </div>
             </div>`;
@@ -101,7 +101,7 @@ function recommendMovies(){
             let output = "";
             for(let i = 0; i < movie.length; i++) {
                 output +=
-                `<div class="recommended_card" onclick="movieSelected(${movie[i].id})">
+                `<div class="recommended_peliculas" onclick="movieSelected(${movie[i].id})">
                 <div class="recommendedOverlay">
                     <div class="recommendedInfo">
                         <h2>${movie[i].title}</h2>
@@ -109,7 +109,7 @@ function recommendMovies(){
                         <p>Release date: ${movie[i].release_date}</p>
                     </div>
                 </div>
-                <div class="recommended_cardImg">
+                <div class="recommended_peliculasImg">
                     <img src="http://image.tmdb.org/t/p/w154/${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';">
                 </div>
                 </div>`;
@@ -147,7 +147,7 @@ function recommendTvShows(){
             let output = "";
             for(let i = 0; i < series.length; i++) {
                 output +=
-                `<div class="recommended_card" onclick="movieSelected(${series[i].id})">
+                `<div class="recommended_peliculas" onclick="movieSelected(${series[i].id})">
                 <div class="recommendedOverlay">
                     <div class="recommendedInfo">
                         <h2>${series[i].name}</h2>
@@ -155,7 +155,7 @@ function recommendTvShows(){
                         <p>Release date: ${series[i].first_air_date}</p>
                     </div>
                 </div>
-                <div class="recommended_cardImg">
+                <div class="recommended_peliculasImg">
                     <img src="http://image.tmdb.org/t/p/w154/${series[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';">
                 </div>
                 </div>`;

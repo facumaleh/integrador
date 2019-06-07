@@ -24,7 +24,7 @@ window.onload = function() {
         let favoriteMovies = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
         if(favoriteMovies.indexOf(id) === -1){
           output += `
-          <div class="card">
+          <div class="peliculas">
             <div class="overlay">
             <div class="addBtn">
               <span>
@@ -52,14 +52,14 @@ window.onload = function() {
             </div>
             </div>
 
-            <div class="card_img">
+            <div class="peliculas_img">
               <img src="${imgURL}${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';" >
             </div>
           </div>
           `;
         } else {
           output += `
-                    <div class="card">
+                    <div class="peliculas">
                     <div class="overlay">
                     <div class="addBtn">
                       <span>
@@ -81,7 +81,7 @@ window.onload = function() {
                             <a onclick="movieSelected('${movie[i].id}')" href="../detalle.html'>Detalles</a>
                     </div>
                     </div>
-                    <div class="card_img">
+                    <div class="peliculas_img">
                         <img src="${imgURL}${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';" >
                     </div>
                 </div>
