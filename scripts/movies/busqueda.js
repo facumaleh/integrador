@@ -94,7 +94,7 @@ window.onload = function() {
   .catch(function(error){
     console.log("The error was: "+ error);
   })
-}
+
 
 
 // ********* STORING INTO LISTS *********
@@ -159,35 +159,57 @@ const form = document.getElementById("form");
 
 // Object.freeze makes the object read-only, defending it from "hacky" activities.
 // Object containing the genres for the movies.
-const genresObject = Object.freeze({
-    "ACTION": 28,
-    "ADVENTURE": 12,
-    "ANIMATION": 16,
-    "COMEDY": 35,
-    "CRIME": 80,
-    "DOCUMENTARY":99,
-    "DRAMA": 18,
-    "FAMILY": 10751,
-    "FANTASY": 14,
-    "HISTORY": 36,
-    "HORROR": 27,
-    "MUSIC": 10402,
-    "MYSTERY":9648,
-    "ROMANCE": 10749,
-    "THRILLER": 53,
-    "WAR": 10752,
-    "WESTERN": 37,
-    "SCIFI": 878,
-    "TV MOVIE": 10770
-})
+// const genresObject = Object.freeze({
+//     "ACTION": 28,
+//     "ADVENTURE": 12,
+//     "ANIMATION": 16,
+//     "COMEDY": 35,
+//     "CRIME": 80,
+//     "DOCUMENTARY":99,
+//     "DRAMA": 18,
+//     "FAMILY": 10751,
+//     "FANTASY": 14,
+//     "HISTORY": 36,
+//     "HORROR": 27,
+//     "MUSIC": 10402,
+//     "MYSTERY":9648,
+//     "ROMANCE": 10749,
+//     "THRILLER": 53,
+//     "WAR": 10752,
+//     "WESTERN": 37,
+//     "SCIFI": 878,
+//     "TV MOVIE": 10770
+// })
+//
+// form.addEventListener("submit", (e)=>{
+//     let input = document.getElementById("inputField").value;
+//     let searchedFor = document.getElementById("searchedFor");
+// })
 
-form.addEventListener("submit", (e)=>{
-    let input = document.getElementById("inputField").value;
-    let searchedFor = document.getElementById("searchedFor");
-})
+const API_KEY = "07be10560c3c4cf68794acc1da83356b";
 
-// // ON PAGE RELOAD, CLEAR SESSION STORAGE.
-// window.onload = function clearStorage(){
-//     sessionStorage.removeItem("movieByYearGenre");
-//     sessionStorage.removeItem("movieByTitleGenre");
-// }
+  var urlGeneros = "https://api.themoviedb.org/3/genre/movie/list?api_key="+API_KEY;
+
+  fetch(urlGeneros)
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(responseJSON){
+      var generos = responseJSON.genres;
+      console.log(generos);
+      var buscarGeneros = document.querySelector('.listaGenres');
+      console.log(buscarGeneros);
+      var sleect = document.querySelector("#selectedGenres")
+      abro select
+      for (var i = 0; i < generos.length; i++) {
+        option += generos[i].name
+      }
+
+      select += option
+      cierro select
+  })
+  .catch(function(error){
+    console.log("The error was: "+ error);
+  })
+
+}
