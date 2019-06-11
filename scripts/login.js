@@ -1,8 +1,8 @@
 
-// Get the modal
+// SACAR MODAL (POP-UP)
 var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
+// SALIR DEL POP UP CUANDO APRETAS AFUERA DEL MISMO
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
