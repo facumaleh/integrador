@@ -204,15 +204,21 @@ const API_KEY = "07be10560c3c4cf68794acc1da83356b";
   .catch(function(error){
     console.log("The error was: "+ error);
   })
-
-  // Aca se configura para que aparezcan los resultados en la busqueda que correspondan con el genero buscado
-
-
-
-                                                      //Hasta aca logramos que cuando busque aparezca el ID correspondiente con el
-
-
 }
+// Aca van los requerimientos minimos para que funcione el Buscador
+// Tiene que validarse teniendo el campo al menos 3 caracteres y si no se cumple salta una alerta por 3 segundos
 
+//if cajaBuscador tiene un numero menor a 3 de caracteres, mostrar una alerta por 3 segundos
 
-// Ahora se configura para que los generos que aparecen en la caja de busqueda busquen las peliculas que les corresponden
+var form = document.querySelector('#form')
+console.log(form);
+form.addEventListener("submit",function(event){
+    console.log('form subido');
+    var input = document.querySelector('#inputField')
+    console.log(input.value);
+    console.log(input.value.length);
+    if (input.value.length <3) {
+      event.preventDefault()
+      setTimeout(function(){ alert("Por favor ingresá 3 caractéres o más para buscar una película"); }, 3000);
+    }
+})

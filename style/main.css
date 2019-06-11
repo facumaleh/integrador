@@ -21,9 +21,9 @@ body{
 	overflow: hidden;
 }
 
-/* Menu for small screens. */
+/* Menu para pantallas chicas. */
 .slide{
-	display: none
+	display: none;
 }
 .menu span, .slide span{
 	margin-left: 5px;
@@ -42,6 +42,7 @@ body{
 	word-wrap: normal;
 	white-space: nowrap;
 	direction: ltr;
+}
 
 	/*  WebKit browsers. */
 	-webkit-font-smoothing: antialiased;
@@ -111,8 +112,6 @@ nav a{
 	padding: 15px;
 	cursor: pointer;
 	position: relative;
-
-
 	font-family: "Montserrat Medium";
 	text-transform: lowercase;
 }
