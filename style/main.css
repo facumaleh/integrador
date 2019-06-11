@@ -1,7 +1,5 @@
-/* The Main.css file hold the main CSS (body, links, menus, logo, peliculass, containers) for all the pages.
-That includes (index.html,popular-movies.html,search-movies.html,top-rated.html,search-series.html,series-latest.html, series-popular & series-toprated.html). It also holds the CSS for the menu, MenuExpandible menu, slide menu for the movie-page.html and shows-page.html. */
 
-/* Target the whole document. */
+/* afecta a todos los docs. */
 *{
 	margin: 0;
 	padding: 0;
@@ -14,7 +12,7 @@ select {
 	outline: none !important;
 	cursor: pointer;
 }
-/* Global parameters. */
+/* parametros globales. */
 body{
 	background-color: #b8d4f2;
 	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
@@ -22,59 +20,7 @@ body{
 .bodyHidden{
 	overflow: hidden;
 }
-/* SCROLL TO TOP BUTTON */
-#scrollToTop{
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	z-index: 9999;
-	width: 40px;
-	height: 40px;
-	border: none;
-	border-radius: 2px;
-	padding: 3px;
 
-	opacity: 0;
-	box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
-	background-color: #2f3640;
-	cursor: pointer;
-	outline: none;
-}
-#scrollToTop:hover{
-	background-color: #f5f5f5;
-}
-#scrollToTop:hover i {
-	color: #2f3640;
-}
-#scrollToTop i {
-	font-size: 30px;
-	color: #f5f5f5;
-}
-#scrollToTop.scrollButtonActive{
-
-	opacity: 1;
-}
-li{
-	color: #2f3640;
-}
-a{
-	text-decoration: none;
-	color: #2f3640;
-}
-ul{
-	list-style: none;
-}
-button:focus, button:active{
-	outline: none;
-}
-.change{
-	position: absolute;
-	margin-left: 35px;
-}
-/* Button for small screens. */
-.MenuExpandible{
-	display: none;
-}
 /* Menu for small screens. */
 .slide{
 	display: none
@@ -83,12 +29,12 @@ button:focus, button:active{
 	margin-left: 5px;
 }
 
-/* MATERIAL DESIGN ICONS CSS */
+/* ICONOS CSS */
 .material-icons {
 	font-family: 'Material Icons';
 	font-weight: normal;
 	font-style: normal;
-	font-size: 24px;  /* Preferred icon size */
+	font-size: 24px;  /* tamaño preferido*/
 	display: inline-block;
 	line-height: 1;
 	text-transform: none;
@@ -97,20 +43,18 @@ button:focus, button:active{
 	white-space: nowrap;
 	direction: ltr;
 
-	/* Support for all WebKit browsers. */
+	/*  WebKit browsers. */
 	-webkit-font-smoothing: antialiased;
-	/* Support for Safari and Chrome. */
+	/* Safari and Chrome. */
 	text-rendering: optimizeLegibility;
 
-	/* Support for Firefox. */
+	/*  Firefox. */
 	-moz-osx-font-smoothing: grayscale;
 
-	/* Support for IE. */
-	font-feature-settings: 'liga';
-  }
-/* Global parameters end. */
 
-/* Navigation bar - START. */
+/* termina webKit */
+
+/* barra de navegacion . */
 nav{
 	position: fixed;
 	top: 0px;
@@ -226,9 +170,9 @@ nav a{
 	color: #2f3640;
 	border-bottom: 5px solid #6e00f4;
 }
-/* Navigation bar - END. */
+/* termina barra de navegacion */
 
-/* Page Title */
+/* TItulos */
 .container{
 	margin-top: 60px;
 	width: 100%;
@@ -238,7 +182,7 @@ nav a{
 	align-items: center;
 	position: relative;
 }
-/* Page title on lists page and upcoming movies page. */
+/* Estrenos. */
 .title{
 	margin-top: 30px;
 	margin-bottom: 0;
@@ -280,7 +224,7 @@ nav a{
 	font-weight: bold;
 }
 
-/* Movies/Tvshows output - START. */
+/* output peliculas. */
 .showcase{
 	margin-top: 35px;
 	position: relative;
@@ -524,50 +468,10 @@ nav a{
 		transform: scale(1) rotate(0deg);
 	}
 }
-/* MOVIE / TV SHOW OUTPUT peliculasS END*/
+/* output peliculas termina*/
 
-/* Buttons for pages */
-.pages{
-	width: 100%;
-	display: none;
-	justify-content: center;
-	align-items: center;
-	margin-top: 20px;
-}
-#prev, #next {
-	margin: 20px 25px;
-	font-size: 18px;
-	font-weight: bold;
-	font-family: "Montserrat Black", Arial, Helvetica, sans-serif;
-	border:none;
-	border-radius: 3px;
-	background-color: #fff;
-	box-shadow: 0 3px rgba(0,0,0,0.1);
-	color: #2f3640;
-	width: auto;
-	padding: 0 5px;
-	height: 35px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
 
-}
-#prev:hover, #next:hover{
-	color: #333;
-	box-shadow: 0px 2px 15px rgba(0,0,0,0.3);
-}
-/* Movies/Tvshows output - END. */
-#searchedFor{
-	font-family: "Montserrat Black";
-}
-#searchedFor span{
-	font-family: "Montserrat Black";
-	margin-left: 10px;
-	color: #333;
-	text-transform: capitalize;
-}
-/* Form - search-movies/search-series */
+/* buscador */
 .container_search #form{
 	display: flex;
 	justify-content: center;
@@ -1316,9 +1220,9 @@ nav a{
 		font-size: 42px;
 	}
 }
-/* ANIMATIONS  */
+/* ANIMACIONES  */
 
-/* Animation for dropdown menu on small screens. */
+/* Animation menu desplegable . */
 @keyframes smallDrop{
 	0%{
 		opacity: 0;
@@ -1330,7 +1234,7 @@ nav a{
 	}
 }
 
-/* Animation for select tag. */
+/* Animaticion de selccion. */
 @keyframes select{
 	0%{
 		opacity: 0;

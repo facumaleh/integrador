@@ -1,5 +1,5 @@
 
-/* This css file is formovies-page  (detailed info pages). */
+
 body{
 	width: 100%;
 	background-color: ##b8d4f2;
@@ -14,11 +14,11 @@ li {
 a {
 	outline: none !important;
 }
-/* Movie/tv show page container (both poster and info sections). */
+/
 .moviePage{
 	display: flex;
 }
-/* Movie/tv show poster - START. */
+/*  */postes
 .poster{
 	padding: 20px;
 	margin-top: 0px;
@@ -26,9 +26,8 @@ a {
 .poster img{
 	box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
 }
-/* Movie/tv show poster - END. */
-
-/* Movie/tv show info - START. */
+/* termina poste */
+/* menu */
 .shadowMenu{
 	box-shadow: 0 5px 5px rgba(0,0,0,0.05);
 }
@@ -103,25 +102,13 @@ a {
 	color: #fff;
 	box-shadow: 0px 4px rgba(0,0,0,0.15);
 }
-.buttons .twitter{
-	display: block;
-	background-color: #fff;
-	color: #00aced;
-	width: 60px;
-	overflow: hidden;
-}
-.twitter::before{
-	display: block;
-	content: "\f243";
-	font-family: "Ionicons";
 
 	font-size: 18px;
 }
 .buttons .twitter:hover{
 	background-color: #00aced;
 }
-.buttons .twitter:hover::before{
-	color: #fff;
+
 }
 
 #errorTitle{
@@ -167,9 +154,7 @@ a {
 	color: #333;
 	box-shadow: 0px 2px 15px rgba(0,0,0,0.3);
 }
-/* Movie/tv show info - END. */
-
-/* Movie/tv show trailer - START. */
+/* trailer */
 #trailer{
 	width: 100%;
 	min-height: 50px;
@@ -199,9 +184,9 @@ a {
 	text-align: center;
 }
 
-/* Movie/tv show trailer - END. */
+/* termian trailer*/
 
-/* Movie/tv show recommended - START. */
+/*recomendaciones */
 #recommended{
 	display: grid;
 	grid-template-columns: repeat(4,1fr);
@@ -226,7 +211,7 @@ a {
 		transform: translateX(0px)
 	}
 }
-/* If recommendations are not available */
+/*si recomendaciones no esta disponible */
 .recommendations_error{
 	grid-column: 1/-1;
 	display: flex;
@@ -374,7 +359,7 @@ a {
 		transform: translateY(-100px);
 	}
 }
-/* Movie/tvshow recommended - END. */
+/*termina recomendaciones*/
 
 /* 		Media Queries		 */
 @media (max-width: 1207px){
@@ -384,7 +369,7 @@ a {
 		bottom: -50px;
 	}
 }
-/* Media querie for tablets and phones */
+/* Media querie  tablets y phones */
 @media (max-width: 1024px){
 	.peliculas .overlay{
 		position: absolute;

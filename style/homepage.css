@@ -1,4 +1,4 @@
-/* Global attributes */
+/* atributos globales*/
 *{
     margin: 0;
     padding: 0;
@@ -13,12 +13,12 @@ div:focus, button:focus, span:focus{
 li{
     list-style-type: none;
 }
-/* MATERIAL DESIGN ICONS CSS */
+/*\ICONOS CSS */
 .material-icons {
 	font-family: 'Material Icons';
 	font-weight: normal;
 	font-style: normal;
-	font-size: 24px;  /* Preferred icon size */
+	font-size: 24px;  /* tamaño preferido */
 	display: inline-block;
 	line-height: 1;
 	text-transform: none;
@@ -27,22 +27,15 @@ li{
 	white-space: nowrap;
 	direction: ltr;
 
-	/* Support for all WebKit browsers. */
+	/* soporte para webkit. */
 	-webkit-font-smoothing: antialiased;
-	/* Support for Safari and Chrome. */
+	/* Safari y Chrome. */
 	text-rendering: optimizeLegibility;
 
-	/* Support for Firefox. */
+	/*  Firefox. */
 	-moz-osx-font-smoothing: grayscale;
 
-	/* Support for IE. */
-	font-feature-settings: 'liga';
-  }
-  .hot{
-      color: #e1302a;
-      font-size: 30px;
-  }
-/* Navigation menu */
+/* menu de navegacion*/
 nav{
     width: 100%;
     text-align: center;
@@ -68,7 +61,7 @@ nav ul li a{
 nav ul li a:hover{
     color: #e1302a;
 }
-/* Title Section */
+/* titulos de secciones*/
 .title{
     margin-left: 10px;
 }
@@ -93,7 +86,7 @@ nav ul li a:hover{
     font-style: italic;
 }
 
-/* Popular movies section */
+/* seccion de Populares */
 .popular{
     position: relative;
     margin: 50px 0;
@@ -125,7 +118,7 @@ nav ul li a:hover{
 .popular a:hover{
     color: #2f3640
 }
-/* See more section */
+/* Seccion de ver mas */
 .seeMore{
     text-align: center;
 }
@@ -160,7 +153,7 @@ nav ul li a:hover{
     color: #e1302a;
     box-shadow: 0px 2px 5px rgba(0,0,0,0.20);
 }
-/* Now Playing section */
+/* en cartelera */
 .nowPlaying h1{
     font-family: "Paytone One";
     text-align: center;
@@ -180,7 +173,7 @@ nav ul li a:hover{
     text-decoration: none;
     font-family: "Montserrat SemiBold";
 }
-/* MOVIE & TV SHOW peliculasS */
+/* peliculasS */
 .scroll{
     margin:15px auto;
     overflow: hidden;
@@ -273,7 +266,7 @@ nav ul li a:hover{
 .scroll .peliculas:hover .overlay{
     transform:translateY(0px)
 }
-/* About section */
+/* seccion de info */
 .about{
     text-align: center;
 }
@@ -332,7 +325,7 @@ nav ul li a:hover{
     font-size: 45px;
     color: #e1302a;
 }
-/* Popcorn section */
+
 .popcorn{
     margin: 25px 0;
     display: flex;
@@ -432,7 +425,7 @@ footer .credits{
 /* MEDIA QUERIES */
 
 
-/* For tablets and mobile phones. */
+/* tablets mobile phones. */
 @media (max-width: 1024px){
     ::-webkit-scrollbar {
         width: 10px;

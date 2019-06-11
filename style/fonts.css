@@ -1,4 +1,4 @@
-/* Include custom fonts */
+/* tipografias */
 @font-face{
 	font-family: "Montserrat Regular";
 	src: url("../fonts/Montserrat-Regular.ttf");
@@ -23,7 +23,7 @@
 	font-family: "Paytone One";
 	src: url("../fonts/PaytoneOne-Regular.ttf");
 }
-/* Material Design Icons */
+/* Mdiseño de iconos */
 @font-face {
 	font-family: 'Material Icons';
 	font-style: normal;
@@ -35,7 +35,7 @@
 	  url("../fonts/MaterialIcons-Regular.woff") format('woff'),
 	  url("../fonts/MaterialIcons-Regular.ttf") format('truetype');
   }
-  /* Ionicons font support */
+  /* Ionicons soporte*/
   @font-face {
 	  font-family: "Ionicons";
 	  font-style: normal;
