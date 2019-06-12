@@ -3,6 +3,7 @@ window.onload = function() {
   // Tengo que capturar el formulario, querySelector
   // al formulario le agrego un evento para que cuando se submita el form, envie los datos por ajax(fetch)
 
+
   var queryString = new URLSearchParams(window.location.search)
   var idGenero = queryString.get("id")
   console.log(idGenero);
@@ -219,6 +220,14 @@ form.addEventListener("submit",function(event){
     console.log(input.value.length);
     if (input.value.length <3) {
       event.preventDefault()
-      setTimeout(function(){ alert("Por favor ingresá 3 caractéres o más para buscar una película"); }, 3000);
+      UIkit.notification({
+      message: 'Insertar al menos 3 caracteres para mostrar resultados',
+      status: 'danger',
+      pos: 'top-center',
+      timeout: 3000
+});
+
+
+
     }
 })
