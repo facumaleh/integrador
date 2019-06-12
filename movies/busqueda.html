@@ -6,10 +6,50 @@
 	<title>Buscador</title>
 	<link rel="stylesheet" type="text/css" href="../style/main.css">
 	<link rel="stylesheet" href="../style/fonts.css">
+			<link rel="stylesheet" href="../style/login.css">
 	<!-- <link rel="stylesheet" type="text/css" href="../style/detalles.css"> -->
+	<!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
 </head>
 <body>
-<!-- Navigation Bar -->
+
+	<!-- This is the modal -->
+	<div id="modal-example" uk-modal>
+	    <div class="uk-modal-dialog uk-modal-body">
+				<form class="modal-content animate" action="/action_page.php">
+	    <div class="imgcontainer">
+	      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+	      <img src="../images/nacho.jpg" alt="Avatar" class="avatar">
+	    </div>
+
+	    <div class="container">
+	      <label for="uname"><b>Username</b></label>
+	      <input type="text" placeholder="Enter Username" name="uname" required>
+
+	      <label for="psw"><b>Password</b></label>
+	      <input type="password" placeholder="Enter Password" name="psw" required>
+
+	      <button type="submit">Login</button>
+	      <label>
+	        <input type="checkbox" checked="checked" name="remember"> Remember me
+	      </label>
+	    </div>
+
+	    <div class="container" style="background-color:#f1f1f1">
+	      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+	      <span class="psw">Forgot <a href="#">password?</a></span>
+	    </div>
+	  </form>
+	    </div>
+	</div>
+
+
+
+<!-- barra de navegacion -->
 <nav>
 <h1 class="Titulo">Pelis Para Todos</h1>
 					<!--  Menu -->
@@ -98,7 +138,7 @@
 						 </nav>
 						 <!-- Submenu -->
  <!-- Spinner -->
-	<div class="spinner"></div>
+
 <!-- Container -->
 	<div class="container_search">
 			<form id="form" autocomplete="off" action="busqueda.html" class="formBuscador">
@@ -166,6 +206,7 @@
 <script src="../scripts/config.js"></script>
 <script src="../scripts/movies/busqueda.js"></script>
 <script src="../scripts/global.js"></script>
+<script src="../scripts/login.js"></script>
 <!-- Axios link -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
