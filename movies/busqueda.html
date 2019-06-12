@@ -6,46 +6,9 @@
 	<title>Buscador</title>
 	<link rel="stylesheet" type="text/css" href="../style/main.css">
 	<link rel="stylesheet" href="../style/fonts.css">
-	<link rel="stylesheet" href="../style/login.css">
-	<!-- UIkit CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
-
-<!-- UIkit JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
-
 	<!-- <link rel="stylesheet" type="text/css" href="../style/detalles.css"> -->
 </head>
 <body>
-	<!-- This is the modal -->
-	<div id="modal-example" uk-modal>
-	    <div class="uk-modal-dialog uk-modal-body">
-				<form class="modal-content animate" action="/action_page.php">
-	    <div class="imgcontainer">
-	      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-	      <img src="../images/nacho.jpg" alt="Avatar" class="avatar">
-	    </div>
-
-	    <div class="container">
-	      <label for="uname"><b>Username</b></label>
-	      <input type="text" placeholder="Enter Username" name="uname" required>
-
-	      <label for="psw"><b>Password</b></label>
-	      <input type="password" placeholder="Enter Password" name="psw" required>
-
-	      <button type="submit">Login</button>
-	      <label>
-	        <input type="checkbox" checked="checked" name="remember"> Remember me
-	      </label>
-	    </div>
-
-	    <div class="container" style="background-color:#f1f1f1">
-	      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-	      <span class="psw">Forgot <a href="#">password?</a></span>
-	    </div>
-	  </form>
-	    </div>
-	</div>
 <!-- Navigation Bar -->
 <nav>
 <h1 class="Titulo">Pelis Para Todos</h1>
@@ -56,8 +19,6 @@
 
 				<li class="list"><a href="../enfila.html">FILA</a></li>
 				<li class="list"><a href="../favoritas.html">FAVORITAS</a></li>
-				<button style="background:lightblue"class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Login</button></li>
-
 		</ul>
 	 </div>
 			 <!-- The burger menu for small screens -->
@@ -102,8 +63,8 @@
 	<div class="spinner"></div>
 <!-- Container -->
 	<div class="container_search">
-			<form id="form" autocomplete="off" action="busqueda.html">
-          <input type="text" id="inputField" name="buscador" placeholder="Buscá una peli!">
+			<form id="form" autocomplete="off" action="busqueda.html" class="formBuscador">
+          <input class="cajaBuscador" type="text" id="inputField" name="buscador" required placeholder="Buscá una peli!">
 
 			 </form>
 
