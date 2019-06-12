@@ -115,7 +115,6 @@ nav{
 	position: fixed;
 	top: 0px;
 	width: 100%;
-
 	background-color: transparent;
 	z-index: 999;
 	display: flex;
@@ -123,6 +122,7 @@ nav{
 	justify-content: space-between;
 	margin-bottom: 30px;
 	background-color: #2f3640;
+	height: 7%;
 }
 nav a{
 	color: #fff;
