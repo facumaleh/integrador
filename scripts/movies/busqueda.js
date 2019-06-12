@@ -4,10 +4,23 @@ window.onload = function() {
   // al formulario le agrego un evento para que cuando se submita el form, envie los datos por ajax(fetch)
 
   var queryString = new URLSearchParams(window.location.search)
-
+  var idGenero = queryString.get("id")
+  console.log(idGenero);
+  console.log(idGenero===null);
   var busco = queryString.get("buscador")
-
-  var url = "https://api.themoviedb.org/3/search/movie?api_key=07be10560c3c4cf68794acc1da83356b&language=en-US&query=" + busco + "&page=1&include_adult=false"
+  console.log(busco);
+  var select = document.getElementById('selectedGenres');
+      select.onchange= function(){
+        var idGenero = select.options[select.selectedIndex].value
+        window.location.href = "busqueda.html?id="+idGenero;
+      }
+  if (idGenero != null ) {
+    console.log("busco por genero");
+    var url = ('https://api.themoviedb.org/3/discover/movie?api_key=15bb9ea0cc06d94a6a0f45e9487d7633&sort_by=popularity.desc&include_adult=true&include_video=true&page=1&with_genres='+idGenero)
+  } else if (busco != null) {
+    console.log("busco una peli");
+    var url = "https://api.themoviedb.org/3/search/movie?api_key=07be10560c3c4cf68794acc1da83356b&language=en-US&query=" + busco + "&page=1&include_adult=false"
+  }
 
   var imgURL='https://image.tmdb.org/t/p/original'
 
@@ -184,7 +197,7 @@ const API_KEY = "07be10560c3c4cf68794acc1da83356b";
       var select = document.getElementById('selectedGenres');
 
             for (var i = 0; i < generos.length; i++) {
-                      option = "<option id="+generos[i].id+" class='tag'>"+generos[i].name+"</option>"
+                      option = "<option id="+generos[i].id+" value='"+generos[i].id+"' class='tag'>"+generos[i].name+"</option>"
                       select.innerHTML += option
             }
       })
@@ -192,6 +205,20 @@ const API_KEY = "07be10560c3c4cf68794acc1da83356b";
     console.log("The error was: "+ error);
   })
 }
+// Aca van los requerimientos minimos para que funcione el Buscador
+// Tiene que validarse teniendo el campo al menos 3 caracteres y si no se cumple salta una alerta por 3 segundos
 
+//if cajaBuscador tiene un numero menor a 3 de caracteres, mostrar una alerta por 3 segundos
 
-// Ahora se configura para que los generos que aparecen en la caja de busqueda busquen las peliculas que les corresponden
+var form = document.querySelector('#form')
+console.log(form);
+form.addEventListener("submit",function(event){
+    console.log('form subido');
+    var input = document.querySelector('#inputField')
+    console.log(input.value);
+    console.log(input.value.length);
+    if (input.value.length <3) {
+      event.preventDefault()
+      setTimeout(function(){ alert("Por favor ingresá 3 caractéres o más para buscar una película"); }, 3000);
+    }
+})
