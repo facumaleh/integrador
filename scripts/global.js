@@ -12,7 +12,9 @@ const body = document.querySelector("body");
 MenuExpandible.addEventListener("click", ()=>{
 	MenuExpandible.classList.toggle("active");
 
-
+//Slide MENU
+slide.classList.toggle("slideIn")
+slideMenu = !sideMenu;
 
 	// DEJAR BODY FIJO
 	body.classList.toggle("bodyHidden");
