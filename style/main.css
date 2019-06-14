@@ -464,45 +464,19 @@ nav a{
 .addBtn .trash:hover{
 	animation: trash 0.5s ease forwards infinite;
 }
-@keyframes trash{
-	0%{
-		transform: rotate(0deg)
-	}
-	33%{
-		transform:rotate(15deg)
-	}
-	66%{
-		transform:rotate(-15deg)
-	}
-	100%{
-		transform: rotate(0deg)
-	}
-}
+
+
 .addBtn .watch{
 	color: #eee;
 
 }
-.addBtn .watch:hover{
-	color: #76FF03;
-	animation: queue 0.8s ease forwards infinite;
-}
-@keyframes queue {
-	0%{
-		transform: translateY(0px);
-	}
-	50%{
-		transform: translateY(-2px)
-	}
-	100%{
-		transform: translateY(2px);
-	}
-}
+
 .addBtn .favorite{
 	color: #eee;
 }
 .addBtn .favorite:hover{
 	color: #e1302a;
-	animation: heart 0.65s ease forwards infinite;
+
 }
 .addBtn .watchMarked{
 	color: #76FF03;
@@ -510,20 +484,7 @@ nav a{
 .addBtn .favoriteMarked{
 	color: #e1302a;
 }
-@keyframes heart {
-	0%{
-		transform:scale(1) rotate(0deg);
-	}
-	50%{
-		transform: scale(1.2) rotate(15deg);
-	}
-	55%{
-		transform: scale(1.2) rotate(15deg);
-	}
-	100%{
-		transform: scale(1) rotate(0deg);
-	}
-}
+
 /* MOVIE / TV SHOW OUTPUT peliculasS END*/
 
 /* Buttons for pages */
@@ -577,22 +538,8 @@ nav a{
 	position: relative;
 	height: 0px;
 	transform:translateY(-30px);
-	animation: test 0.5s ease-in-out forwards;
 }
-@keyframes test {
-	0%{
-		transform: translateY(-30px);
-		height: 0px;
-		opacity: 0;
-		z-index: -10;
-	}
-	100%{
-		transform: translateY(10px);
-		height: 40px;
-		opacity: 1;
-		z-index: 7;
-	}
-}
+
 .container_search #form input{
 	padding: 5px;
 	border-radius: 10px;
