@@ -42,7 +42,7 @@ window.onload = function() {
             <div class="overlay">
             <div class="addBtn">
               <span>
-              
+
               </span>
 
               <span>
@@ -226,8 +226,16 @@ form.addEventListener("submit",function(event){
       pos: 'top-center',
       timeout: 3000
 });
-
-
-
     }
 })
+
+
+//Aca va lo que la persona busco impreso en la pagina
+
+
+function cambiarTexto(){
+
+document.innerHTML.getElementById.innerText('vosBuscaste');
+console.log('cambiarTexto');
+
+}
