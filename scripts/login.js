@@ -2,26 +2,26 @@ document.querySelector("form").addEventListener("submit",function(event){
   event.preventDefault()
 
   // tiene usaurio?
-    var email = window.localStorage.getItem("email");
-    console.log(email);
+    var usuario = window.localStorage.getItem("usuario");
+    console.log(usuario);
   // si tiene comparo con el que ingreso
   // es igual al ingresado , remplazo login por el nombre
-    var emailform= document.getElementById("email").value
-      console.log(emailform);
-    if (emailform === email) {
+    var nuevoUsuario= document.getElementById("usuario").value
+      console.log(nuevoUsuario);
+    if (nuevoUsuario === usuario) {
       // innerHTML capturo login y lo remplazo
       console.log("son iguales");
-      document.getElementById('login').innerText=emailform
+      document.getElementById('login').innerText=nuevoUsuario
 
     }
     else {
       // guardar dato en local storage, set item
-      registerUser(emailform)
+      registerUser(nuevoUsuario)
       console.log("usuario registrado");
     }
-    function registerUser(email){
-        window.localStorage.setItem("email", emailform);
-        return `New user ${email} now registered!`;
+    function registerUser(usuario){
+        window.localStorage.setItem("usuario", nuevoUsuario);
+        return `New user ${nuevoUsuario} now registered!`;
     }
 })
 
