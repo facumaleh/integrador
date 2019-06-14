@@ -25,7 +25,7 @@
 <!-- This is the modal -->
 <div id="modal-example" uk-modal>
 		<div class="uk-modal-dialog uk-modal-body">
-			<form class="modal-content animate" action="/action_page.php">
+			<form class="modal-content animate" action="estrenos.html">
 		<div class="imgcontainer">
 
 			<img src="../images/nacho.jpg" alt="Avatar" class="avatar">
@@ -38,7 +38,7 @@
 			<label for="psw"><b>email</b></label>
 			<input  id="email"type="email" placeholder="Enter email" name="email" required>
 
-			<button type="submit">Login</button>
+			<button  type="submit">Login</button>
 
 		</div>
 
@@ -51,7 +51,7 @@
 
     <!-- barra de navegacion -->
 	<nav>
-			<img style="max-width: 4%;" src="../images/logo.jpg" alt="logo" 
+			<img style="max-width: 4%;" src="../images/logo.jpg" alt="logo"
 <h1 class="Titulo">Pelis Para Todos</h1>
             <!--  Menu -->
 						<div class="menu">
@@ -61,7 +61,7 @@
 
 								 <li class="list"><a href="../favoritas.html">Favoritas</a></li>
 								 <li>	<!-- This is a button toggling the modal -->
-								 <button style="background:lightblue"class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Login</button></li>
+								 <button id="login"style="background:lightblue"class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Login</button></li>
 
 
 
@@ -157,8 +157,18 @@
     </div>
 
 
-<footer>   <button type="button" id="vermas" class="cancelbtn">ver mas</button>
-</footer>
+<button type="button" id="vermas" class="cancelbtn">ver mas</button>
+<!-- Footer -->
+    <footer>
+        <!-- Nombres -->
+        <div class="links">
+        	<h3>Tomas C, Facundo M, Lucas G.</h3>
+        </div>
+        <!-- Credits -->
+        <div class="credits">
+					<a href="https://www.themoviedb.org/"><img src='../images/tmdb.png' width="82" height="86"></a>
+        </div>
+    </footer>
 <!-- Script links -->
 <script src="../scripts/config.js"></script>
 <script src="../scripts/movies/estrenos.js"></script>

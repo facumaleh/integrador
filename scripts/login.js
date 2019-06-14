@@ -11,7 +11,8 @@ document.querySelector("form").addEventListener("submit",function(event){
     if (emailform === email) {
       // innerHTML capturo login y lo remplazo
       console.log("son iguales");
-      document.getElementById('Login').innerText=emailform document.getElementById('Login').innerText=email
+      document.getElementById('login').innerText=emailform
+
     }
     else {
       // guardar dato en local storage, set item
