@@ -32,4 +32,5 @@ const smallLists = document.getElementById("smallScreenList");
 smallLists.addEventListener("click", ()=>{
 	const smallListsDropdown = document.getElementById("myListsDropdown");
 	smallListsDropdown.classList.toggle("drop");
-)}
+})
+})
