@@ -464,20 +464,7 @@ nav a{
 .addBtn .trash:hover{
 	animation: trash 0.5s ease forwards infinite;
 }
-@keyframes trash{
-	0%{
-		transform: rotate(0deg)
-	}
-	33%{
-		transform:rotate(15deg)
-	}
-	66%{
-		transform:rotate(-15deg)
-	}
-	100%{
-		transform: rotate(0deg)
-	}
-}
+
 .addBtn .watch{
 	color: #eee;
 
@@ -486,17 +473,7 @@ nav a{
 	color: #76FF03;
 	animation: queue 0.8s ease forwards infinite;
 }
-@keyframes queue {
-	0%{
-		transform: translateY(0px);
-	}
-	50%{
-		transform: translateY(-2px)
-	}
-	100%{
-		transform: translateY(2px);
-	}
-}
+
 .addBtn .favorite{
 	color: #eee;
 }
@@ -510,20 +487,7 @@ nav a{
 .addBtn .favoriteMarked{
 	color: #e1302a;
 }
-@keyframes heart {
-	0%{
-		transform:scale(1) rotate(0deg);
-	}
-	50%{
-		transform: scale(1.2) rotate(15deg);
-	}
-	55%{
-		transform: scale(1.2) rotate(15deg);
-	}
-	100%{
-		transform: scale(1) rotate(0deg);
-	}
-}
+
 /* MOVIE / TV SHOW OUTPUT peliculasS END*/
 
 /* Buttons for pages */
@@ -534,29 +498,7 @@ nav a{
 	align-items: center;
 	margin-top: 20px;
 }
-#prev, #next {
-	margin: 20px 25px;
-	font-size: 18px;
-	font-weight: bold;
-	font-family: "Montserrat Black", Arial, Helvetica, sans-serif;
-	border:none;
-	border-radius: 3px;
-	background-color: #fff;
-	box-shadow: 0 3px rgba(0,0,0,0.1);
-	color: #2f3640;
-	width: auto;
-	padding: 0 5px;
-	height: 35px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
 
-}
-#prev:hover, #next:hover{
-	color: #333;
-	box-shadow: 0px 2px 15px rgba(0,0,0,0.3);
-}
 /* Movies/Tvshows output - END. */
 #searchedFor{
 	font-family: "Montserrat Black";

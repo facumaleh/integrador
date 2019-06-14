@@ -86,88 +86,7 @@ function getMovie(){
 					info.innerHTML = output;
 				})
 		})
-	//
-	// const movieInfo = axios.get("https://api.themoviedb.org/3/movie/"+movieId+'?api_key='+API_KEY+'&language=es-ES');
-	// const movieCast = axios.get("https://api.themoviedb.org/3/movie/"+movieId+'/credits?api_key='+API_KEY)
-	// Promise.all([movieInfo, movieCast])
-	// 	.then( ([movieInfoResponse, movieCastResponse]) =>{
-	// 		const movie = movieInfoResponse.data;
-	// 		const cast = movieCastResponse.data.cast;
-	// 		const genres = movieInfoResponse.data.genres;
-	// 		cast.length = 5;
-	//
-	// 		//Grab the popularity parameter from the data and rounds it to a whole number%.
-	// 		popularity = movieInfoResponse.data.popularity;
-	// 		popularity = Math.floor(popularity)
-	//
-	// 		//Revenue - dynamically make it format itself into a standard looking currency.
-	// 		let revenue = movieInfoResponse.data.revenue;
-	// 		revenue = new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'EUR'}).format(revenue);
-	//
-	// 		let output = `
-	// 		<div class="moviePage">
-	// 		<div class="poster"><img src="http://image.tmdb.org/t/p/w300/${movie.poster_path}"></div>
-	// 		<div class="info">
-	// 			<h2>${movie.title}</h2>
-	// 			<ul>
-	// 				<li><strong>Elenco:</strong> `;
-	// 				for (let i = 0; i < cast.length; i++) {
-	// 					if (i != cast.length - 1) {
-	// 						output += `${cast[i].name}, `;
-	// 					} else {
-	// 						output += `${cast[i].name}.`;
-	// 					}
-	// 				}
-	// 				output += `</li>
-	// 				<li><strong>Genros:</strong> `;
-	// 				for(let i = 0; i < genres.length; i++){
-	// 					if ( i != genres.length -1){
-	// 						output += `${genres[i].name}, `;
-	// 					} else {
-	// 						output += `${genres[i].name}.`;
-	// 					}
-	// 				}
-	// 				output += `<ul>
-	// 				<li><strong>estreno:</strong> ${movie.release_date}</li>
-	// 				<li><strong>duracion:</strong> ${movie.runtime} (min)</li>
-	// 				<li><strong>Rating:</strong> ${movie.vote_average} / 10 <span id="smallText">(${movie.vote_count} votes)</span></li>
-	// 				<li><strong>recaudacion:</strong> ${revenue}</li>
-	// 				<li><strong>estado:</strong> ${movie.status}</li>
-	// 				<li><strong>Productora:</strong> ${movie.production_companies[0].name}</li>
-	// 			</ul>
-	//
-	// 		</div>
-	// 	</div>
-	// 	<div class="plot">
-	// 		<h3>resumen</h3>
-	// 		<p>${movie.overview}</p>
-	// 	</div>`;
-	//
-	// 	//Targets the "movie" element and appends the output to it.
-	// 	const info = document.getElementById("movie");
-	// 	info.innerHTML = output;
-	//
-	// 	})
-	// 	//If there is an error, show this.
-	// 	.catch ((err)=>{
-	// 		let output = "";
-	// 		output += `<h1 id="errorTitle">SORRY !</h1>
-	// 		<p id="errorText">We could not provide informations about this movie at this particular moment. Be sure to come back again. Thank you for your understanding. </p>
-	// 		<div class="buttons errorBack">
-	// 			<a onclick="goBack()"> Go back </a>
-	// 		</div>`;
-	// 		// Hide elements if theres an error.
-	// 		let info = document.getElementById("movie");
-	// 		info.innerHTML = output;
-	// 		document.getElementById("rec_title").style.display = 'none';
-	// 		document.querySelector(".page").style.display = "none";
-	// 		document.getElementById("recommended").style.display = "none";
-	// 		document.getElementById("trailer").style.display = "none";
-	// 		document.getElementById("trailer_title").style.display = "none";
-	// 		document.getElementById("rec_title").style.display = "none";
-	// 	});
-	//
-
+	
 
 fetch("https://api.themoviedb.org/3/movie/"+movieId+'/videos?api_key='+API_KEY+'&language=es-ES')
 .then(function(response) {
@@ -231,7 +150,7 @@ fetch("https://api.themoviedb.org/3/movie/"+movieId+'/recommendations?api_key='+
 	//If there is an error, it logs it in the console.
 	.catch ((err)=>{
 		let recommended = document.getElementById("recommended");
-	
+
 		 `<div class="recommendations_error">
 			<h3>Perdon! </h3>
 			<br>

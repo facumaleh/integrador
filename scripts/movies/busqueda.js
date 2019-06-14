@@ -42,7 +42,7 @@ window.onload = function() {
             <div class="overlay">
             <div class="addBtn">
               <span>
-                <i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i>
+              
               </span>
 
               <span>
