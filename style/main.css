@@ -464,6 +464,28 @@ nav a{
 .addBtn .trash:hover{
 	animation: trash 0.5s ease forwards infinite;
 }
+<<<<<<< HEAD
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
+=======
+@keyframes trash{
+	0%{
+		transform: rotate(0deg)
+	}
+	33%{
+		transform:rotate(15deg)
+	}
+	66%{
+		transform:rotate(-15deg)
+	}
+	100%{
+		transform: rotate(0deg)
+	}
+}
+>>>>>>> parent of 31874c6... pulliendo detalles css
 @keyframes trash{
 	0%{
 		transform: rotate(0deg)
@@ -482,10 +504,31 @@ nav a{
 	color: #eee;
 
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 31874c6... pulliendo detalles css
 .addBtn .watch:hover{
 	color: #76FF03;
 	animation: queue 0.8s ease forwards infinite;
 }
+<<<<<<< HEAD
+=======
+>>>>>>> master
+
+=======
+@keyframes queue {
+	0%{
+		transform: translateY(0px);
+	}
+	50%{
+		transform: translateY(-2px)
+	}
+	100%{
+		transform: translateY(2px);
+	}
+}
+>>>>>>> parent of 31874c6... pulliendo detalles css
 @keyframes queue {
 	0%{
 		transform: translateY(0px);
