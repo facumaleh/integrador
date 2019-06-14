@@ -196,7 +196,7 @@ window.onload = function() {
               </div>
       `;
       }
-    }
+
       }
 
     })
