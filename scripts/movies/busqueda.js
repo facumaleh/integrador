@@ -212,7 +212,7 @@ window.onload = function() {
 
 
 // ** GUARDAR EN LISTA DE FAVORITOS **
-//Add movie to watch list.
+//agregar a watch list.  AL FINAL NO HAY WATCHLIST
 function addToList(id){
     let storedId = JSON.parse(localStorage.getItem("movies")) || [];
 	if(storedId.indexOf(id) === -1){
@@ -226,7 +226,7 @@ function addToList(id){
             added.classList.remove("added");
         }, 1500);
 	} else {
-		//Notification that it has already been added to the watchlist.
+		//notificacion de que se metio a la watchlist.
         const alreadyStored = document.getElementById("alreadyStored");
         alreadyStored.innerHTML = "Already in watchlist !"
         alreadyStored.classList.add("alreadyStored");
@@ -306,6 +306,9 @@ const API_KEY = "07be10560c3c4cf68794acc1da83356b";
     console.log("The error was: "+ error);
   })
 }
+
+
+
 // Aca van los requerimientos minimos para que funcione el Buscador
 // Tiene que validarse teniendo el campo al menos 3 caracteres y si no se cumple salta una alerta por 3 segundos
 
@@ -328,6 +331,9 @@ form.addEventListener("submit",function(event){
 });
     }
 })
+
+//TERMINA NOTIFICACION POR ERROR EN BUSQUEDA
+
 
 
 //Aca va lo que la persona busco impreso en la pagina
