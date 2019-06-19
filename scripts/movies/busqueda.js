@@ -132,6 +132,7 @@ window.onload = function() {
       id = JSON.stringify(id);
       let favoriteMovies = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
       if(favoriteMovies.indexOf(id) === -1){
+        let output = "";
         output += `
         <div class="peliculas">
           <div class="overlay">
@@ -311,7 +312,6 @@ const API_KEY = "07be10560c3c4cf68794acc1da83356b";
 
 // Aca van los requerimientos minimos para que funcione el Buscador
 // Tiene que validarse teniendo el campo al menos 3 caracteres y si no se cumple salta una alerta por 3 segundos
-
 //if cajaBuscador tiene un numero menor a 3 de caracteres, mostrar una alerta por 3 segundos
 
 var form = document.querySelector('#form')
@@ -336,12 +336,12 @@ form.addEventListener("submit",function(event){
 
 
 
-//Aca va lo que la persona busco impreso en la pagina
-
+// Aca va lo que la persona busco impreso en la pagina
 
 function cambiarTexto(){
+var buscador = new URLSearchParams(window.location.search).get('buscador')
+document.querySelector('div.busqueda').innerHTML += buscador
 
-document.innerHTML.getElementById.innerText('vosBuscaste');
-console.log('cambiarTexto');
 
+console.log(cambiarTexto);
 }
