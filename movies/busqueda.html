@@ -139,11 +139,15 @@
 								 </div>
 						 </nav>
 						 <!-- Submenu -->
- <!-- Spinner -->
+
+
+<!-- Spinner -->
+
 
 <!-- Container -->
 	<div class="container_search">
 			<form id="form" autocomplete="off" action="busqueda.html" class="formBuscador">
+
           <input class="cajaBuscador" type="text" id="inputField" name="buscador" required placeholder="Buscá una peli!">
 
 			 </form>
@@ -175,7 +179,11 @@
 		   </div>
 	</div>
 
+<!-- Aca tiene que ir el texto de vos buscaste x cosa -->
 
+<div class=>
+	<h2 class='vosBuscaste' id="vosBuscaste">Estos son los resultados para: </h2>
+</div>
 
 	    <!-- Notifications -->
 		<div class="notification" id="added"></div>
@@ -196,7 +204,7 @@
         <button id="scrollToTop"><i class="material-icons upArrow">expand_less</i></button>
 
 
-	<div class="showcase">
+	<div class="showcase" id="showcaseByID">
 		<h1 id="searchedFor"></h1>
 		<div id="movies" class="moviesRows"></div>
 	</div>
@@ -211,14 +219,31 @@
 		<!-- Footer -->
     <footer>
         <!-- Links -->
-        <div class="links">
-        	<h3>Tomas C, Facundo M, Lucas G.</h3>
-        </div>
-        <!-- Credits -->
-        <div class="credits">
+
+			<div class="footer">
+				<div class="links">
+					<h3>Tomas C, Facundo M, Lucas G.</h3>
+				</div>
+				<!-- Credits -->
+				<div class="credits">
 					<a href="https://www.themoviedb.org/"><img src='../images/logotmdb.png' width="82" height="86"></a>
-        </div>
+				</div>
+			</div>
+
     </footer>
+
+
+		<style>
+		.footer {
+
+		  left: 0;
+		  bottom: 0;
+		  width: 100%;
+		  background-color: white;
+		  color: white;
+		  text-align: center;
+		}
+		</style>
 
 <!-- Script links -->
 <script src="../scripts/config.js"></script>
