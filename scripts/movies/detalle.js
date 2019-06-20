@@ -86,7 +86,7 @@ function getMovie(){
 					info.innerHTML = output;
 				})
 		})
-	
+
 
 fetch("https://api.themoviedb.org/3/movie/"+movieId+'/videos?api_key='+API_KEY+'&language=es-ES')
 .then(function(response) {
