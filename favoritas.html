@@ -11,68 +11,62 @@
     <link rel="stylesheet" href="style/fonts.css">
 </head>
 <body>
-    <!--Barra de navegacion -->
-	<nav>
-    	<img style="max-width: 4%;" src="images/logo.jpg" alt="logo"
-<h1 class="Titulo">Pelis Para Todos</h1>
-    <div class="menu">
+      <!-- barra de navegacion -->
+  	<nav>
+  			<img style="max-width: 4%;" src="images/logo.jpg" alt="logo"
+  <h1 class="Titulo">Pelis Para Todos</h1>
+              <!--  Menu -->
+  						<div class="menu">
+  								<ul>
+  								 <li class="list"><a href="../favoritas.html">Favoritas</a></li>
+  								 <li>	<!-- This is a button toggling the modal -->
 
-        <ul>
-         <li class="list"><a href="movies/estrenos.html">PELICULAS</a></li>
+  		 </ul>
+  						</div>
+  								<!-- navbar pantalla chica -->
+  								<div class="MenuExpandible">
+  									<span></span>
+  									<span></span>
+  									<span></span>
+  								</div>
+  								<!-- navegacion pantalla chica -->
+  								<div class="slide">
+  									<ul>
+
+  										<li id="PeliculasChicas">Peliculas<span><i class="ion-chevron-down"></i></span>
+  											<ul id="moviesDropdown">
+  														<li><a href="movies/busqueda.html">buscar peliculas</a></li>
+  														<li><a href="movies/mejorespuntuadas.html">Mejores Puntuadas</a></li>
+  														<li><a href="movies/populares.html">Peliculas populares</a></li>
+  														<li><a href="movies/estrenos.html">ultimas peliculas</a></li>
+  											</ul>
+  										</li>
+
+  										<li class="list" id="smallScreenList">Mi Lista<span class="drop"><i class="ion-chevron-down"></i></span></a>
+  																 <ul id="myListsDropdown">
+
+  																		<li><a href="favoritas.html">Favoritas</a>
+  																 </ul>
+  									 </li>
+
+  								</div>
+  							</nav>
+  							<!-- Submenu -->
+  										<div class="submenu">
+  											<li><a href="movies/busqueda.html">buscar peliculas</a></li>
+  											<li><a href="movies/mejorespuntuadas.html">Mejores Puntuadas</a></li>
+  										 <li><a href="movies/populares.html">Peliculas populares</a></li>
+  										 <li><a href="movies/estrenos.html">ultimas peliculas</a></li>
+
+  										</div>            </div>
+                     <!-- The MenuExpandible menu for small screens -->
+                     <div class="MenuExpandible">
+                         <span></span>
+                         <span></span>
+                         <span></span>
+                     </div>
 
 
-     </ul>
-    </div>
-        <!-- menu -->
-        <div class="MenuExpandible">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <!-- menu de costado -->
-        <div class="slide">
-          <ul>
-
-            <li id="PeliculasChicas">Peliculas<span><i class="ion-chevron-down"></i></span>
-
-            </li>
-
-            <li class="list" id="smallScreenList">Mi Lista<span class="drop"><i class="ion-chevron-down"></i></span></a>
-                         <ul id="myListsDropdown">
-                            <li><a href="favoritas.html">Favoritas</a>
-                         </ul>
-           </li>
-
-          </ul>
-        </div>
-      </nav>
-
-               <!-- menu de costado pantalla chica -->
-               <div class="MenuExpandible">
-                   <span></span>
-                   <span></span>
-                   <span></span>
-               </div>
-               <div class="slide">
-                   <ul>
-
-                     <li id="PeliculasChicas">Peliculas<span><i class="ion-chevron-down"></i></span>
-                       <ul id="moviesDropdown">
-                             <li><a href="movies/busqueda.html">Buscador</a></li>
-                             <li><a href="movies/mejorespuntuadas.html">Mejores puntuadas</a></li>
-                             <li><a href="movies/populares.html">Populares</a></li>
-                             <li><a href="movies/estrenos.html">Estrenos</a></li>
-                       </ul>
-                     </li>
-
-                       <li class="list" id="smallScreenList">Mi Lista<span class="drop"><i class="ion-chevron-down"></i></span></a>
-                        <ul id="myListsDropdown">
-
-                        </ul>
-                        </li>
-                   </ul>
-               </div>
-           </nav>
 <!-- Container -->
 	<div class="container">
         <h1>Favoritas</h1>

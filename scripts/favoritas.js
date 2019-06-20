@@ -60,7 +60,7 @@ function openRecommendMoviesBox(){
   function movieSplice(id){
     let storedId = JSON.parse(localStorage.getItem("favoriteMovies")) ||  [];
     let index = storedId.indexOf(id);
-    storedId.splice(index, 1);
+    storedId.splice(index, 1)
     localStorage.setItem("favoriteMovies", JSON.stringify(storedId));
 
     //NOTIFICACION DE QUE SACAS UNA PELI DE LA WATCHLIST

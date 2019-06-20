@@ -131,28 +131,10 @@ a {
 	justify-content: center;
 	margin-bottom: 20px;
 }
-#prev, #next {
-	margin: 10px 25px;
-	font-size: 18px;
-	font-weight: bold;
-	font-family: "Montserrat Black", Arial, Helvetica, sans-serif;
-	border:none;
-	border-radius: 3px;
-	background-color: #fff;
-	box-shadow: 0 3px rgba(0,0,0,0.1);
-	color: #2f3640;
-	width: auto;
-	padding: 0 5px;
-	height: 35px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
+
 
 }
-#prev:hover, #next:hover{
-	color: #333;
-	box-shadow: 0px 2px 15px rgba(0,0,0,0.3);
+
 }
 /* trailer */
 #trailer{
