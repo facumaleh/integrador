@@ -936,8 +936,14 @@ nav a{
 	#movies, #tvShows{
 		grid-template-columns: repeat(3,1fr);
 	}
+	nav{
+		height: 4%;
+	}
 }
 @media (max-width: 1024px){
+	nav{
+		height: 5%;
+	}
 	.peliculas .overlay{
 		position: absolute;
 		top: 0;
