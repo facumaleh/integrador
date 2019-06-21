@@ -7,7 +7,7 @@ const container = document.querySelector(".container");
 spinner.style.display = "none";
 container.style.display = "none";
 
-//Gets the movie ID stored in the Session storage and uses it to display information about
+//Agarra el ID lo guarda en el locoal storage y lo usa para mostrar la info de la peli que tiene ese id
 //the movie that has that ID.
 function getMovie(){
 	spinner.style.display = "block";
@@ -34,11 +34,11 @@ function getMovie(){
 					const genres = movieInfoResponse.genres;
 					cast.length = 5;
 
-					//Grab the popularity parameter from the data and rounds it to a whole number%.
+					//Redondea el numero de popularidad de la pelicula
 					popularity = movieInfoResponse.popularity;
 					popularity = Math.floor(popularity)
 
-					//Revenue - dynamically make it format itself into a standard looking currency.
+
 					let revenue = movieInfoResponse.revenue;
 					revenue = new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'EUR'}).format(revenue);
 
@@ -81,7 +81,7 @@ function getMovie(){
 						<p>${movie.overview}</p>
 					</div>`;
 
-					//Targets the "movie" element and appends the output to it.
+
 					const info = document.getElementById("movie");
 					info.innerHTML = output;
 				})
@@ -97,7 +97,7 @@ fetch("https://api.themoviedb.org/3/movie/"+movieId+'/videos?api_key='+API_KEY+'
   let movie = response.results;
 	let trailer = response.results;
 
-	// RANDOM NUMBER FOR TRAILER OUTPUT (ON EVERY PAGE LOAD, A DIFFERENT TRAILER WILL SHOW).
+	// Se muestra un trailer distinto cada vez
 	let min = 0;
 	// -1 so it takes into account if theres only 1 item in the trailer length( at position 0).
 	let max = trailer.length - 1;
@@ -109,7 +109,7 @@ fetch("https://api.themoviedb.org/3/movie/"+movieId+'/videos?api_key='+API_KEY+'
 		<div class="video">
 		<iframe width="620" height="400" src="https://www.youtube.com/embed/${trailer[trailerNumber].key}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 		</div>`;
-	// Display the trailer.
+	// Muestra el trailer
 	let video = document.getElementById("trailer");
 	video.innerHTML = output;
 })
@@ -141,13 +141,13 @@ fetch("https://api.themoviedb.org/3/movie/"+movieId+'/recommendations?api_key='+
 			</div>
 			`;
 		}
-		//Target "recommended" and output the similar movies into it.
+
 		let recommended = document.getElementById("recommended");
 		recommended.innerHTML = output;
-		// Hide the previous page button of the first page.
+
 		document.getElementById("prev").style.display = "none";
 	})
-	//If there is an error, it logs it in the console.
+
 	.catch ((err)=>{
 		let recommended = document.getElementById("recommended");
 
@@ -164,12 +164,12 @@ function goBack(){
 window.close();
 }
 
-// Take user to details page.
+// Lleva al usuario a la pagina de detalles
 function movieSelected(id){
 sessionStorage.setItem("movieId", id);
 location.replace("movie-page.html");
 return false;
 }
 
-//Page number.
+//Numero de pagina
 let pageNum = 1;

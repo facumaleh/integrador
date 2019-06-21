@@ -3,7 +3,7 @@ const API_KEY = config.API_KEY;
 // => es una function
 
 
-// Pages.
+
 const pages = document.querySelector(".pages");
 pages.style.display = "none";
 
@@ -66,14 +66,14 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key="+API_KEY+'&language
 })
 
 
-//Takes the user to detailed info page.
+//te lleva a detalles de la pelicula
 function movieSelected(id){
 sessionStorage.setItem("movieId", id);
 window.open("../detalle.html");
 return false;
 }
 
-//Creates a variable for the page number to make it dynamic.
+
 let pageNum = 1;
 
 
@@ -84,14 +84,14 @@ let pageNum = 1;
 
 
 
-//Add movie to favorite movies.
+//agrega peliculas a favoritos
 function favorite(id){
     let storedId = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
 	if(storedId.indexOf(id) === -1){
 		storedId.push(id);
 		localStorage.setItem("favoriteMovies", JSON.stringify(storedId));
 
-		//Notification that it will be added to Watchlist.
+		//Notifiacion de que va a ser agregada a favoritos
         const added = document.getElementById("added");
         added.innerHTML = "Added to Favorites !";
         added.classList.add("added");
@@ -100,7 +100,7 @@ function favorite(id){
             added.classList.remove("added");
         }, 1500);
 	} else {
-		//Notification that it has already been added to the watchlist.
+		//Notificacion de que fue agregada a favoritos
 		const alreadyStored = document.getElementById("alreadyStored");
         alreadyStored.innerHTML = "Already in favorites !";
         alreadyStored.classList.add("alreadyStored");

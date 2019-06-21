@@ -126,7 +126,7 @@ function favorite(id){
 	if(storedId.indexOf(id) === -1){
 		storedId.push(id);
 		localStorage.setItem("favoriteMovies", JSON.stringify(storedId));
-		//Notification that it will be added to Watchlist.
+		//notificacion que va a ser agregada a favoritos
         const added = document.getElementById("added");
         added.innerHTML = "Added to Favorites !";
         added.classList.add("added");
@@ -134,7 +134,7 @@ function favorite(id){
             added.classList.remove("added");
         }, 1500);
 	} else {
-		//Notification that it has already been added to the watchlist.
+		//notificacion que ya fue agregada a favoritos
 		const alreadyStored = document.getElementById("alreadyStored");
         alreadyStored.innerHTML = "Already in favorites !";
         alreadyStored.classList.add("alreadyStored");
@@ -144,7 +144,7 @@ function favorite(id){
 	}
 }
 
-//Get the movie ID, set it to storageSession and then re-direct the user to movie details page.
+//Agarra el movie id y lo setea en el local storage
 function movieSelected(id){
     sessionStorage.setItem("movieId", id);
     window.open("../detalle.html");

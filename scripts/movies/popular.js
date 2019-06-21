@@ -19,7 +19,7 @@ window.onload = function getMovies(){
 		pages.style.display = "flex";
 	}, 1000);
 
-	//Get the API.
+
 	axios.get("https://api.themoviedb.org/3/movie/popular?api_key="+API_KEY+'&language=es-ES&page=1')
 		.then ((response)=>{
 			console.log(response);
@@ -67,11 +67,11 @@ window.onload = function getMovies(){
 				</div>`;
 				}
 			}
-			// Display movies.
+			// Display a las peliculas
 			let movieInfo = document.getElementById("movies");
 			movieInfo.innerHTML = output;
 
-			//Display pages buttons.
+			//Display a los botons
             let totalPages = response.data.total_pages;
 			let pages = document.querySelector(".pages");
 
@@ -84,7 +84,7 @@ window.onload = function getMovies(){
 			console.log(err);
 		})
 }
-// Take user to detailed info page.
+// lleva al usuaruo a detalles
 function movieSelected(id){
 	sessionStorage.setItem("movieId", id);
 	window.open("../detalle.html");
@@ -92,13 +92,13 @@ function movieSelected(id){
 }
 
 
-//Add movie to favorite movies.
+//agrega peliculas a favoritos
 function favorite(id){
     let storedId = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
 	if(storedId.indexOf(id) === -1){
 		storedId.push(id);
 		localStorage.setItem("favoriteMovies", JSON.stringify(storedId));
-		//Notification that it will be added to Watchlist.
+		//notificacion que la pelicula esta siendo agregada
         const added = document.getElementById("added");
         added.innerHTML = "Added to Favorites !";
         added.classList.add("added");
@@ -106,7 +106,7 @@ function favorite(id){
             added.classList.remove("added");
         }, 1500);
 	} else {
-		//Notification that it has already been added to the watchlist.
+		//notificacion que fue agregada
 		const alreadyStored = document.getElementById("alreadyStored");
         alreadyStored.innerHTML = "Already in favorites !";
         alreadyStored.classList.add("alreadyStored");
