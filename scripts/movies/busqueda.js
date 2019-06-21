@@ -49,7 +49,7 @@ if (busco==null) {
             <div class="overlay">
             <div class="addBtn">
               <span>
-                <i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i>
+
               </span>
 
               <span>
@@ -84,7 +84,7 @@ if (busco==null) {
                     <div class="overlay">
                     <div class="addBtn">
                       <span>
-                        <i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i>
+
                       </span>
 
                       <span>
@@ -119,29 +119,6 @@ if (busco==null) {
 
 
 // ** GUARDAR EN LISTA DE FAVORITOS **
-//Add movie to watch list.
-function addToList(id){
-    let storedId = JSON.parse(localStorage.getItem("movies")) || [];
-	if(storedId.indexOf(id) === -1){
-		storedId.push(id);
-		localStorage.setItem("movies", JSON.stringify(storedId));
-		//Notification that it will be added to Watchlist.
-        const added = document.getElementById("added");
-        added.innerHTML = "Added to watchlist !"
-        added.classList.add("added");
-        setTimeout(() => {
-            added.classList.remove("added");
-        }, 1500);
-	} else {
-		//Notification that it has already been added to the watchlist.
-        const alreadyStored = document.getElementById("alreadyStored");
-        alreadyStored.innerHTML = "Already in watchlist !"
-        alreadyStored.classList.add("alreadyStored");
-        setTimeout(() => {
-            alreadyStored.classList.remove("alreadyStored");
-        }, 1500);
-	}
-}
 
 //Agregar pelicula a favoritos
 function favorite(id){
@@ -236,4 +213,3 @@ form.addEventListener("submit",function(event){
 
     }
 })
- 
