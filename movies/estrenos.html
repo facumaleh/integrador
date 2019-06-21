@@ -16,8 +16,63 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
 
+		<style>
+			/* Center the loader */
+			#loader {
+			  position: absolute;
+			  left: 50%;
+			  top: 50%;
+			  z-index: 1;
+			  width: 150px;
+			  height: 150px;
+			  margin: -75px 0 0 -75px;
+			  border: 16px solid #f3f3f3;
+			  border-radius: 50%;
+			  border-top: 16px solid #333;
+			  width: 120px;
+			  height: 120px;
+			  -webkit-animation: spin 1.5s linear infinite;
+			  animation: spin 1.5s linear infinite;
+			}
+
+			@-webkit-keyframes spin {
+			  0% { -webkit-transform: rotate(0deg); }
+			  100% { -webkit-transform: rotate(360deg); }
+			}
+
+			@keyframes spin {
+			  0% { transform: rotate(0deg); }
+			  100% { transform: rotate(360deg); }
+			}
+
+			/* Add animation to "page content" */
+			.animate-bottom {
+			  position: relative;
+			  -webkit-animation-name: animatebottom;
+			  -webkit-animation-duration: 1s;
+			  animation-name: animatebottom;
+			  animation-duration: 1s
+			}
+
+			@-webkit-keyframes animatebottom {
+			  from { bottom:-100px; opacity:0 }
+			  to { bottom:0px; opacity:1 }
+			}
+
+			@keyframes animatebottom {
+			  from{ bottom:-100px; opacity:0 }
+			  to{ bottom:0; opacity:1 }
+			}
+
+			#myDiv {
+			  display: none;
+			  text-align: center;
+			}
+		</style>
+
 </head>
-<body>
+<body onload="myFunction()" style="margin:0;">
+
 
 
 
@@ -57,7 +112,7 @@
 				<h1 class="Titulo">Pelis Para Todos</h1>
 		</a>
 
-			<style>
+		<style>
 			a:hover{
 				text-decoration: none;
 			}
@@ -77,7 +132,7 @@
 					white-space: nowrap;
 			}
 
-			</style>
+		</style>
 
             <!--  Menu -->
 						<div class="menu">
@@ -166,12 +221,22 @@
                </nav>
                <!-- Submenu -->
 
-<!-- Spinner -->
-<div class="spinner"></div>
+
 <!-- Container -->
 	<div class="container">
 		<h1>ESTRENOS</h1>
     </div>
+
+		<br><br><br>
+
+<!-- Loader -->
+
+		<div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+
+
+
     <!-- Notificaciones -->
     <div class="notification" id="added"></div>
     <div class="notification" id="alreadyStored"></div>
@@ -185,8 +250,28 @@
 <!-- Footer -->
     </footer>
 
-<footer>   <button type="button" id="vermas" class="cancelbtn">ver mas</button>
+<footer>
+	 <button type="button" id="vermas" class="cancelbtn">Ver mas</button>
 </footer>
+
+
+
+</div>
+
+<script>
+	var myVar;
+
+	function myFunction() {
+		myVar = setTimeout(showPage, 1000);
+	}
+
+	function showPage() {
+		document.getElementById("loader").style.display = "none";
+		document.getElementById("myDiv").style.display = "block";
+	}
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!-- Footer -->
 <footer>
 		<!-- Links -->
