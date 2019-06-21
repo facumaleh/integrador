@@ -11,75 +11,97 @@
     <link rel="stylesheet" href="style/fonts.css">
 </head>
 <body>
-    <!--Barra de navegacion -->
-	<nav>
-    	<img style="max-width: 4%;" src="images/logo.jpg" alt="logo"
-<h1 class="Titulo">Pelis Para Todos</h1>
-    <div class="menu">
-
-        <ul>
-         <li class="list"><a href="movies/estrenos.html">PELICULAS</a></li>
+      <!-- barra de navegacion -->
+  	<nav>
+  			<img style="max-width: 4%;" src="images/logo.jpg" alt="logo">
 
 
-     </ul>
-    </div>
-        <!-- menu -->
-        <div class="MenuExpandible">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <!-- menu de costado -->
-        <div class="slide">
-          <ul>
+        <a href="movies/estrenos.html">
+    			<h1 class="Titulo">Pelis Para Todos</h1>
+    	</a>
 
-            <li id="PeliculasChicas">Peliculas<span><i class="ion-chevron-down"></i></span>
+    		<style>
+        a:hover{
+  				text-decoration: none;
+  			}
 
-            </li>
+        .Titulo{
+      		font-family: arial;
+      			text-align: center;
+      	    display: block;
+      	    font-size: 2em;
+      	    margin-block-start: 0.67em;
+      	    margin-block-end: 0.67em;
+      	    margin-inline-start: 0px;
+      	    margin-inline-end: 0px;
+            margin-left: auto;
+            margin-right: auto;
+      	    font-weight: bold;
+      			white-space: nowrap;
+      	}
 
-            <li class="list" id="smallScreenList">Mi Lista<span class="drop"><i class="ion-chevron-down"></i></span></a>
-                         <ul id="myListsDropdown">
-                            <li><a href="favoritas.html">Favoritas</a>
-                         </ul>
-           </li>
+    		</style>
 
-          </ul>
-        </div>
-      </nav>
 
-               <!-- menu de costado pantalla chica -->
-               <div class="MenuExpandible">
-                   <span></span>
-                   <span></span>
-                   <span></span>
-               </div>
-               <div class="slide">
-                   <ul>
+              <!--  Menu -->
+  						<div class="menu">
+  								<ul>
+  								 <li class="list"><a href="favoritas.html">Favoritas</a></li>
+  								 <li>	<!-- Boton para activar el modal -->
 
-                     <li id="PeliculasChicas">Peliculas<span><i class="ion-chevron-down"></i></span>
-                       <ul id="moviesDropdown">
-                             <li><a href="movies/busqueda.html">Buscador</a></li>
-                             <li><a href="movies/mejorespuntuadas.html">Mejores puntuadas</a></li>
-                             <li><a href="movies/populares.html">Populares</a></li>
-                             <li><a href="movies/estrenos.html">Estrenos</a></li>
-                       </ul>
-                     </li>
+  		 </ul>
+  						</div>
+  								<!-- navbar pantalla chica -->
+  								<div class="MenuExpandible">
+  									<span></span>
+  									<span></span>
+  									<span></span>
+  								</div>
+  								<!-- navegacion pantalla chica -->
+  								<div class="slide">
+  									<ul>
 
-                       <li class="list" id="smallScreenList">Mi Lista<span class="drop"><i class="ion-chevron-down"></i></span></a>
-                        <ul id="myListsDropdown">
+  										<li id="PeliculasChicas">Peliculas<span><i class="ion-chevron-down"></i></span>
+  											<ul id="moviesDropdown">
+  														<li><a href="movies/busqueda.html">buscar peliculas</a></li>
+  														<li><a href="movies/mejorespuntuadas.html">Mejores Puntuadas</a></li>
+  														<li><a href="movies/populares.html">Peliculas populares</a></li>
+  														<li><a href="movies/estrenos.html">ultimas peliculas</a></li>
+  											</ul>
+  										</li>
 
-                        </ul>
-                        </li>
-                   </ul>
-               </div>
-           </nav>
+  										<li class="list" id="smallScreenList">Mi Lista<span class="drop"><i class="ion-chevron-down"></i></span></a>
+  																 <ul id="myListsDropdown">
+
+  																		<li><a href="favoritas.html">Favoritas</a>
+  																 </ul>
+  									 </li>
+
+  								</div>
+  							</nav>
+  							<!-- Submenu -->
+  										<div class="submenu">
+  											<li><a href="movies/busqueda.html">buscar peliculas</a></li>
+  											<li><a href="movies/mejorespuntuadas.html">Mejores Puntuadas</a></li>
+  										 <li><a href="movies/populares.html">Peliculas populares</a></li>
+  										 <li><a href="movies/estrenos.html">ultimas peliculas</a></li>
+
+  										</div>            </div>
+                     <!-- Menu expandible para pantallas chicas (mobile) -->
+                     <div class="MenuExpandible">
+                         <span></span>
+                         <span></span>
+                         <span></span>
+                     </div>
+
+
 <!-- Container -->
 	<div class="container">
         <h1>Favoritas</h1>
     </div>
 
 
-<!-- Showcase - lista mejres puntuadas -->
+<!-- Showcase - lista favs -->
 	<div class="showcase">
 		<!-- OUTPUT DE PELICULAS -->
         <h2>PELICULAS</h2>
@@ -109,7 +131,7 @@
       </div>
       <!-- Credits -->
       <div class="credits">
-        <a href="https://www.themoviedb.org/"><img src='../images/logotmdb.png' width="82" height="86"></a>
+        <a href="https://www.themoviedb.org/"><img src='images/logotmdb.png' width="82" height="86"></a>
       </div>
     </div>
 
@@ -122,7 +144,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: white;
+    background-color: #b8d4f2;
     color: white;
     text-align: center;
   }
@@ -131,6 +153,7 @@
 <script src="scripts/config.js"></script>
 <script src="scripts/global.js"></script>
 <script src="scripts/favoritas.js"></script>
+<script src="scripts/login.js"></script>
 <!-- Axios link -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>

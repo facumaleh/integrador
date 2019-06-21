@@ -17,8 +17,8 @@
 </head>
 <body>
 
-	<!-- This is the modal -->
-	<!-- This is the modal -->
+
+	<!-- Este es el modal del login -->
 	<div id="modal-example" uk-modal>
 	    <div class="uk-modal-dialog uk-modal-body">
 				<form class="modal-content animate" action="/action_page.php">
@@ -51,16 +51,47 @@
 
 <!-- barra de navegacion -->
 <nav>
-	<img style="max-width: 4%;" src="../images/logo.jpg" alt="logo"
-<h1 class="Titulo">Pelis Para Todos</h1>
-					<!--  Menu -->
+
+	<img style="max-width: 4%;" src="../images/logo.jpg" alt="logo">
+
+
+
+	<a href="estrenos.html">
+		<h1 class="Titulo">Pelis Para Todos</h1>
+	</a>
+
+	<style>
+	a:hover{
+		text-decoration: none;
+	}
+
+	.Titulo{
+		font-family: arial;
+			text-align: center;
+	    display: block;
+	    font-size: 2em;
+	    margin-block-start: 0.67em;
+	    margin-block-end: 0.67em;
+	    margin-inline-start: 0px;
+	    margin-inline-end: 0px;
+			margin-left: auto;
+			margin-right: auto;
+	    font-weight: bold;
+			white-space: nowrap;
+	}
+
+
+	</style>
+
+
+					<!--  Menu lateral (para mobile)-->
 					<div class="menu">
 							<ul>
 
 
 
 							 <li class="list"><a href="../favoritas.html">Favoritas</a></li>
-							 <li>	<!-- This is a button toggling the modal -->
+							 <li>	<!-- boton para el modal -->
 							  <button id="login"style="background:lightblue"class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Login</button></li>
 
 
@@ -103,7 +134,7 @@
 									 <li><a href="estrenos.html">ultimas peliculas</a></li>
 
 									</div>            </div>
-								 <!-- The MenuExpandible menu for small screens -->
+								 <!-- Menu expandible para mobile -->
 								 <div class="MenuExpandible">
 										 <span></span>
 										 <span></span>
@@ -156,40 +187,31 @@
 				<select id="selectedGenres" class="listaGenres">
 					<option>SELECT GENRE </option>
 
-					<!-- <option id="28" class="tag">Action</option>
-					<option id="12" class="tag">Adventure</option>
-					<option id="16" class="tag">Animation</option>
-					<option id="35" class="tag">Comedy</option>
-					<option id="80" class="tag">Crime</option>
-					<option id="99" class="tag">Documentary</option>
-					<option id="18" class="tag">Drama</option>
-					<option id="10751" class="tag">Family</option>
-					<option id="14" class="tag">Fantasy</option>
-					<option id="36" class="tag">History</option>
-					<option id="27" class="tag">Horror</option>
-					<option id="10402" class="tag">Music</option>
-					<option id="9648" class="tag">Mystery</option>
-					<option id="10749" class="tag">Romance</option>
-					<option id="878" class="tag">Sci-Fi</option>
-					<option id="53" class="tag">Thriller</option>
-					<option id="10752" class="tag">War</option>
-					<option id="37" class="tag">Western</option>
-					<option id="10770" class="tag">TV Movie</option> -->
 				</select>
 		   </div>
 	</div>
 
-<!-- Aca tiene que ir el texto de vos buscaste x cosa -->
-
-<div class=>
-	<h2 class='vosBuscaste' id="vosBuscaste">Estos son los resultados para: </h2>
+<!-- Aca tiene que ir el texto de VOS BUSCASTE X PELICULA -->
+<br>
+<div class="busqueda">
+	<h2 class='vosBuscaste' id="vosBuscaste"> </h2>
 </div>
 
-	    <!-- Notifications -->
+<style>
+	.vosBuscaste{
+				font-weight: bold;
+		    text-transform: uppercase;
+    		font-family: "Montserrat Medium";
+				font-size: 20px;
+				margin-left: 10%;
+	}
+</style>
+
+	    <!-- Notificaciones para el storage -->
 		<div class="notification" id="added"></div>
 		<div class="notification" id="alreadyStored"></div>
 
-		<!-- Modal box -->
+		<!-- caja del modal -->
 		<div class="modal">
 
 			<div class="modal_container">
@@ -200,7 +222,7 @@
 			</div>
 		</div>
 
-		<!-- Smooth scroll to top button -->
+		<!-- Scroll to top (al final no aparece) -->
         <button id="scrollToTop"><i class="material-icons upArrow">expand_less</i></button>
 
 
@@ -208,12 +230,11 @@
 		<h1 id="searchedFor"></h1>
 		<div id="movies" class="moviesRows"></div>
 	</div>
-	<!-- Random movie container -->
+	<!-- Pelicula aleatoria (no aparece al final)-->
 	<div class="randomContainer"></div>
-	<!-- Buttons for Pages -->
+	<!-- paso de pagina -->
 	<div class="pages">
-        <button id="prev" title="Previous page">ANTERIOR</button>
-		<button id="next" title="Next page">PROXIMO</button>
+
     </div>
 
 		<!-- Footer -->
@@ -239,7 +260,7 @@
 		  left: 0;
 		  bottom: 0;
 		  width: 100%;
-		  background-color: white;
+		  background-color: #b8d4f2;
 		  color: white;
 		  text-align: center;
 		}

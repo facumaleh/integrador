@@ -2,19 +2,19 @@
 const API_KEY = config.API_KEY;
 
 //Define "spinner" and set it to display none.
-const spinner = document.querySelector(".spinner");
-spinner.style.display = "none";
+// const spinner = document.querySelector(".spinner");
+// spinner.style.display = "none";
 
 
 //Pages
 
 
 //Run "getMovies()" on page load.
-window.onload = function getMovies(){
-	spinner.style.display = "block";
-	setTimeout => {
-
-	}, 1000;
+// window.onload = function getMovies(){
+// 	spinner.style.display = "block";
+// 	setTimeout => {
+//
+// 	}, 1000;
 
 	//Get the API.
 
@@ -79,7 +79,7 @@ window.onload = function getMovies(){
 		.catch( (err) =>{
 			console.log(err);
 		})
-}
+
 
 // 	axios.get("https://api.themoviedb.org/3/movie/now_playing?api_key="+API_KEY+'&language=es-ES&page=1&region=US')
 // 		.then( (response) =>{

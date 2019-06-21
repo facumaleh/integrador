@@ -11,8 +11,36 @@
 <body>
 <!-- barra de navegacion -->
 <nav class="shadowMenu">
-		<img style="max-width: 4%;" src="images/logo.jpg" alt="logo"
-<h1 class="Titulo">Pelis Para Todos</h1>
+		<img style="max-width: 4%;" src="images/logo.jpg" alt="logo">
+
+
+		<a href="movies/estrenos.html">
+			<h1 class="Titulo">Pelis Para Todos</h1>
+	</a>
+
+		<style>
+		a:hover{
+			text-decoration: none;
+		}
+
+		.Titulo{
+			font-family: arial;
+				text-align: center;
+				display: block;
+				font-size: 2em;
+				margin-block-start: 0.67em;
+				margin-block-end: 0.67em;
+				margin-inline-start: 0px;
+				margin-inline-end: 0px;
+				margin-left: auto;
+				margin-right: auto;
+				font-weight: bold;
+				white-space: nowrap;
+		}
+
+		</style>
+
+
 	<!-- Menu -->
 	<div class="menu">
 			<ul>
@@ -86,8 +114,7 @@ Contenedor que mostrará la información, enlaces, tráiler, links recomendados.
 <div class="container">
 
 	<!-- Notificaciones -->
-	<div class="notification" id="added"> Added to enfila !</div>
-	<div class="notification" id="alreadyStored"> Already in enfila !</div>
+
 	<div id="movie"></div>
 	<h2 id="trailer_title">Trailer</h2>
 	<div id="trailer"></div>
@@ -112,7 +139,7 @@ Contenedor que mostrará la información, enlaces, tráiler, links recomendados.
 		</div>
 		<!-- Credits -->
 		<div class="credits">
-			<a href="https://www.themoviedb.org/"><img src='../images/logotmdb.png' width="82" height="86"></a>
+			<a href="https://www.themoviedb.org/"><img src='images/logotmdb.png' width="82" height="86"></a>
 		</div>
 	</div>
 
@@ -125,12 +152,12 @@ Contenedor que mostrará la información, enlaces, tráiler, links recomendados.
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	background-color: white;
+	background-color: #b8d4f2;
 	color: white;
 	text-align: center;
 }
 </style>
-<!-- Script links -->
+<!-- Links -->
 <script src="scripts/config.js"></script>
 <script src="scripts/global.js"></script>
 <script src="scripts/movies/detalle.js"></script>
