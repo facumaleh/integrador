@@ -1,9 +1,7 @@
-
 window.onload = function() {
   // Tengo que capturar el formulario, querySelector
   // al formulario le agrego un evento para que cuando se submita el form, envie los datos por ajax(fetch)
 
-  var imgURL='https://image.tmdb.org/t/p/original'
 
   var queryString = new URLSearchParams(window.location.search)
   var idGenero = queryString.get("id")
@@ -11,6 +9,13 @@ window.onload = function() {
   console.log(idGenero===null);
   var busco = queryString.get("buscador")
   console.log(busco);
+
+  //Se imprimen en pantalla los resultados del buscador
+  document.getElementById("vosBuscaste").innerHTML = 'Estos son los resultados para:'+' '+ busco;
+
+if (busco==null) {
+  document.getElementById("vosBuscaste").style.display = "none";
+}
 
   var select = document.getElementById('selectedGenres');
       select.onchange= function(){
@@ -20,200 +25,101 @@ window.onload = function() {
   if (idGenero != null ) {
     console.log("busco por genero");
     var url = ('https://api.themoviedb.org/3/discover/movie?api_key=15bb9ea0cc06d94a6a0f45e9487d7633&sort_by=popularity.desc&include_adult=true&include_video=true&page=1&with_genres='+idGenero)
-    fetch(url)
-    .then(function(response){
-      return response.json();
-    })
-    .then(function(responseJSON){
-        let movie = responseJSON.results;
-        let output = "";
-        for(let i = 0; i < movie.length; i++){
-            let id = responseJSON.results[i].id;
-          id = JSON.stringify(id);
-          let favoriteMovies = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
-          if(favoriteMovies.indexOf(id) === -1){
-            output += `
-            <div class="peliculas">
-              <div class="overlay">
-              <div class="addBtn">
-                <span>
-
-                </span>
-
-                <span>
-                  <i class="material-icons favorite" onclick="favorite('${movie[i].id}')">favorite</i>
-                </span>
-              </div>
-
-              <div class="movie">
-                <h2>${movie[i].title}</h2>
-                  <p id="p_rating">
-                    <strong>Rating:</strong>
-                      <span>${movie[i].vote_average} / 10 </span>
-                  </p>
-
-                  <p>
-                    <strong>Release date:</strong>
-                      <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span>
-                  </p>
-
-                  <a onclick="movieSelected('${movie[i].id}')" href="../detalle.html">Detalles</a>
-              </div>
-              </div>
-
-              <div class="peliculas_img">
-                <img src="${imgURL}${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';" >
-              </div>
-            </div>
-            `;
-          } else {
-            output += `
-                      <div class="peliculas">
-                      <div class="overlay">
-                      <div class="addBtn">
-                        <span>
-                          <i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i>
-                        </span>
-
-                        <span>
-                          <i class="material-icons favoriteMarked" onclick="favorite('${movie[i].id}')">favorite</i></span></div>
-                            <div class="movie">
-                              <h2>${movie[i].title}</h2>
-                                <p id="p_rating">
-                                  <strong>Rating:</strong>
-                                    <span>${movie[i].vote_average} / 10 </span>
-                                </p>
-                                <p>
-                                  <strong>Release date:</strong>
-                                    <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span>
-                                </p>
-                              <a onclick="movieSelected('${movie[i].id}')" href="../detalle.html'>Detalles</a>
-                      </div>
-                      </div>
-                      <div class="peliculas_img">
-                          <img src="${imgURL}${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';" >
-                      </div>
-                  </div>
-          `;
-          }
-        }
-        let moviesInfo = document.getElementById("movies");
-        moviesInfo.innerHTML = output;
-    })
-    .catch(function(error){
-      console.log("The error was: "+ error);
-    })
-
   } else if (busco != null) {
     console.log("busco una peli");
     var url = "https://api.themoviedb.org/3/search/movie?api_key=07be10560c3c4cf68794acc1da83356b&language=en-US&query=" + busco + "&page=1&include_adult=false"
-
-
-
-// Aca tengo que extraer del HTML para decir que es lo que estoy buscando
-
-    fetch(url)
-    .then(function(response){
-      return response.json();
-    })
-    .then(function(responseJSON){
-      // imprimo la respuesta para ver que tiene
-      console.log(responseJSON);
-
-//ACA VA EL CODIGO QUE TENGO QUE PONER PARA AGARRAR Y MOSTRAR LAS PELICULAS
-      // la respuesta tiene un array de pelis
-      var arrayDeBusqueda = responseJSON.results
-      // capturo el div para insertar las pelis
-      var divMovies =  document.querySelector("#showcaseByID")
-      // recorro el array de respuesta
-      for (var i = 0; i < arrayDeBusqueda.length; i++) {
-        // arrayDeBusqueda[i]
-        let id = responseJSON.results[i].id;
-      id = JSON.stringify(id);
-      let favoriteMovies = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
-      if(favoriteMovies.indexOf(id) === -1){
-        let output = "";
-        output += `
-        <div class="peliculas">
-          <div class="overlay">
-          <div class="addBtn">
-            <span>
-
-            </span>
-
-            <span>
-              <i class="material-icons favorite" onclick="favorite('${movie[i].id}')">favorite</i>
-            </span>
-          </div>
-
-          <div class="movie">
-            <h2>${movie[i].title}</h2>
-              <p id="p_rating">
-                <strong>Rating:</strong>
-                  <span>${movie[i].vote_average} / 10 </span>
-              </p>
-
-              <p>
-                <strong>Release date:</strong>
-                  <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span>
-              </p>
-
-              <a onclick="movieSelected('${movie[i].id}')" href="../detalle.html">Detalles</a>
-          </div>
-          </div>
-
-          <div class="peliculas_img">
-            <img src="${imgURL}${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';" >
-          </div>
-        </div>
-        `;
-      } else {
-        output += `
-                  <div class="peliculas">
-                  <div class="overlay">
-                  <div class="addBtn">
-                    <span>
-                      <i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i>
-                    </span>
-
-                    <span>
-                      <i class="material-icons favoriteMarked" onclick="favorite('${movie[i].id}')">favorite</i></span></div>
-                        <div class="movie">
-                          <h2>${movie[i].title}</h2>
-                            <p id="p_rating">
-                              <strong>Rating:</strong>
-                                <span>${movie[i].vote_average} / 10 </span>
-                            </p>
-                            <p>
-                              <strong>Release date:</strong>
-                                <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span>
-                            </p>
-                          <a onclick="movieSelected('${movie[i].id}')" href="../detalle.html'>Detalles</a>
-                  </div>
-                  </div>
-                  <div class="peliculas_img">
-                      <img src="${imgURL}${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';" >
-                  </div>
-              </div>
-      `;
-      }
-
-      }
-
-    })
-    .catch(function(error){
-      console.log("The error was: "+ error);
-    })
-
   }
 
+  var imgURL='https://image.tmdb.org/t/p/original'
 
+  fetch(url)
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(responseJSON){
+      let movie = responseJSON.results;
+      let output = "";
+      for(let i = 0; i < movie.length; i++){
+          let id = responseJSON.results[i].id;
+        id = JSON.stringify(id);
+        let favoriteMovies = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
+        if(favoriteMovies.indexOf(id) === -1){
+          output += `
+          <div class="peliculas">
+            <div class="overlay">
+            <div class="addBtn">
+              <span>
+                <i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i>
+              </span>
 
+              <span>
+                <i class="material-icons favorite" onclick="favorite('${movie[i].id}')">favorite</i>
+              </span>
+            </div>
+
+            <div class="movie">
+              <h2>${movie[i].title}</h2>
+                <p id="p_rating">
+                  <strong>Rating:</strong>
+                    <span>${movie[i].vote_average} / 10 </span>
+                </p>
+
+                <p>
+                  <strong>Release date:</strong>
+                    <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span>
+                </p>
+
+                <a onclick="movieSelected('${movie[i].id}')" href="../detalle.html">Detalles</a>
+            </div>
+            </div>
+
+            <div class="peliculas_img">
+              <img src="${imgURL}${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';" >
+            </div>
+          </div>
+          `;
+        } else {
+          output += `
+                    <div class="peliculas">
+                    <div class="overlay">
+                    <div class="addBtn">
+                      <span>
+                        <i class="material-icons watch" onclick="addToList('${movie[i].id}')">visibility</i>
+                      </span>
+
+                      <span>
+                        <i class="material-icons favoriteMarked" onclick="favorite('${movie[i].id}')">favorite</i></span></div>
+                          <div class="movie">
+                            <h2>${movie[i].title}</h2>
+                              <p id="p_rating">
+                                <strong>Rating:</strong>
+                                  <span>${movie[i].vote_average} / 10 </span>
+                              </p>
+                              <p>
+                                <strong>Release date:</strong>
+                                  <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span>
+                              </p>
+                            <a onclick="movieSelected('${movie[i].id}')" href="../detalle.html'>Detalles</a>
+                    </div>
+                    </div>
+                    <div class="peliculas_img">
+                        <img src="${imgURL}${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';" >
+                    </div>
+                </div>
+        `;
+        }
+      }
+      let moviesInfo = document.getElementById("movies");
+      moviesInfo.innerHTML = output;
+  })
+  .catch(function(error){
+    console.log("The error was: "+ error);
+  })
 
 
 
 // ** GUARDAR EN LISTA DE FAVORITOS **
-//agregar a watch list.  AL FINAL NO HAY WATCHLIST
+//Add movie to watch list.
 function addToList(id){
     let storedId = JSON.parse(localStorage.getItem("movies")) || [];
 	if(storedId.indexOf(id) === -1){
@@ -227,7 +133,7 @@ function addToList(id){
             added.classList.remove("added");
         }, 1500);
 	} else {
-		//notificacion de que se metio a la watchlist.
+		//Notification that it has already been added to the watchlist.
         const alreadyStored = document.getElementById("alreadyStored");
         alreadyStored.innerHTML = "Already in watchlist !"
         alreadyStored.classList.add("alreadyStored");
@@ -307,11 +213,9 @@ const API_KEY = "07be10560c3c4cf68794acc1da83356b";
     console.log("The error was: "+ error);
   })
 }
-
-
-
 // Aca van los requerimientos minimos para que funcione el Buscador
 // Tiene que validarse teniendo el campo al menos 3 caracteres y si no se cumple salta una alerta por 3 segundos
+
 //if cajaBuscador tiene un numero menor a 3 de caracteres, mostrar una alerta por 3 segundos
 
 var form = document.querySelector('#form')
@@ -329,19 +233,17 @@ form.addEventListener("submit",function(event){
       pos: 'top-center',
       timeout: 3000
 });
+
     }
 })
-
-//TERMINA NOTIFICACION POR ERROR EN BUSQUEDA
-
 
 
 // Aca va lo que la persona busco impreso en la pagina
 
-function cambiarTexto(){
-var buscador = new URLSearchParams(window.location.search).get('buscador')
-document.querySelector('div.busqueda').innerHTML += buscador
-
-
-console.log(cambiarTexto);
-}
+// function cambiarTexto(){
+// var buscador = new URLSearchParams(window.location.search).get('buscador')
+// document.querySelector('div.busqueda').innerHTML += buscador
+//
+//
+// console.log(cambiarTexto);
+// }

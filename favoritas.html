@@ -14,10 +14,14 @@
       <!-- barra de navegacion -->
   	<nav>
   			<img style="max-width: 4%;" src="images/logo.jpg" alt="logo"
-  <h1 class="Titulo">Super Pelis</h1>
+  <h1 class="Titulo">Pelis Para Todos</h1>
               <!--  Menu -->
   						<div class="menu">
+  								<ul>
+  								 <li class="list"><a href="favoritas.html">Favoritas</a></li>
+  								 <li>	<!-- This is a button toggling the modal -->
 
+  		 </ul>
   						</div>
   								<!-- navbar pantalla chica -->
   								<div class="MenuExpandible">
@@ -38,8 +42,12 @@
   											</ul>
   										</li>
 
+  										<li class="list" id="smallScreenList">Mi Lista<span class="drop"><i class="ion-chevron-down"></i></span></a>
+  																 <ul id="myListsDropdown">
 
-
+  																		<li><a href="favoritas.html">Favoritas</a>
+  																 </ul>
+  									 </li>
 
   								</div>
   							</nav>
@@ -117,6 +125,7 @@
 <script src="scripts/config.js"></script>
 <script src="scripts/global.js"></script>
 <script src="scripts/favoritas.js"></script>
+<script src="scripts/login.js"></script>
 <!-- Axios link -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
