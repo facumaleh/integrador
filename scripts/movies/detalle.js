@@ -132,6 +132,7 @@ fetch("https://api.themoviedb.org/3/movie/"+movieId+'/recommendations?api_key='+
 				<div class="movie">
 					<h2>${movie[i].title}</h2>
 						<p><strong>Release date:</strong> <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span></p>
+							<a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
 
 				</div>
 				</div>

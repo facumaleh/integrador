@@ -24,13 +24,12 @@ const API_KEY = config.API_KEY;
 					<div class="peliculas">
 						<div class="overlay">
 						<div class="addBtn">
-						<span><i class="material-icons favorite" onclick="favorite('${movie[i].id}')">favorite</i></span></div>
-						<div class="movie">
-							<h2>${movie[i].title}</h2>
-								<p id="p_rating"><strong>Rating:</strong> <span>${movie[i].vote_average} / 10 </span> </p>
-								<p><strong>Release date:</strong> <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span></p>
-								<a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
-						</div>
+					<span><i class="material-icons favorite" onclick="favorite('${movie[i].id}')">favorite</i></span></div>
+					<div class="movie">
+						<h2>${movie[i].title}</h2>
+							<p id="p_rating"><strong>Rating:</strong> <span>${movie[i].vote_average} / 10 </span> </p>
+							<p><strong>Release date:</strong> <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span></p>
+							<a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
 						</div>
 						<div class="peliculas_img">
 							<img src="http://image.tmdb.org/t/p/w400/${movie[i].poster_path}" onerror="this.onerror=null;this.src='../images/imageNotFound.png';">
@@ -164,7 +163,7 @@ function() {
 
 
 		})
-	
+
 		.catch( (err) =>{
 			console.log(err);
 		})

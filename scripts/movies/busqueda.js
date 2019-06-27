@@ -3,6 +3,7 @@ window.onload = function() {
   // al formulario le agrego un evento para que cuando se submita el form, envie los datos por ajax(fetch)
 
 
+// La interfaz URLSearchParams define métodos útiles para trabajar con los parámetros de búsqueda de una URL.
   var queryString = new URLSearchParams(window.location.search)
   var idGenero = queryString.get("id")
   console.log(idGenero);
@@ -108,6 +109,7 @@ if (busco==null) {
                 </div>
         `;
         }
+        // on erro funcion pra pone la foto 
       }
       let moviesInfo = document.getElementById("movies");
       moviesInfo.innerHTML = output;
