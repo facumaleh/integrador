@@ -213,3 +213,32 @@ form.addEventListener("submit",function(event){
 
     }
 })
+// ver detalle
+function movieSelected(id){
+	sessionStorage.setItem("movieId", id);
+	window.open("../detalle.html");
+	return false;
+}
+//agrega peliculas a favoritos
+function favorite(id){
+    let storedId = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
+	if(storedId.indexOf(id) === -1){
+		storedId.push(id);
+		localStorage.setItem("favoriteMovies", JSON.stringify(storedId));
+		//notificacion que la pelicula esta siendo agregada
+        const added = document.getElementById("added");
+        added.innerHTML = "Added to Favorites !";
+        added.classList.add("added");
+        setTimeout(() => {
+            added.classList.remove("added");
+        }, 1500);
+	} else {
+		//notificacion que fue agregada
+		const alreadyStored = document.getElementById("alreadyStored");
+        alreadyStored.innerHTML = "Already in favorites !";
+        alreadyStored.classList.add("alreadyStored");
+        setTimeout(() => {
+            alreadyStored.classList.remove("alreadyStored");
+        }, 1500);
+	}
+}
