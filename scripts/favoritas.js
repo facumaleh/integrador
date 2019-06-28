@@ -41,11 +41,7 @@ window.onload = function displayWatchlist(){
       `<p class="infoText">  </p>`;
     }
 
-    if(toWatchTvShows == 0){
-        // MENSAJE SI NO HAY NINGUNA PELICULA EN LA LISTA
-        tvShowsOutput.innerHTML +=
-        `<p class="infoText"> There are no favorite tv shows. Go watch some. <a href="#" onclick="openRecommendTvShowsBox()"> Here are some recommendations !</a> </p>`;
-    }
+
 }
 // PELIS RECOMENDADAS
 const recommendedBox = document.querySelector(".recommendedBox");
@@ -65,7 +61,7 @@ function openRecommendMoviesBox(){
 
     //NOTIFICACION DE QUE SACAS UNA PELI DE LA WATCHLIST
     const removedWatchlist = document.getElementById("alreadyStored");
-    removedWatchlist.innerHTML = "Removed from watchlist !";
+    removedWatchlist.innerHTML = "Eliminada de favoritas!";
     removedWatchlist.classList.add("alreadyStored");
     setTimeout(() => {
         added.classList.remove("alreadyStored");
