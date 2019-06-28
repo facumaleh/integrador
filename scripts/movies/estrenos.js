@@ -6,7 +6,7 @@ const API_KEY = config.API_KEY;
 
 
 
-	fetch("https://api.themoviedb.org/3/movie/now_playing?api_key="+API_KEY+'&language=es-ES&page=1&region=US')
+	fetch("https://api.themoviedb.org/3/movie/now_playing?api_key="+API_KEY+'&language=es-ES&page=1&region=ES')
 	  .then(function(response) {
 	    return response.json();
 	  })
@@ -106,7 +106,7 @@ function favorite(id){
 
 document.querySelector('#vermas').addEventListener('click',
 function() {
-		fetch("https://api.themoviedb.org/3/movie/now_playing?api_key="+API_KEY+'&language=es-ES&page=2&region=US')
+		fetch("https://api.themoviedb.org/3/movie/now_playing?api_key="+API_KEY+'&language=es-ES&page=2&region=ES')
 	  .then(function(response) {
 	    return response.json();
 	  })

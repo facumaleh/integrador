@@ -9,6 +9,7 @@ window.onload = function() {
   console.log(idGenero);
   console.log(idGenero===null);
   var busco = queryString.get("buscador")
+  var genre = queryString.get("genero")
   console.log(busco);
 
   //Se imprimen en pantalla los resultados del buscador
@@ -21,8 +22,24 @@ if (busco==null) {
   var select = document.getElementById('selectedGenres');
       select.onchange= function(){
         var idGenero = select.options[select.selectedIndex].value
-        window.location.href = "busqueda.html?id="+idGenero;
+        var genero = select.options[select.selectedIndex].text
+        console.log("hola");
+        console.log(genre);
+        window.location.href = "busqueda.html?id="+idGenero+"&genero="+genero;
+        //Se imprimen en pantalla los resultados del buscador
       }
+
+
+    if (genre==null) {
+      document.getElementById("vosBuscaste").style.display = "none";
+    }else{
+      console.log("hola");
+      console.log(genre);
+      document.getElementById("vosBuscaste").style.display = "block";
+      document.querySelector("#vosBuscaste").innerHTML = 'Estos son los resultados para: '+ genre;
+    }
+
+
   if (idGenero != null ) {
     console.log("busco por genero");
     var url = ('https://api.themoviedb.org/3/discover/movie?api_key=15bb9ea0cc06d94a6a0f45e9487d7633&sort_by=popularity.desc&include_adult=true&include_video=true&page=1&with_genres='+idGenero)
