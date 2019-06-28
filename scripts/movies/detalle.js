@@ -125,14 +125,14 @@ fetch("https://api.themoviedb.org/3/movie/"+movieId+'/recommendations?api_key='+
 		movie.length = 4;
 		let output = "";
 		for(let i = 0; i < movie.length; i++){
+let favoriteMovies = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
 			output += `
-
 			<div class="peliculas">
 				<div class="overlay">
 				<div class="movie">
 					<h2>${movie[i].title}</h2>
 						<p><strong>Release date:</strong> <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span></p>
-							<a onclick="movieSelected('${movie[i].id}')" href="#">Detalles</a>
+							<a onclick="movieSelected('${movie[i].id}')" >Detalles</a>
 
 				</div>
 				</div>
@@ -167,10 +167,10 @@ window.close();
 
 // Lleva al usuario a la pagina de detalles
 function movieSelected(id){
-sessionStorage.setItem("movieId", id);
-location.replace("movie-page.html");
-return false;
+	sessionStorage.setItem("movieId", id);
+	window.open("../integrador/detalle.html");
+	// return false;
 }
 
+
 //Numero de pagina
-let pageNum = 1;

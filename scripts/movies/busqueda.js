@@ -87,7 +87,7 @@ if (busco==null) {
                     <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span>
                 </p>
 
-                <a onclick="movieSelected('${movie[i].id}')" href="../detalle.html">Detalles</a>
+                <a onclick="movieSelected('${movie[i].id}')" >Detalles</a>
             </div>
             </div>
 
@@ -117,7 +117,7 @@ if (busco==null) {
                                 <strong>Release date:</strong>
                                   <span>${movie[i].release_date} <i class="material-icons date">date_range</i> </span>
                               </p>
-                            <a onclick="movieSelected('${movie[i].id}')" href="../detalle.html'>Detalles</a>
+                            <a onclick="movieSelected('${movie[i].id}')" >Detalles</a>
                     </div>
                     </div>
                     <div class="peliculas_img">
@@ -166,7 +166,7 @@ function favorite(id){
 //Agarra el movie id y lo setea en el local storage
 function movieSelected(id){
     sessionStorage.setItem("movieId", id);
-    window.open("../detalle.html");
+    window.open("../integrador/detalle.html");
     return false;
 }
 
@@ -206,7 +206,7 @@ const API_KEY = "07be10560c3c4cf68794acc1da83356b";
             }
       })
   .catch(function(error){
-    console.log("The error was: "+ error);
+    console.log("hubo un error: "+ error);
   })
 }
 // Aca van los requerimientos minimos para que funcione el Buscador
@@ -233,11 +233,7 @@ form.addEventListener("submit",function(event){
     }
 })
 // ver detalle
-function movieSelected(id){
-	sessionStorage.setItem("movieId", id);
-	window.open("../detalle.html");
-	return false;
-}
+
 //agrega peliculas a favoritos
 function favorite(id){
     let storedId = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
