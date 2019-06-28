@@ -45,7 +45,7 @@ if (busco==null) {
     var url = ('https://api.themoviedb.org/3/discover/movie?api_key=15bb9ea0cc06d94a6a0f45e9487d7633&sort_by=popularity.desc&include_adult=true&include_video=true&page=1&with_genres='+idGenero)
   } else if (busco != null) {
     console.log("busco una peli");
-    var url = "https://api.themoviedb.org/3/search/movie?api_key=07be10560c3c4cf68794acc1da83356b&language=en-US&query=" + busco + "&page=1&include_adult=false"
+    var url = "https://api.themoviedb.org/3/search/movie?api_key=07be10560c3c4cf68794acc1da83356b&language=es-ES&query=" + busco + "&page=1&include_adult=false"
   }
 
   var imgURL='https://image.tmdb.org/t/p/original'
