@@ -109,7 +109,7 @@ if (busco==null) {
                 </div>
         `;
         }
-        // on erro funcion pra pone la foto 
+        // on erro funcion pra pone la foto
       }
       let moviesInfo = document.getElementById("movies");
       moviesInfo.innerHTML = output;

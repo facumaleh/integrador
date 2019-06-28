@@ -1,5 +1,31 @@
 
+.aTitulo:hover{
+	text-decoration: none;
+}
 
+.Titulo{
+	font-family: arial;
+		text-align: center;
+		display: block;
+		font-size: 2em;
+		margin-block-start: 0.67em;
+		margin-block-end: 0.67em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		margin-left: auto;
+		margin-right: auto;
+		font-weight: bold;
+		white-space: nowrap;
+}
+.footer {
+
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #b8d4f2;
+	color: white;
+	text-align: center;
+}
 body{
 	width: 100%;
 	background-color: ##b8d4f2;

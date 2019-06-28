@@ -1,5 +1,16 @@
+function validar() {var usuario, email;
+  usuario=document.getElementById('usuario').value;
+    email=document.getElementById('email')
+    if (usuario==="")
+    alert("El campo esta vacio");
+
+    }
+
+
+
 document.querySelector("form").addEventListener("submit",function(event){
   event.preventDefault()
+
 
   // tiene usaurio?
     var usuario = window.localStorage.getItem("usuario");
@@ -25,6 +36,8 @@ document.querySelector("form").addEventListener("submit",function(event){
     }
 })
 
+
+
 // SACAR MODAL (POP-UP)
 var modal = document.getElementById('id01');
 
@@ -34,5 +47,6 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
 
   //

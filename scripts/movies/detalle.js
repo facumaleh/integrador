@@ -113,7 +113,7 @@ fetch("https://api.themoviedb.org/3/movie/"+movieId+'/videos?api_key='+API_KEY+'
 	let video = document.getElementById("trailer");
 	video.innerHTML = output;
 })
-
+// recomendaciones
 fetch("https://api.themoviedb.org/3/movie/"+movieId+'/recommendations?api_key='+API_KEY+'&language=es-ES&page=1')
   .then(function(response) {
     return response.json();

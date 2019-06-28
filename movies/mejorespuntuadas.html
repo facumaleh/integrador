@@ -77,7 +77,7 @@
 	<!--Modal del login -->
 	<div id="modal-example" uk-modal>
 	    <div class="uk-modal-dialog uk-modal-body">
-				<form class="modal-content animate" action="estrenos.html">
+				<form class="modal-content animate" action="estrenos.html"onsubmit="return validar();">
 	    <div class="imgcontainer">
 
 	      <img src="../images/nacho.jpg" alt="Avatar" class="avatar">
@@ -85,10 +85,10 @@
 
 	    <div class="container">
 	      <label for="uname"><b>Username</b></label>
-	      <input id="usuario" type="text" placeholder="Enter Username" name="uname" required>
+	      <input id="usuario" type="text" placeholder="Enter Username" name="uname" >
 
 	      <label for="psw"><b>email</b></label>
-	      <input  id="email"type="email" placeholder="Enter email" name="email" required>
+	      <input  id="email"type="email" placeholder="Enter email" name="email" >
 
 	      <button type="submit">Login</button>
 	      <label>
@@ -240,7 +240,7 @@
 	</script>
 
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
- 
+
 		<!-- Footer -->
     <footer>
         <!-- Links -->
